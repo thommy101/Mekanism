@@ -2,6 +2,7 @@ package mekanism.client.gui;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import mekanism.api.Coord4D;
 import mekanism.common.util.LangUtils;
@@ -30,7 +31,7 @@ public class GuiSeismicReader extends GuiScreen
 
 	public ItemStack itemStack;
 
-	private ArrayList<Pair<Integer, Block>> blockList = new ArrayList<Pair<Integer, Block>>();
+	private ArrayList<Pair<Integer, Block>> blockList = new ArrayList<>();
 
 	public Coord4D pos;
 
@@ -156,10 +157,9 @@ public class GuiSeismicReader extends GuiScreen
 			}
 			
 			String capitalised = renderString.substring(0, 1).toUpperCase() + renderString.substring(1);
-			float renderScale = 1.0f;
 			int lengthX = fontRendererObj.getStringWidth(capitalised);
 
-			renderScale = lengthX > 53 ? 53f / lengthX : 1.0f;
+			float renderScale = lengthX > 53 ? 53f / lengthX : 1.0f;
 
 			GlStateManager.pushMatrix();
 			GlStateManager.translate(guiWidth + 72, guiHeight + 16, 0);
@@ -189,7 +189,7 @@ public class GuiSeismicReader extends GuiScreen
 			{
 				Block block = blockList.get(currentLayer - 1).getRight();
 
-				if(pair.getRight() == block && pair.getLeft() == blockList.get(currentLayer - 1).getLeft())
+				if(pair.getRight() == block && Objects.equals(pair.getLeft(), blockList.get(currentLayer - 1).getLeft()))
 				{
 					frequency++;
 				}

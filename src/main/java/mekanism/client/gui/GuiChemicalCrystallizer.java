@@ -54,7 +54,7 @@ public class GuiChemicalCrystallizer extends GuiMekanism
 
 	public int stackIndex = 0;
 
-	public List<ItemStack> iterStacks = new ArrayList<ItemStack>();
+	public List<ItemStack> iterStacks = new ArrayList<>();
 
 	public GuiChemicalCrystallizer(InventoryPlayer inventory, TileEntityChemicalCrystallizer tentity)
 	{
@@ -220,13 +220,13 @@ public class GuiChemicalCrystallizer extends GuiMekanism
 	{
 		if(iterStacks == null)
 		{
-			iterStacks = new ArrayList<ItemStack>();
+			iterStacks = new ArrayList<>();
 		}
 		else {
 			iterStacks.clear();
 		}
 
-		List<String> keys = new ArrayList<String>();
+		List<String> keys = new ArrayList<>();
 
 		for(String s : OreDictionary.getOreNames())
 		{

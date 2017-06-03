@@ -573,7 +573,7 @@ public abstract class BlockMachine extends BlockContainer implements ICTMBlock
 					{
 						UUID owner = ((ISecurityTile)tileEntity).getSecurity().getOwnerUUID();
 						
-						if(MekanismUtils.isOp((EntityPlayerMP)entityplayer) || owner == null || entityplayer.getUniqueID().equals(owner))
+						if(MekanismUtils.isOp(entityplayer) || owner == null || entityplayer.getUniqueID().equals(owner))
 						{
 							entityplayer.openGui(Mekanism.instance, type.guiId, world, pos.getX(), pos.getY(), pos.getZ());
 						} 
@@ -1025,12 +1025,6 @@ public abstract class BlockMachine extends BlockContainer implements ICTMBlock
     {
         return false;
     }
-	
-	@Override
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos)
-	{
-		return super.getCollisionBoundingBox(state, world, pos);
-	}
 
 	@Override
 	public boolean isSideSolid(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side)

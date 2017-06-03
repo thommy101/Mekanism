@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.ResourceLocation;
 
 public class TextureCTM 
@@ -33,7 +32,7 @@ public class TextureCTM
         
         Quad[] quads = quad.subdivide(4);
         
-        int[] ctm = ((CTMBlockRenderContext)context).getCTM(bq.getFace()).getSubmapIndices();
+        int[] ctm = context.getCTM(bq.getFace()).getSubmapIndices();
         
         for(int i = 0; i < quads.length; i++) 
         {
@@ -46,7 +45,7 @@ public class TextureCTM
             }
         }
         
-        return Arrays.stream(quads).filter(Objects::nonNull).map(q -> q.rebake()).collect(Collectors.toList());
+        return Arrays.stream(quads).filter(Objects::nonNull).map(Quad::rebake).collect(Collectors.toList());
     }
     
     public TextureAtlasSprite getParticle()

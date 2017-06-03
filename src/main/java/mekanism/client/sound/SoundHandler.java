@@ -25,13 +25,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class SoundHandler
 {
-	public static Map<String, Map<String, IResettableSound>> soundMaps = new HashMap<String, Map<String, IResettableSound>>();
+	public static Map<String, Map<String, IResettableSound>> soundMaps = new HashMap<>();
 
 	public static Map<ISound, String> invPlayingSounds;
 
 	public static Minecraft mc = Minecraft.getMinecraft();
 
-	public static enum Channel
+	public enum Channel
 	{
 		JETPACK("jetpack", JetpackSound.class),
 		GASMASK("gasMask", GasMaskSound.class),
@@ -40,7 +40,7 @@ public class SoundHandler
 		String channelName;
 		Class<? extends PlayerSound> soundClass;
 
-		private Channel(String name, Class<? extends PlayerSound> clazz)
+		Channel(String name, Class<? extends PlayerSound> clazz)
 		{
 			channelName = name;
 			soundClass = clazz;
@@ -105,15 +105,7 @@ public class SoundHandler
 
 	public static Map<String, IResettableSound> getMap(String name)
 	{
-		Map<String, IResettableSound> map = soundMaps.get(name);
-		
-		if(map == null)
-		{
-			map = new HashMap<String, IResettableSound>();
-			soundMaps.put(name, map);
-		}
-
-		return map;
+		return soundMaps.computeIfAbsent(name, k -> new HashMap<>());
 	}
 
 	public static SoundManager getSoundManager()

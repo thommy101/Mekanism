@@ -131,32 +131,29 @@ public class ItemBlockEnergyCube extends ItemBlock implements IEnergizedItem, IS
 			
 			if(tileEntity instanceof ISecurityTile)
 			{
-				ISecurityTile security = (ISecurityTile)tileEntity;
-				security.getSecurity().setOwnerUUID(getOwnerUUID(stack));
+				tileEntity.getSecurity().setOwnerUUID(getOwnerUUID(stack));
 				
 				if(hasSecurity(stack))
 				{
-					security.getSecurity().setMode(getSecurity(stack));
+					tileEntity.getSecurity().setMode(getSecurity(stack));
 				}
 				
 				if(getOwnerUUID(stack) == null)
 				{
-					security.getSecurity().setOwnerUUID(player.getUniqueID());
+					tileEntity.getSecurity().setOwnerUUID(player.getUniqueID());
 				}
 			}
 			
 			if(tileEntity instanceof ISideConfiguration)
 			{
-				ISideConfiguration config = (ISideConfiguration)tileEntity;
-
 				if(ItemDataUtils.hasData(stack, "sideDataStored"))
 				{
-					config.getConfig().read(ItemDataUtils.getDataMap(stack));
-					config.getEjector().read(ItemDataUtils.getDataMap(stack));
+					tileEntity.getConfig().read(ItemDataUtils.getDataMap(stack));
+					tileEntity.getEjector().read(ItemDataUtils.getDataMap(stack));
 				}
 			}
 
-			((ISustainedInventory)tileEntity).setInventory(getInventory(stack));
+			tileEntity.setInventory(getInventory(stack));
 
 			if(!world.isRemote)
 			{

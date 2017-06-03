@@ -22,7 +22,7 @@ public class GuiElementHandler implements IAdvancedGuiHandler
 	{
 		if(gui instanceof GuiMekanism)
 		{
-			List<Rectangle> list = new ArrayList<Rectangle>();
+			List<Rectangle> list = new ArrayList<>();
 			
 			GuiMekanism guiMek = (GuiMekanism)gui;
 			

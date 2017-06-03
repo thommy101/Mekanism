@@ -5,7 +5,6 @@ import io.netty.buffer.ByteBuf;
 import java.util.ArrayList;
 
 import mekanism.api.Coord4D;
-import mekanism.api.gas.GasRegistry;
 import mekanism.api.gas.GasStack;
 import mekanism.api.gas.GasTank;
 import mekanism.client.SparkleAnimation.INodeChecker;
@@ -255,7 +254,7 @@ public class TileEntityReactorController extends TileEntityReactorBlock implemen
 			
 			if(formed)
 			{
-				if(getReactor() == null || !((FusionReactor)getReactor()).formed)
+				if(getReactor() == null || !getReactor().formed)
 				{
 					Mekanism.proxy.doGenericSparkle(this, new INodeChecker() {
 						@Override
@@ -272,7 +271,7 @@ public class TileEntityReactorController extends TileEntityReactorBlock implemen
 					MekanismUtils.updateBlock(world, getPos());
 				}
 				
-				((FusionReactor)getReactor()).formed = true;
+				getReactor().formed = true;
 				getReactor().setPlasmaTemp(dataStream.readDouble());
 				getReactor().setCaseTemp(dataStream.readDouble());
 				getReactor().setInjectionRate(dataStream.readInt());

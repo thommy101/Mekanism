@@ -64,22 +64,22 @@ public enum CTMConnections
     private Dir dir;
     private boolean offset;
 
-    private CTMConnections(Dir dir) 
+    CTMConnections(Dir dir)
     {
         this(EnumFacing.SOUTH, dir);
     }
     
-    private CTMConnections(Dir dir, boolean offset) 
+    CTMConnections(Dir dir, boolean offset)
     {
         this(EnumFacing.SOUTH, dir, offset);
     }
     
-    private CTMConnections(EnumFacing normal, Dir dir)
+    CTMConnections(EnumFacing normal, Dir dir)
     {
         this(normal, dir, false);
     }
     
-    private CTMConnections(EnumFacing normal, Dir dir, boolean offset) 
+    CTMConnections(EnumFacing normal, Dir dir, boolean offset)
     {
         this.normal = normal;
         this.dir = dir;
@@ -88,7 +88,7 @@ public enum CTMConnections
 
     public Dir getDirForSide(EnumFacing facing)
     {
-        return dir == null ? null : dir;//TODO .relativize()
+        return dir;//TODO .relativize()
     }
 
     public EnumFacing clipOrDestroy(EnumFacing direction) 

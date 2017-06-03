@@ -9,7 +9,7 @@ public class ListUtils
 {
 	public static <V> List<V> inverse(List<V> list)
 	{
-		List<V> toReturn = new ArrayList<V>();
+		List<V> toReturn = new ArrayList<>();
 
 		for(int i = list.size() - 1; i >= 0; i--)
 		{
@@ -21,7 +21,7 @@ public class ListUtils
 
 	public static <V> List<V> cap(List<V> list, int cap)
 	{
-		List<V> toReturn = new ArrayList<V>();
+		List<V> toReturn = new ArrayList<>();
 
 		if(list.size() <= cap)
 		{
@@ -48,36 +48,27 @@ public class ListUtils
 
 	public static <V> List<V> copy(List<V> list)
 	{
-		List<V> toReturn = new ArrayList<V>();
+		List<V> toReturn = new ArrayList<>();
 
-		for(V obj : list)
-		{
-			toReturn.add(obj);
-		}
+		toReturn.addAll(list);
 
 		return toReturn;
 	}
 
 	public static <V> List<V> merge(List<V> listOne, List<V> listTwo)
 	{
-		List<V> newList = new ArrayList<V>();
+		List<V> newList = new ArrayList<>();
 
-		for(V obj : listOne)
-		{
-			newList.add(obj);
-		}
+		newList.addAll(listOne);
 
-		for(V obj : listTwo)
-		{
-			newList.add(obj);
-		}
+		newList.addAll(listTwo);
 
 		return newList;
 	}
 
 	public static <V> List<V> capRemains(List<V> list, int cap)
 	{
-		List<V> toReturn = new ArrayList<V>();
+		List<V> toReturn = new ArrayList<>();
 
 		if(list.size() <= cap)
 		{
@@ -110,16 +101,16 @@ public class ListUtils
 		int remain = list.size() % divide;
 		int size = (list.size() - remain) / divide;
 
-		ArrayList<List<V>> toReturn = new ArrayList<List<V>>();
+		ArrayList<List<V>> toReturn = new ArrayList<>();
 
 		for(int i = 0; i < divide; i++)
 		{
-			toReturn.add(i, new ArrayList<V>());
+			toReturn.add(i, new ArrayList<>());
 		}
 
 		for(List<V> iterSet : toReturn)
 		{
-			List<V> removed = new ArrayList<V>();
+			List<V> removed = new ArrayList<>();
 
 			int toAdd = size;
 
@@ -141,10 +132,7 @@ public class ListUtils
 				toAdd--;
 			}
 
-			for(V obj : removed)
-			{
-				list.remove(obj);
-			}
+			list.removeAll(removed);
 		}
 
 		return toReturn;
@@ -167,7 +155,7 @@ public class ListUtils
 
 	public static <V> List<V> asList(V... values)
 	{
-		return (List<V>)Arrays.asList(values);
+		return Arrays.asList(values);
 	}
 
 	public static double[] splitDouble(int size, double num)

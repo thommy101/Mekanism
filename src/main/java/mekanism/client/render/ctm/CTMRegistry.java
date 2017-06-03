@@ -22,14 +22,14 @@ import org.apache.commons.lang3.tuple.Pair;
 
 public class CTMRegistry 
 {
-    private static List<TextureSpriteCallback> textures = new ArrayList<TextureSpriteCallback>();
+    private static List<TextureSpriteCallback> textures = new ArrayList<>();
 
 	private IBakedModel baseModel;
 	public static ResourceLocation baseResource = new ResourceLocation("mekanism:block/ctm_block");
 	
-	public static List<Pair<String, String>> ctmTypes = new ArrayList<Pair<String, String>>();
+	public static List<Pair<String, String>> ctmTypes = new ArrayList<>();
 	
-	public static Map<String, TextureCTM> textureCache = new HashMap<String, TextureCTM>();
+	public static Map<String, TextureCTM> textureCache = new HashMap<>();
 	
     @SubscribeEvent
     public void onTextureStitch(TextureStitchEvent.Pre event) 

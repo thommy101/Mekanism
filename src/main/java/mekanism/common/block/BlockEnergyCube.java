@@ -302,17 +302,15 @@ public class BlockEnergyCube extends BlockContainer
 			
 			if(securityItem.hasSecurity(itemStack))
 			{
-				securityItem.setOwnerUUID(itemStack, ((ISecurityTile)tileEntity).getSecurity().getOwnerUUID());
-				securityItem.setSecurity(itemStack, ((ISecurityTile)tileEntity).getSecurity().getMode());
+				securityItem.setOwnerUUID(itemStack, tileEntity.getSecurity().getOwnerUUID());
+				securityItem.setSecurity(itemStack, tileEntity.getSecurity().getMode());
 			}
 		}
 		
 		if(tileEntity instanceof ISideConfiguration)
 		{
-			ISideConfiguration config = (ISideConfiguration)tileEntity;
-
-			config.getConfig().write(ItemDataUtils.getDataMap(itemStack));
-			config.getEjector().write(ItemDataUtils.getDataMap(itemStack));
+			tileEntity.getConfig().write(ItemDataUtils.getDataMap(itemStack));
+			tileEntity.getEjector().write(ItemDataUtils.getDataMap(itemStack));
 		}
 
 		ITierItem tierItem = (ITierItem)itemStack.getItem();

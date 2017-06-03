@@ -8,16 +8,10 @@ import mekanism.client.render.FluidRenderer.ValveRenderData;
 import mekanism.client.render.FluidRenderer;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.MekanismRenderer.DisplayInteger;
-import mekanism.client.render.MekanismRenderer.FluidType;
-import mekanism.client.render.MekanismRenderer.Model3D;
 import mekanism.common.content.tank.SynchronizedTankData.ValveData;
 import mekanism.common.content.tank.TankUpdateProtocol;
 import mekanism.common.tile.TileEntityBoilerCasing;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -28,9 +22,9 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class RenderThermoelectricBoiler extends TileEntitySpecialRenderer<TileEntityBoilerCasing>
 {
-	private static Map<RenderData, DisplayInteger[]> cachedLowerFluids = new HashMap<RenderData, DisplayInteger[]>();
-	private static Map<RenderData, DisplayInteger> cachedUpperFluids = new HashMap<RenderData, DisplayInteger>();
-	private static Map<ValveRenderData, DisplayInteger> cachedValveFluids = new HashMap<ValveRenderData, DisplayInteger>();
+	private static Map<RenderData, DisplayInteger[]> cachedLowerFluids = new HashMap<>();
+	private static Map<RenderData, DisplayInteger> cachedUpperFluids = new HashMap<>();
+	private static Map<ValveRenderData, DisplayInteger> cachedValveFluids = new HashMap<>();
 	
 	private Fluid STEAM = FluidRegistry.getFluid("steam");
 	private Fluid WATER = FluidRegistry.WATER;

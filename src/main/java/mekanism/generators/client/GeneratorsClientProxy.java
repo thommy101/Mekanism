@@ -1,7 +1,5 @@
 package mekanism.generators.client;
 
-import java.io.IOException;
-
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.ctm.CTMRegistry;
 import mekanism.generators.client.gui.GuiBioGenerator;
@@ -55,7 +53,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelBakeEvent;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -120,7 +117,7 @@ public class GeneratorsClientProxy extends GeneratorsCommonProxy
 	}
 	
 	@SubscribeEvent
-    public void onModelBake(ModelBakeEvent event) throws IOException 
+    public void onModelBake(ModelBakeEvent event)
     {
 		for(String s : CUSTOM_RENDERS)
 		{
@@ -179,7 +176,4 @@ public class GeneratorsClientProxy extends GeneratorsCommonProxy
 		
 		return null;
 	}
-	
-	@SubscribeEvent
-	public void onStitch(TextureStitchEvent.Pre event) {}
 }

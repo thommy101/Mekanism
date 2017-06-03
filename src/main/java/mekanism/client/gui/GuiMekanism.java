@@ -25,7 +25,7 @@ import org.lwjgl.input.Mouse;
 
 public abstract class GuiMekanism extends GuiContainer implements IGuiWrapper
 {
-	public Set<GuiElement> guiElements = new HashSet<GuiElement>();
+	public Set<GuiElement> guiElements = new HashSet<>();
 
 	private TileEntityContainerBlock tileEntity;
 
@@ -108,7 +108,7 @@ public abstract class GuiMekanism extends GuiContainer implements IGuiWrapper
 
 			for(int i = 0; i < inventorySlots.inventorySlots.size(); i++)
 			{
-				Slot slot = (Slot)inventorySlots.inventorySlots.get(i);
+				Slot slot = inventorySlots.inventorySlots.get(i);
 
 				if(isMouseOverSlot(slot, mouseX, mouseY))
 				{

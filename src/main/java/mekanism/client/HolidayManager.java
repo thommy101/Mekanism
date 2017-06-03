@@ -17,8 +17,8 @@ public final class HolidayManager
 	private static Calendar calendar = Calendar.getInstance();
 	private static Minecraft mc = Minecraft.getMinecraft();
 
-	public static List<Holiday> holidays = new ArrayList<Holiday>();
-	private static List<Holiday> holidaysNotified = new ArrayList<Holiday>();
+	public static List<Holiday> holidays = new ArrayList<>();
+	private static List<Holiday> holidaysNotified = new ArrayList<>();
 
 	public static void init()
 	{
@@ -113,30 +113,31 @@ public final class HolidayManager
 		}
 
 		@Override
-		public ResourceLocation filterSound(ResourceLocation sound)
+		public ResourceLocation filterSound(ResourceLocation soundResource)
 		{
-			if(sound.toString().contains("machine.enrichment"))
+			String sound = soundResource.toString();
+			if(sound.contains("machine.enrichment"))
 			{
-				return new ResourceLocation(sound.toString().replace("machine.enrichment", nutcracker[0]));
+				return new ResourceLocation(sound.replace("machine.enrichment", nutcracker[0]));
 			}
 			else if(sound.equals("machine.metalinfuser"))
 			{
-				return new ResourceLocation(sound.toString().replace("machine.metalinfuser", nutcracker[1]));
+				return new ResourceLocation(sound.replace("machine.metalinfuser", nutcracker[1]));
 			}
 			else if(sound.equals("machine.purification"))
 			{
-				return new ResourceLocation(sound.toString().replace("machine.purification", nutcracker[2]));
+				return new ResourceLocation(sound.replace("machine.purification", nutcracker[2]));
 			}
 			else if(sound.equals("machine.smelter"))
 			{
-				return new ResourceLocation(sound.toString().replace("machine.smelter", nutcracker[3]));
+				return new ResourceLocation(sound.replace("machine.smelter", nutcracker[3]));
 			}
 			else if(sound.equals("machine.dissolution"))
 			{
-				return new ResourceLocation(sound.toString().replace("machine.dissolution", nutcracker[4]));
+				return new ResourceLocation(sound.replace("machine.dissolution", nutcracker[4]));
 			}
 
-			return sound;
+			return soundResource;
 		}
 	}
 
@@ -161,7 +162,7 @@ public final class HolidayManager
 		}
 	}
 
-	public static enum Month
+	public enum Month
 	{
 		JANUARY("January"),
 		FEBRUARY("February"),
@@ -178,7 +179,7 @@ public final class HolidayManager
 
 		private final String name;
 
-		private Month(String n)
+		Month(String n)
 		{
 			name = n;
 		}

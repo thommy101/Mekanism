@@ -1,7 +1,5 @@
 package mekanism.client.jei.machine;
 
-import java.util.List;
-
 import mekanism.api.gas.GasStack;
 import mekanism.client.gui.element.GuiPowerBar;
 import mekanism.client.gui.element.GuiPowerBar.IPowerInfoHandler;
@@ -30,7 +28,7 @@ import net.minecraft.util.ResourceLocation;
 public class AdvancedMachineRecipeCategory extends BaseRecipeCategory
 {
 	public IGuiHelper guiHelper;
-	
+
 	public String recipeName;
 	public String unlocalizedName;
 	

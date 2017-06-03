@@ -2,7 +2,6 @@ package mekanism.common.integration;
 
 import ic2.api.recipe.Recipes;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,7 +24,6 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.common.Optional.Method;
 import net.minecraftforge.oredict.OreDictionary;
@@ -353,32 +351,24 @@ public final class OreDictManager
 		}
 
 		List<ItemStack> registeredOres = OreDictionary.getOres("logWood");
-		
-		for(int i = 0; i < registeredOres.size(); i++)
-		{
-			ItemStack logEntry = registeredOres.get(i);
 
-			if(logEntry.getItemDamage() == OreDictionary.WILDCARD_VALUE)
-			{
-				for(int j = 0; j < 16; j++)
-				{
+		for (ItemStack logEntry : registeredOres) {
+			if (logEntry.getItemDamage() == OreDictionary.WILDCARD_VALUE) {
+				for (int j = 0; j < 16; j++) {
 					ItemStack log = new ItemStack(logEntry.getItem(), 1, j);
 					tempCrafting.setInventorySlotContents(0, log);
 					ItemStack resultEntry = MekanismUtils.findMatchingRecipe(tempCrafting, null);
 
-					if(resultEntry != null)
-					{
+					if (resultEntry != null) {
 						RecipeHandler.addPrecisionSawmillRecipe(log, StackUtils.size(resultEntry, 6), new ItemStack(MekanismItems.Sawdust), 1);
 					}
 				}
-			}
-			else {
+			} else {
 				ItemStack log = StackUtils.size(logEntry, 1);
 				tempCrafting.setInventorySlotContents(0, log);
 				ItemStack resultEntry = MekanismUtils.findMatchingRecipe(tempCrafting, null);
 
-				if(resultEntry != null)
-				{
+				if (resultEntry != null) {
 					RecipeHandler.addPrecisionSawmillRecipe(log, StackUtils.size(resultEntry, 6), new ItemStack(MekanismItems.Sawdust), 1);
 				}
 			}

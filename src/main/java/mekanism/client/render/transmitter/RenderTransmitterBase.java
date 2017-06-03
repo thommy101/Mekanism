@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableList;
 public abstract class RenderTransmitterBase<T extends TileEntityTransmitter> extends TileEntitySpecialRenderer<T>
 {
 	private static OBJModel contentsModel;
-	private static Map<String, IBakedModel> contentsMap = new HashMap<String, IBakedModel>();
+	private static Map<String, IBakedModel> contentsMap = new HashMap<>();
 	
 	protected Minecraft mc = Minecraft.getMinecraft();
 	
@@ -88,17 +88,16 @@ public abstract class RenderTransmitterBase<T extends TileEntityTransmitter> ext
 	
 	public static HashMap<String, IBakedModel> buildModelMap(OBJModel objModel) 
 	{
-		HashMap<String, IBakedModel> modelParts = new HashMap<String, IBakedModel>();
+		HashMap<String, IBakedModel> modelParts = new HashMap<>();
 
 		if(!objModel.getMatLib().getGroups().keySet().isEmpty())
 		{
 			for(String key : objModel.getMatLib().getGroups().keySet()) 
 			{
-				String k = key;
-				
-				if(!modelParts.containsKey(key)) 
+
+                if(!modelParts.containsKey(key))
 				{
-					modelParts.put(k, objModel.bake(new OBJModel.OBJState(ImmutableList.of(k), false), Attributes.DEFAULT_BAKED_FORMAT, textureGetterFlipV));
+					modelParts.put(key, objModel.bake(new OBJModel.OBJState(ImmutableList.of(key), false), Attributes.DEFAULT_BAKED_FORMAT, textureGetterFlipV));
 				}
 			}
 		}

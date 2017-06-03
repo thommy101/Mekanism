@@ -29,7 +29,6 @@ import mekanism.common.recipe.machines.SeparatorRecipe;
 import mekanism.common.recipe.outputs.ChemicalPairOutput;
 import mekanism.common.tile.TileEntityGasTank.GasMode;
 import mekanism.common.tile.component.TileComponentSecurity;
-import mekanism.common.tile.component.TileComponentUpgrade;
 import mekanism.common.tile.prefab.TileEntityMachine;
 import mekanism.common.util.ChargeUtils;
 import mekanism.common.util.FluidContainerUtils;
@@ -193,7 +192,7 @@ public class TileEntityElectrolyticSeparator extends TileEntityMachine implement
 	
 	public int getUpgradedUsage(SeparatorRecipe recipe)
 	{
-		int possibleProcess = 0;
+		int possibleProcess;
 		
 		if(leftTank.getGasType() == recipe.recipeOutput.leftGas.getGas())
 		{

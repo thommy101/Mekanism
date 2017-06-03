@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CTMData 
 {
-	public List<String> acceptableBlockStates = new ArrayList<String>();
+	public List<String> acceptableBlockStates = new ArrayList<>();
 	
 	public boolean renderConvexConnections = false;
 	

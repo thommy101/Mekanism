@@ -6,13 +6,13 @@ import mekanism.common.recipe.ShapedMekanismRecipe;
 
 public interface IBlockType
 {
-	public String getBlockName();
+	String getBlockName();
 	
-	public Collection<ShapedMekanismRecipe> getRecipes();
+	Collection<ShapedMekanismRecipe> getRecipes();
 	
-	public void addRecipes(Collection<ShapedMekanismRecipe> recipes);
+	void addRecipes(Collection<ShapedMekanismRecipe> recipes);
 	
-	public void addRecipe(ShapedMekanismRecipe recipe);
+	void addRecipe(ShapedMekanismRecipe recipe);
 	
-	public boolean isEnabled();
+	boolean isEnabled();
 }

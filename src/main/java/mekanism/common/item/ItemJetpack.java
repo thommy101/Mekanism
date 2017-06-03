@@ -221,7 +221,7 @@ public class ItemJetpack extends ItemArmor implements IGasItem, ISpecialArmor
 		list.add(filled);
 	}
 
-	public static enum JetpackMode
+	public enum JetpackMode
 	{
 		NORMAL("tooltip.jetpack.regular", EnumColor.DARK_GREEN),
 		HOVER("tooltip.jetpack.hover", EnumColor.DARK_AQUA),
@@ -230,7 +230,7 @@ public class ItemJetpack extends ItemArmor implements IGasItem, ISpecialArmor
 		private String unlocalized;
 		private EnumColor color;
 
-		private JetpackMode(String s, EnumColor c)
+		JetpackMode(String s, EnumColor c)
 		{
 			unlocalized = s;
 			color = c;

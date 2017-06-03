@@ -24,7 +24,6 @@ import mekanism.common.util.CapabilityUtils;
 import mekanism.common.util.InventoryUtils;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.TransporterUtils;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
@@ -59,7 +58,7 @@ public class TransporterImpl extends TransmitterImpl<TileEntity, InventoryNetwor
 				return;
 			}
 			
-			Set<TransporterStack> remove = new HashSet<TransporterStack>();
+			Set<TransporterStack> remove = new HashSet<>();
 
 			getTileEntity().pullItems();
 
@@ -137,8 +136,7 @@ public class TransporterImpl extends TransmitterImpl<TileEntity, InventoryNetwor
 					if(!recalculate(stack, prevSet))
 					{
 						remove.add(stack);
-						continue;
-					}
+                    }
 					else {
 						if(prevSet != null)
 						{
@@ -158,24 +156,21 @@ public class TransporterImpl extends TransmitterImpl<TileEntity, InventoryNetwor
 							if(!recalculate(stack, null))
 							{
 								remove.add(stack);
-								continue;
-							}
+                            }
 						}
 						else if(stack.pathType == Path.HOME && (!checkSideForInsert(stack) || !InventoryUtils.canInsert(stack.getDest().getTileEntity(world()), stack.color, stack.itemStack, stack.getSide(this), true)))
 						{
 							if(!recalculate(stack, null))
 							{
 								remove.add(stack);
-								continue;
-							}
+                            }
 						}
 						else if(stack.pathType == Path.NONE)
 						{
 							if(!recalculate(stack, null))
 							{
 								remove.add(stack);
-								continue;
-							}
+                            }
 						}
 					}
 					else {
@@ -192,8 +187,7 @@ public class TransporterImpl extends TransmitterImpl<TileEntity, InventoryNetwor
 							if(!recalculate(stack, null))
 							{
 								remove.add(stack);
-								continue;
-							}
+                            }
 						}
 					}
 				}

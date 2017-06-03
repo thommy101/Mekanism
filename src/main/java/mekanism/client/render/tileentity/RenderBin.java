@@ -97,8 +97,8 @@ public class RenderBin extends TileEntitySpecialRenderer<TileEntityBin>
 		GlStateManager.doPolygonOffset(-10, -10);
 		GlStateManager.enablePolygonOffset();
 
-		float displayWidth = 1 - (2 / 16);
-		float displayHeight = 1 - (2 / 16);
+		float displayWidth = 1 - (2 / 16f);
+		float displayHeight = 1 - (2 / 16f);
 		GlStateManager.translate(x, y, z);
 
 		switch(side)

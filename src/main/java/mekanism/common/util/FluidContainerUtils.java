@@ -45,10 +45,8 @@ public final class FluidContainerUtils
 		{
 			return null;
 		}
-		
-		FluidStack ret = handler.drain(needed, true);
-		
-		return ret;
+
+        return handler.drain(needed, true);
 	}
 	
 	public static int insertFluid(FluidTank tileTank, ItemStack container)
@@ -205,7 +203,7 @@ public final class FluidContainerUtils
 		return stack;
 	}
 	
-	public static enum ContainerEditMode
+	public enum ContainerEditMode
 	{
 		BOTH("fluidedit.both"),
 		FILL("fluidedit.fill"),
@@ -218,7 +216,7 @@ public final class FluidContainerUtils
 			return LangUtils.localize(display);
 		}
 
-		private ContainerEditMode(String s)
+		ContainerEditMode(String s)
 		{
 			display = s;
 		}

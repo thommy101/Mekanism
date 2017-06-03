@@ -23,7 +23,7 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class RenderThermalEvaporationController extends TileEntitySpecialRenderer<TileEntityThermalEvaporationController>
 {
-	private static Map<SalinationRenderData, HashMap<Fluid, DisplayInteger[]>> cachedCenterFluids = new HashMap<SalinationRenderData, HashMap<Fluid, DisplayInteger[]>>();
+	private static Map<SalinationRenderData, HashMap<Fluid, DisplayInteger[]>> cachedCenterFluids = new HashMap<>();
 
 	@Override
 	public void renderTileEntityAt(TileEntityThermalEvaporationController tileEntity, double x, double y, double z, float partialTick, int destroyStage)
@@ -94,7 +94,7 @@ public class RenderThermalEvaporationController extends TileEntitySpecialRendere
 			cachedCenterFluids.get(data).put(fluid, displays);
 		}
 		else {
-			HashMap<Fluid, DisplayInteger[]> map = new HashMap<Fluid, DisplayInteger[]>();
+			HashMap<Fluid, DisplayInteger[]> map = new HashMap<>();
 			map.put(fluid, displays);
 			cachedCenterFluids.put(data, map);
 		}
@@ -150,7 +150,7 @@ public class RenderThermalEvaporationController extends TileEntitySpecialRendere
 				MekanismRenderer.renderObject(toReturn);
 			}
 
-			displays[i].endList();
+			DisplayInteger.endList();
 		}
 
 		MekanismRenderer.resetColor();

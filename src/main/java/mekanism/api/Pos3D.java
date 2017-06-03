@@ -233,13 +233,9 @@ public class Pos3D extends Vec3d
         double pitchRadians = Math.toRadians(pitch);
         double rollRadians = Math.toRadians(roll);
 
-        double xPos = xCoord;
-        double yPos = yCoord;
-        double zPos = zCoord;
-
-        xPos = xCoord * Math.cos(yawRadians) * Math.cos(pitchRadians) + zCoord * (Math.cos(yawRadians) * Math.sin(pitchRadians) * Math.sin(rollRadians) - Math.sin(yawRadians) * Math.cos(rollRadians)) + yCoord * (Math.cos(yawRadians) * Math.sin(pitchRadians) * Math.cos(rollRadians) + Math.sin(yawRadians) * Math.sin(rollRadians));
-        zPos = xCoord * Math.sin(yawRadians) * Math.cos(pitchRadians) + zCoord * (Math.sin(yawRadians) * Math.sin(pitchRadians) * Math.sin(rollRadians) + Math.cos(yawRadians) * Math.cos(rollRadians)) + yCoord * (Math.sin(yawRadians) * Math.sin(pitchRadians) * Math.cos(rollRadians) - Math.cos(yawRadians) * Math.sin(rollRadians));
-        yPos = -xCoord * Math.sin(pitchRadians) + zCoord * Math.cos(pitchRadians) * Math.sin(rollRadians) + yCoord * Math.cos(pitchRadians) * Math.cos(rollRadians);
+        double xPos = xCoord * Math.cos(yawRadians) * Math.cos(pitchRadians) + zCoord * (Math.cos(yawRadians) * Math.sin(pitchRadians) * Math.sin(rollRadians) - Math.sin(yawRadians) * Math.cos(rollRadians)) + yCoord * (Math.cos(yawRadians) * Math.sin(pitchRadians) * Math.cos(rollRadians) + Math.sin(yawRadians) * Math.sin(rollRadians));
+		double zPos = xCoord * Math.sin(yawRadians) * Math.cos(pitchRadians) + zCoord * (Math.sin(yawRadians) * Math.sin(pitchRadians) * Math.sin(rollRadians) + Math.cos(yawRadians) * Math.cos(rollRadians)) + yCoord * (Math.sin(yawRadians) * Math.sin(pitchRadians) * Math.cos(rollRadians) - Math.cos(yawRadians) * Math.sin(rollRadians));
+		double yPos = -xCoord * Math.sin(pitchRadians) + zCoord * Math.cos(pitchRadians) * Math.sin(rollRadians) + yCoord * Math.cos(pitchRadians) * Math.cos(rollRadians);
         
         return new Pos3D(xPos, yPos, zPos);
     }

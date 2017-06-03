@@ -64,7 +64,7 @@ public class TileEntityThermalEvaporationBlock extends TileEntityContainerBlock 
 			
 			if(tile != null)
 			{
-				((TileEntityThermalEvaporationController)tile).refresh();
+				tile.refresh();
 			}
 		}
 	}
@@ -80,7 +80,7 @@ public class TileEntityThermalEvaporationBlock extends TileEntityContainerBlock 
 			
 			if(tile != null)
 			{
-				((TileEntityThermalEvaporationController)tile).refresh();
+				tile.refresh();
 			}
 			else {
 				updateController();
@@ -120,7 +120,7 @@ public class TileEntityThermalEvaporationBlock extends TileEntityContainerBlock 
 	{
 		public TileEntityThermalEvaporationController found;
 		
-		public Set<Coord4D> iterated = new HashSet<Coord4D>();
+		public Set<Coord4D> iterated = new HashSet<>();
 		
 		public void loop(Coord4D pos)
 		{

@@ -139,7 +139,7 @@ public class MekanismJEI extends BlankModPlugin
 	@Override
 	public void registerIngredients(IModIngredientRegistration registry)
 	{
-		List<GasStack> list = GasRegistry.getRegisteredGasses().stream().filter(g -> g.isVisible()).map(g -> new GasStack(g, Fluid.BUCKET_VOLUME)).collect(Collectors.toList());
+		List<GasStack> list = GasRegistry.getRegisteredGasses().stream().filter(Gas::isVisible).map(g -> new GasStack(g, Fluid.BUCKET_VOLUME)).collect(Collectors.toList());
 		registry.register(GasStack.class, list, new GasStackHelper(), new GasStackRenderer());
 	}
 	
@@ -218,7 +218,7 @@ public class MekanismJEI extends BlankModPlugin
 			e.printStackTrace();
 		}
 		
-		List<RotaryCondensentratorRecipeWrapper> condensentratorRecipes = new ArrayList<RotaryCondensentratorRecipeWrapper>();
+		List<RotaryCondensentratorRecipeWrapper> condensentratorRecipes = new ArrayList<>();
 		
 		RotaryCondensentratorRecipeCategory rotaryCondensentratorCategory = new RotaryCondensentratorRecipeCategory(registry.getJeiHelpers().getGuiHelper());
 		registry.addRecipeCategories(rotaryCondensentratorCategory);
@@ -313,7 +313,7 @@ public class MekanismJEI extends BlankModPlugin
 	
 	private void addRecipes(IModRegistry registry, Recipe type, IRecipeCategory cat, Class recipe, Class category, Class<? extends IRecipeWrapper> wrapper) throws Exception
 	{
-		List<IRecipeWrapper> recipes = new ArrayList<IRecipeWrapper>();
+		List<IRecipeWrapper> recipes = new ArrayList<>();
 		
 		for(Object obj : type.get().values())
 		{

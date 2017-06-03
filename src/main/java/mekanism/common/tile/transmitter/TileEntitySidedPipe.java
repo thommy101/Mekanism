@@ -555,7 +555,7 @@ public abstract class TileEntitySidedPipe extends TileEntity implements ITileNet
 
 	public List<EnumFacing> getConnections(ConnectionType type)
 	{
-		List<EnumFacing> sides = new ArrayList<EnumFacing>();
+		List<EnumFacing> sides = new ArrayList<>();
 
 		for(EnumFacing side : EnumFacing.values())
 		{
@@ -706,7 +706,7 @@ public abstract class TileEntitySidedPipe extends TileEntity implements ITileNet
 		return super.getCapability(capability, facing);
 	}
 
-	public static enum ConnectionType implements IStringSerializable
+	public enum ConnectionType implements IStringSerializable
 	{
 		NORMAL,
 		PUSH,

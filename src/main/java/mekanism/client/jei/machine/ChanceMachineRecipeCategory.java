@@ -1,7 +1,5 @@
 package mekanism.client.jei.machine;
 
-import java.util.List;
-
 import mekanism.client.gui.element.GuiPowerBar;
 import mekanism.client.gui.element.GuiPowerBar.IPowerInfoHandler;
 import mekanism.client.gui.element.GuiProgress;

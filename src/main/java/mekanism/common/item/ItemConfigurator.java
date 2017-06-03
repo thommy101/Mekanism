@@ -31,7 +31,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -165,7 +164,7 @@ public class ItemConfigurator extends ItemEnergized implements IMekWrench, ITool
 
 								if(slotStack.hasTagCompound())
 								{
-									item.getEntityItem().setTagCompound((NBTTagCompound)slotStack.getTagCompound().copy());
+									item.getEntityItem().setTagCompound(slotStack.getTagCompound().copy());
 								}
 
 								float k = 0.05F;
@@ -295,7 +294,7 @@ public class ItemConfigurator extends ItemEnergized implements IMekWrench, ITool
 	@Override
 	public void toolUsed(ItemStack item, EntityLivingBase user, Entity entity) {}
 	
-	public static enum ConfiguratorMode
+	public enum ConfiguratorMode
 	{
 		CONFIGURATE_ITEMS("configurate", "(" + TransmissionType.ITEM.localize() + ")", EnumColor.BRIGHT_GREEN, true),
 		CONFIGURATE_FLUIDS("configurate", "(" + TransmissionType.FLUID.localize() + ")", EnumColor.BRIGHT_GREEN, true),
@@ -311,7 +310,7 @@ public class ItemConfigurator extends ItemEnergized implements IMekWrench, ITool
 		private EnumColor color;
 		private boolean configurating;
 		
-		private ConfiguratorMode(String s, String s1, EnumColor c, boolean b)
+		ConfiguratorMode(String s, String s1, EnumColor c, boolean b)
 		{
 			name = s;
 			info = s1;

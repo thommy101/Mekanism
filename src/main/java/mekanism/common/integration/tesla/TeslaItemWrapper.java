@@ -76,13 +76,13 @@ public class TeslaItemWrapper extends ItemCapability implements ITeslaHolder, IT
 	@Method(modid = "tesla")
 	public long getStoredPower() 
 	{
-		return (long)Math.round(getItem().getEnergy(getStack())*general.TO_TESLA);
+		return Math.round(getItem().getEnergy(getStack())*general.TO_TESLA);
 	}
 
 	@Override
 	@Method(modid = "tesla")
 	public long getCapacity() 
 	{
-		return (long)Math.round(getItem().getEnergy(getStack())*general.TO_TESLA);
+		return Math.round(getItem().getEnergy(getStack())*general.TO_TESLA);
 	}
 }

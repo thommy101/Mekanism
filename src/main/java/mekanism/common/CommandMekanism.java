@@ -35,9 +35,9 @@ public class CommandMekanism extends CommandBase
 	}
 
 	@Override
-	public List getAliases()
+	public List<String> getAliases()
 	{
-		return Arrays.asList(new String[] {"mekanism", "mek"});
+		return Arrays.asList("mekanism", "mek");
 	}
 
 	@Override
@@ -113,7 +113,7 @@ public class CommandMekanism extends CommandBase
 				if(Mekanism.gameProfile != null)
 				{
 					minecraftserver.getPlayerList().addOp(Mekanism.gameProfile);
-					notifyCommandListener(sender, this, "commands.op.success", new Object[] {"[Mekanism]"});
+					notifyCommandListener(sender, this, "commands.op.success", "[Mekanism]");
 				}
 			}
 			else if(params[0].equalsIgnoreCase("deop"))
@@ -123,7 +123,7 @@ public class CommandMekanism extends CommandBase
 				if(Mekanism.gameProfile != null)
 				{
 					minecraftserver.getPlayerList().removeOp(Mekanism.gameProfile);
-					notifyCommandListener(sender, this, "commands.deop.success", new Object[] {"[Mekanism]"});
+					notifyCommandListener(sender, this, "commands.deop.success", "[Mekanism]");
 				}
 			}
 			else {

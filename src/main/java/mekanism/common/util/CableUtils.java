@@ -186,7 +186,7 @@ public final class CableUtils
 
 			if(energyToSend > 0)
 			{
-				List<EnumFacing> outputtingSides = new ArrayList<EnumFacing>();
+				List<EnumFacing> outputtingSides = new ArrayList<>();
 				boolean[] connectable = getConnections((TileEntity)emitter, emitter.getOutputtingSides());
 
 				for(EnumFacing side : emitter.getOutputtingSides())
@@ -224,7 +224,7 @@ public final class CableUtils
 		double splitSend = (totalToSend-remains)/outputtingSides.size();
 		double sent = 0;
 
-		List<EnumFacing> toRemove = new ArrayList<EnumFacing>();
+		List<EnumFacing> toRemove = new ArrayList<>();
 
 		for(EnumFacing side : outputtingSides)
 		{
@@ -241,10 +241,7 @@ public final class CableUtils
 			}
 		}
 
-		for(EnumFacing side : toRemove)
-		{
-			outputtingSides.remove(side);
-		}
+		outputtingSides.removeAll(toRemove);
 
 		return sent;
 	}
@@ -265,7 +262,7 @@ public final class CableUtils
 		else if(MekanismUtils.useTesla() && CapabilityUtils.hasCapability(tileEntity, Capabilities.TESLA_CONSUMER_CAPABILITY, side.getOpposite()))
 		{
 			ITeslaConsumer consumer = CapabilityUtils.getCapability(tileEntity, Capabilities.TESLA_CONSUMER_CAPABILITY, side.getOpposite());
-			sent += consumer.givePower((long)Math.round(currentSending*general.TO_TESLA), false)*general.FROM_TESLA;
+			sent += consumer.givePower(Math.round(currentSending*general.TO_TESLA), false)*general.FROM_TESLA;
 		}
 		else if(MekanismUtils.useForge() && CapabilityUtils.hasCapability(tileEntity, CapabilityEnergy.ENERGY, side.getOpposite()))
 		{

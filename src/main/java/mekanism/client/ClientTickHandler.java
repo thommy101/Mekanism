@@ -8,7 +8,6 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
@@ -89,11 +88,11 @@ public class ClientTickHandler
 	public static final String DONATE_CAPE = "https://dl.dropboxusercontent.com/u/90411166/donate.png";
 	public static final String AIDAN_CAPE = "https://dl.dropboxusercontent.com/u/90411166/aidan.png";
 
-	private Map<String, CapeBufferDownload> mikeDownload = new HashMap<String, CapeBufferDownload>();
-	private Map<String, CapeBufferDownload> donateDownload = new HashMap<String, CapeBufferDownload>();
-	private Map<String, CapeBufferDownload> aidanDownload = new HashMap<String, CapeBufferDownload>();
+	private Map<String, CapeBufferDownload> mikeDownload = new HashMap<>();
+	private Map<String, CapeBufferDownload> donateDownload = new HashMap<>();
+	private Map<String, CapeBufferDownload> aidanDownload = new HashMap<>();
 
-	public static Set<IClientTicker> tickingSet = new HashSet<IClientTicker>();
+	public static Set<IClientTicker> tickingSet = new HashSet<>();
 	public static Map<EntityPlayer, TeleportData> portableTeleports = new HashMap<>();
 	
 	public static int wheelStatus = 0;
@@ -304,7 +303,7 @@ public class ClientTickHandler
 					}
 				}
 
-				for(EntityPlayer player : (List<EntityPlayer>)mc.world.playerEntities)
+				for(EntityPlayer player : mc.world.playerEntities)
 				{
 					if(hasFlamethrower(player))
 					{
@@ -483,13 +482,7 @@ public class ClientTickHandler
 
 	public static void killDeadNetworks()
 	{
-		for(Iterator<IClientTicker> iter = tickingSet.iterator(); iter.hasNext();)
-		{
-			if(!iter.next().needsTicks())
-			{
-				iter.remove();
-			}
-		}
+		tickingSet.removeIf(iClientTicker -> !iClientTicker.needsTicks());
 	}
 
 	public static boolean isJetpackOn(EntityPlayer player)

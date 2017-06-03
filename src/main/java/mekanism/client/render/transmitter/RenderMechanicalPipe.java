@@ -21,7 +21,7 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderMechanicalPipe extends RenderTransmitterBase<TileEntityMechanicalPipe>
 {
-	private static HashMap<Integer, HashMap<Fluid, DisplayInteger[]>> cachedLiquids = new HashMap<Integer, HashMap<Fluid, DisplayInteger[]>>();
+	private static HashMap<Integer, HashMap<Fluid, DisplayInteger[]>> cachedLiquids = new HashMap<>();
 	
 	private static final int stages = 100;
 	private static final double height = 0.45;
@@ -92,7 +92,7 @@ public class RenderMechanicalPipe extends RenderTransmitterBase<TileEntityMechan
 					{
 						if(!gas)
 						{
-							displayLists[Math.max(3, (int)((float)scale*(stages-1)))].render();
+							displayLists[Math.max(3, (int)(scale *(stages-1)))].render();
 						}
 						else {
 							GL11.glColor4f(1F, 1F, 1F, scale);
@@ -121,7 +121,7 @@ public class RenderMechanicalPipe extends RenderTransmitterBase<TileEntityMechan
 			{
 				if(!gas)
 				{
-					displayLists[Math.max(3, (int)((float)scale*(stages-1)))].render();
+					displayLists[Math.max(3, (int)(scale *(stages-1)))].render();
 				}
 				else {
 					GL11.glColor4f(1F, 1F, 1F, scale);
@@ -167,7 +167,7 @@ public class RenderMechanicalPipe extends RenderTransmitterBase<TileEntityMechan
 			cachedLiquids.get(sideOrdinal).put(fluid, displays);
 		}
 		else {
-			HashMap<Fluid, DisplayInteger[]> map = new HashMap<Fluid, DisplayInteger[]>();
+			HashMap<Fluid, DisplayInteger[]> map = new HashMap<>();
 			map.put(fluid, displays);
 			cachedLiquids.put(sideOrdinal, map);
 		}
@@ -258,7 +258,7 @@ public class RenderMechanicalPipe extends RenderTransmitterBase<TileEntityMechan
 			}
 
 			MekanismRenderer.renderObject(toReturn);
-			displays[i].endList();
+			DisplayInteger.endList();
 		}
 
 		return displays;

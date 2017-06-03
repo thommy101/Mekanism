@@ -27,9 +27,9 @@ public class FrequencyManager
 
 	public static boolean loaded;
 	
-	private static Set<FrequencyManager> managers = new HashSet<FrequencyManager>();
+	private static Set<FrequencyManager> managers = new HashSet<>();
 	
-	private Set<Frequency> frequencies = new HashSet<Frequency>();
+	private Set<Frequency> frequencies = new HashSet<>();
 	
 	private FrequencyDataHandler dataHandler;
 	
@@ -110,7 +110,7 @@ public class FrequencyManager
 		}
 	}
 	
-	public int removeAll(String user)
+	public int removeAll(UUID userUUID)
 	{
 		int amount = 0;
 		
@@ -118,7 +118,7 @@ public class FrequencyManager
 		{
 			Frequency iterFreq = iter.next();
 			
-			if(iterFreq.ownerUUID.equals(user))
+			if(iterFreq.ownerUUID.equals(userUUID))
 			{
 				iter.remove();
 				dataHandler.markDirty();
@@ -269,7 +269,7 @@ public class FrequencyManager
 	
 	public Set<Frequency> readFrequencies(ByteBuf dataStream)
 	{
-		Set<Frequency> ret = new HashSet<Frequency>();
+		Set<Frequency> ret = new HashSet<>();
 		int size = dataStream.readInt();
 		
 		try {
@@ -341,13 +341,13 @@ public class FrequencyManager
 				
 				NBTTagList list = nbtTags.getTagList("freqList", NBT.TAG_COMPOUND);
 				
-				loadedFrequencies = new HashSet<Frequency>();
+				loadedFrequencies = new HashSet<>();
 				
 				for(int i = 0; i < list.tagCount(); i++)
 				{
 					NBTTagCompound compound = list.getCompoundTagAt(i);
 					
-					Constructor c = Class.forName(frequencyClass).getConstructor(new Class[] {NBTTagCompound.class});
+					Constructor c = Class.forName(frequencyClass).getConstructor(NBTTagCompound.class);
 					Frequency freq = (Frequency)c.newInstance(compound);
 					
 					loadedFrequencies.add(freq);

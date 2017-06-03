@@ -3,7 +3,6 @@ package mekanism.client;
 import static mekanism.common.block.states.BlockStatePlastic.colorProperty;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -251,9 +250,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
-	public static Map<String, ModelResourceLocation> machineResources = new HashMap<String, ModelResourceLocation>();
-	public static Map<String, ModelResourceLocation> basicResources = new HashMap<String, ModelResourceLocation>();
-	public static Map<String, ModelResourceLocation> transmitterResources = new HashMap<String, ModelResourceLocation>();
+	public static Map<String, ModelResourceLocation> machineResources = new HashMap<>();
+	public static Map<String, ModelResourceLocation> basicResources = new HashMap<>();
+	public static Map<String, ModelResourceLocation> transmitterResources = new HashMap<>();
 	
 	public static final String[] CUSTOM_RENDERS = new String[] {"fluid_tank", "bin_basic", "bin_advanced", "bin_elite", "bin_ultimate", 
 		"Jetpack", "FreeRunners", "AtomicDisassembler", "ScubaTank", "GasMask", "ArmoredJetpack", "Flamethrower", "personal_chest",
@@ -319,16 +318,16 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerSpecialTileEntities()
 	{
-		ClientRegistry.registerTileEntity(TileEntityEnrichmentChamber.class, "EnrichmentChamber", new RenderConfigurableMachine<TileEntityEnrichmentChamber>());
-		ClientRegistry.registerTileEntity(TileEntityOsmiumCompressor.class, "OsmiumCompressor", new RenderConfigurableMachine<TileEntityOsmiumCompressor>());
-		ClientRegistry.registerTileEntity(TileEntityCombiner.class, "Combiner", new RenderConfigurableMachine<TileEntityCombiner>());
-		ClientRegistry.registerTileEntity(TileEntityCrusher.class, "Crusher", new RenderConfigurableMachine<TileEntityCrusher>());
-		ClientRegistry.registerTileEntity(TileEntityFactory.class, "SmeltingFactory", new RenderConfigurableMachine<TileEntityFactory>());
-		ClientRegistry.registerTileEntity(TileEntityAdvancedFactory.class, "AdvancedSmeltingFactory", new RenderConfigurableMachine<TileEntityAdvancedFactory>());
-		ClientRegistry.registerTileEntity(TileEntityEliteFactory.class, "UltimateSmeltingFactory", new RenderConfigurableMachine<TileEntityEliteFactory>());
-		ClientRegistry.registerTileEntity(TileEntityPurificationChamber.class, "PurificationChamber", new RenderConfigurableMachine<TileEntityPurificationChamber>());
-		ClientRegistry.registerTileEntity(TileEntityEnergizedSmelter.class, "EnergizedSmelter", new RenderConfigurableMachine<TileEntityEnergizedSmelter>());
-		ClientRegistry.registerTileEntity(TileEntityMetallurgicInfuser.class, "MetallurgicInfuser", new RenderConfigurableMachine<TileEntityMetallurgicInfuser>());
+		ClientRegistry.registerTileEntity(TileEntityEnrichmentChamber.class, "EnrichmentChamber", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityOsmiumCompressor.class, "OsmiumCompressor", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityCombiner.class, "Combiner", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityCrusher.class, "Crusher", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityFactory.class, "SmeltingFactory", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityAdvancedFactory.class, "AdvancedSmeltingFactory", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityEliteFactory.class, "UltimateSmeltingFactory", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityPurificationChamber.class, "PurificationChamber", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityEnergizedSmelter.class, "EnergizedSmelter", new RenderConfigurableMachine<>());
+		ClientRegistry.registerTileEntity(TileEntityMetallurgicInfuser.class, "MetallurgicInfuser", new RenderConfigurableMachine<>());
 		ClientRegistry.registerTileEntity(TileEntityGasTank.class, "GasTank", new RenderGasTank());
 		ClientRegistry.registerTileEntity(TileEntityEnergyCube.class, "EnergyCube", new RenderEnergyCube());
 		ClientRegistry.registerTileEntity(TileEntityPersonalChest.class, "PersonalChest", new RenderPersonalChest());
@@ -339,15 +338,15 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.registerTileEntity(TileEntityBin.class, "Bin", new RenderBin());
 		ClientRegistry.registerTileEntity(TileEntityDigitalMiner.class, "DigitalMiner", new RenderDigitalMiner());
 		ClientRegistry.registerTileEntity(TileEntityTeleporter.class, "MekanismTeleporter", new RenderTeleporter());
-		ClientRegistry.registerTileEntity(TileEntityChemicalInjectionChamber.class, "ChemicalInjectionChamber", new RenderConfigurableMachine<TileEntityChemicalInjectionChamber>());
+		ClientRegistry.registerTileEntity(TileEntityChemicalInjectionChamber.class, "ChemicalInjectionChamber", new RenderConfigurableMachine<>());
 		ClientRegistry.registerTileEntity(TileEntityThermalEvaporationController.class, "ThermalEvaporationController", new RenderThermalEvaporationController());
-		ClientRegistry.registerTileEntity(TileEntityPrecisionSawmill.class, "PrecisionSawmill", new RenderConfigurableMachine<TileEntityPrecisionSawmill>());
+		ClientRegistry.registerTileEntity(TileEntityPrecisionSawmill.class, "PrecisionSawmill", new RenderConfigurableMachine<>());
 		ClientRegistry.registerTileEntity(TileEntityChemicalCrystallizer.class, "ChemicalCrystallizer", new RenderChemicalCrystallizer());
 		ClientRegistry.registerTileEntity(TileEntitySeismicVibrator.class, "SeismicVibrator", new RenderSeismicVibrator());
-		ClientRegistry.registerTileEntity(TileEntityPRC.class, "PressurizedReactionChamber", new RenderConfigurableMachine<TileEntityPRC>());
+		ClientRegistry.registerTileEntity(TileEntityPRC.class, "PressurizedReactionChamber", new RenderConfigurableMachine<>());
 		ClientRegistry.registerTileEntity(TileEntityFluidTank.class, "FluidTank", new RenderFluidTank());
 		ClientRegistry.registerTileEntity(TileEntitySolarNeutronActivator.class, "SolarNeutronActivator", new RenderSolarNeutronActivator());
-		ClientRegistry.registerTileEntity(TileEntityFormulaicAssemblicator.class, "FormulaicAssemblicator", new RenderConfigurableMachine<TileEntityFormulaicAssemblicator>());
+		ClientRegistry.registerTileEntity(TileEntityFormulaicAssemblicator.class, "FormulaicAssemblicator", new RenderConfigurableMachine<>());
 		ClientRegistry.registerTileEntity(TileEntityResistiveHeater.class, "ResistiveHeater", new RenderResistiveHeater());
 		ClientRegistry.registerTileEntity(TileEntityBoilerCasing.class, "BoilerCasing", new RenderThermoelectricBoiler());
 		ClientRegistry.registerTileEntity(TileEntityBoilerValve.class, "BoilerValve", new RenderThermoelectricBoiler());
@@ -463,7 +462,7 @@ public class ClientProxy extends CommonProxy
 				continue;
 			}
 			
-			List<ModelResourceLocation> modelsToAdd = new ArrayList<ModelResourceLocation>();
+			List<ModelResourceLocation> modelsToAdd = new ArrayList<>();
 			String resource = "mekanism:" + type.getName();
 			RecipeType recipePointer = null;
 			
@@ -477,7 +476,7 @@ public class ClientProxy extends CommonProxy
 			{
 				if(machineResources.get(resource) == null)
 				{
-					List<String> entries = new ArrayList<String>();
+					List<String> entries = new ArrayList<>();
 					
 					if(type.hasActiveTexture())
 					{
@@ -489,7 +488,7 @@ public class ClientProxy extends CommonProxy
 						entries.add("facing=north");
 					}
 					
-					String properties = new String();
+					String properties = "";
 					
 					for(int i = 0; i < entries.size(); i++)
 					{
@@ -531,7 +530,7 @@ public class ClientProxy extends CommonProxy
 
 		for(BasicBlockType type : BasicBlockType.values())
 		{
-			List<ModelResourceLocation> modelsToAdd = new ArrayList<ModelResourceLocation>();
+			List<ModelResourceLocation> modelsToAdd = new ArrayList<>();
 			String resource = "mekanism:" + type.getName();
 			BaseTier tierPointer = null;
 			
@@ -545,7 +544,7 @@ public class ClientProxy extends CommonProxy
 			{
 				if(basicResources.get(resource) == null)
 				{
-					List<String> entries = new ArrayList<String>();
+					List<String> entries = new ArrayList<>();
 					
 					if(type.hasActiveTexture())
 					{
@@ -557,7 +556,7 @@ public class ClientProxy extends CommonProxy
 						entries.add("facing=north");
 					}
 					
-					String properties = new String();
+					String properties = "";
 					
 					for(int i = 0; i < entries.size(); i++)
 					{
@@ -603,7 +602,7 @@ public class ClientProxy extends CommonProxy
 		
 		for(TransmitterType type : TransmitterType.values())
 		{
-			List<ModelResourceLocation> modelsToAdd = new ArrayList<ModelResourceLocation>();
+			List<ModelResourceLocation> modelsToAdd = new ArrayList<>();
 			String resource = "mekanism:" + type.getName();
 			BaseTier tierPointer = null;
 			
@@ -1050,7 +1049,7 @@ public class ClientProxy extends CommonProxy
 	}
 	
 	@SubscribeEvent
-    public void onModelBake(ModelBakeEvent event) throws IOException 
+    public void onModelBake(ModelBakeEvent event)
     {
 		for(String s : CUSTOM_RENDERS)
 		{

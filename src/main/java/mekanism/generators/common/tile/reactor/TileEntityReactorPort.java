@@ -11,7 +11,6 @@ import mekanism.api.IConfigurable;
 import mekanism.api.IHeatTransfer;
 import mekanism.api.Range4D;
 import mekanism.api.gas.Gas;
-import mekanism.api.gas.GasRegistry;
 import mekanism.api.gas.GasStack;
 import mekanism.api.gas.IGasHandler;
 import mekanism.api.gas.ITubeConnection;

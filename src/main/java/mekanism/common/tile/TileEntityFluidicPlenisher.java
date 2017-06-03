@@ -53,8 +53,8 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 
 public class TileEntityFluidicPlenisher extends TileEntityElectricBlock implements IComputerIntegration, IConfigurable, IFluidHandlerWrapper, ISustainedTank, IUpgradeTile, IRedstoneControl, ISecurityTile
 {
-	public Set<Coord4D> activeNodes = new HashSet<Coord4D>();
-	public Set<Coord4D> usedNodes = new HashSet<Coord4D>();
+	public Set<Coord4D> activeNodes = new HashSet<>();
+	public Set<Coord4D> usedNodes = new HashSet<>();
 	
 	public boolean finishedCalc = false;
 	
@@ -169,7 +169,7 @@ public class TileEntityFluidicPlenisher extends TileEntityElectricBlock implemen
 			}
 		}
 		
-		Set<Coord4D> toRemove = new HashSet<Coord4D>();
+		Set<Coord4D> toRemove = new HashSet<>();
 		
 		for(Coord4D coord : activeNodes)
 		{

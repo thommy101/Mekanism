@@ -180,8 +180,7 @@ public final class MekanismHooks
 			if(type.getTransmission().equals(TransmissionType.ENERGY))
 			{
 				FMLInterModComms.sendMessage("appliedenergistics2", energyP2P, new ItemStack(MekanismBlocks.Transmitter, 1, type.ordinal()));
-				continue;
-			}
+            }
 
 		}		
 	}

@@ -23,7 +23,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ShapelessMekanismRecipe implements IRecipe
 {
     private ItemStack output = ItemStack.EMPTY;
-    private ArrayList<Object> input = new ArrayList<Object>();
+    private ArrayList<Object> input = new ArrayList<>();
 
     public ShapelessMekanismRecipe(Block result, Object... recipe){ this(new ItemStack(result), recipe); }
     public ShapelessMekanismRecipe(Item  result, Object... recipe){ this(new ItemStack(result), recipe); }
@@ -92,7 +92,7 @@ public class ShapelessMekanismRecipe implements IRecipe
     @Override
     public boolean matches(InventoryCrafting inv, World world)
     {
-        ArrayList<Object> required = new ArrayList<Object>(input);
+        ArrayList<Object> required = new ArrayList<>(input);
 
         for(int x = 0; x < inv.getSizeInventory(); x++)
         {
@@ -101,33 +101,24 @@ public class ShapelessMekanismRecipe implements IRecipe
             if(!slot.isEmpty())
             {
                 boolean inRecipe = false;
-                Iterator<Object> req = required.iterator();
 
-                while(req.hasNext())
-                {
+                for (Object aRequired : required) {
                     boolean match = false;
 
-                    Object next = req.next();
+                    if (aRequired instanceof ItemStack) {
+                        match = RecipeUtils.areItemsEqualForCrafting((ItemStack) aRequired, slot);
+                    } else if (aRequired instanceof List) {
+                        Iterator<ItemStack> itr = ((List<ItemStack>) aRequired).iterator();
 
-                    if(next instanceof ItemStack)
-                    {
-                        match = RecipeUtils.areItemsEqualForCrafting((ItemStack)next, slot);
-                    }
-                    else if(next instanceof List)
-                    {
-                        Iterator<ItemStack> itr = ((List<ItemStack>)next).iterator();
-                        
-                        while(itr.hasNext() && !match)
-                        {
+                        while (itr.hasNext() && !match) {
                             match = RecipeUtils.areItemsEqualForCrafting(itr.next(), slot);
                         }
                     }
 
-                    if(match)
-                    {
+                    if (match) {
                         inRecipe = true;
-                        required.remove(next);
-                        
+                        required.remove(aRequired);
+
                         break;
                     }
                 }

@@ -113,9 +113,8 @@ public class BakedGeneratorItemModel implements IBakedModel, IPerspectiveAwareMo
 				mc.renderEngine.bindTexture(MekanismUtils.getResource(ResourceType.RENDER, "WindGenerator.png"));
 				windGenerator.render(0.016F, 0);
 			}
-			
-			return;
-		}
+
+        }
 	}
 
 	@Override
@@ -131,7 +130,7 @@ public class BakedGeneratorItemModel implements IBakedModel, IPerspectiveAwareMo
 		
 		MekanismRenderer.pauseRenderer(tessellator);
 		
-		List<BakedQuad> generalQuads = new LinkedList<BakedQuad>();
+		List<BakedQuad> generalQuads = new LinkedList<>();
 		
         GlStateManager.pushMatrix();
         GlStateManager.translate(0.5F, 0.5F, 0.5F);

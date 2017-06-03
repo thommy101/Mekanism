@@ -1,6 +1,5 @@
 package mekanism.client.jei.machine.other;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import mekanism.client.gui.element.GuiFluidGauge;

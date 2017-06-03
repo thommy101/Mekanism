@@ -36,7 +36,6 @@ import mekanism.common.content.miner.ThreadMinerSearch.State;
 import mekanism.common.content.transporter.InvStack;
 import mekanism.common.content.transporter.TransitRequest;
 import mekanism.common.content.transporter.TransitRequest.TransitResponse;
-import mekanism.common.content.transporter.TransporterManager;
 import mekanism.common.inventory.container.ContainerFilter;
 import mekanism.common.inventory.container.ContainerNull;
 import mekanism.common.network.PacketTileEntity.TileEntityMessage;
@@ -79,10 +78,10 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 {
 	public static int[] EJECT_INV;
 
-	public Map<Chunk3D, BitSet> oresToMine = new HashMap<Chunk3D, BitSet>();
-	public Map<Integer, MinerFilter> replaceMap = new HashMap<Integer, MinerFilter>();
+	public Map<Chunk3D, BitSet> oresToMine = new HashMap<>();
+	public Map<Integer, MinerFilter> replaceMap = new HashMap<>();
 
-	public HashList<MinerFilter> filters = new HashList<MinerFilter>();
+	public HashList<MinerFilter> filters = new HashList<>();
 
 	public ThreadMinerSearch searcher = new ThreadMinerSearch(this);
 
@@ -191,7 +190,7 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 
 				if(delay == 0)
 				{
-					Set<Chunk3D> toRemove = new HashSet<Chunk3D>();
+					Set<Chunk3D> toRemove = new HashSet<>();
 					boolean did = false;
 					
 					for(Chunk3D chunk : oresToMine.keySet())
@@ -340,7 +339,7 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 			{
 				for(EntityPlayer player : playersUsing)
 				{
-					Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getSmallPacket(new ArrayList<Object>())), (EntityPlayerMP)player);
+					Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getSmallPacket(new ArrayList<>())), (EntityPlayerMP)player);
 				}
 			}
 
@@ -799,7 +798,7 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 
 			for(EntityPlayer player : playersUsing)
 			{
-				Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getGenericPacket(new ArrayList<Object>())), (EntityPlayerMP)player);
+				Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getGenericPacket(new ArrayList<>())), (EntityPlayerMP)player);
 			}
 
 			return;
@@ -1103,7 +1102,7 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 
 		if(clientActive != active)
 		{
-			Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<Object>())), new Range4D(Coord4D.get(this)));
+			Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<>())), new Range4D(Coord4D.get(this)));
 
 			clientActive = active;
 		}
@@ -1424,7 +1423,7 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 
 		for(EntityPlayer player : playersUsing)
 		{
-			Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getGenericPacket(new ArrayList<Object>())), (EntityPlayerMP)player);
+			Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getGenericPacket(new ArrayList<>())), (EntityPlayerMP)player);
 		}
 		
 		return null;
@@ -1528,7 +1527,7 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 
 				for(int i = 0; i < tagList.tagCount(); i++)
 				{
-					filters.add(MinerFilter.readFromNBT((NBTTagCompound)tagList.getCompoundTagAt(i)));
+					filters.add(MinerFilter.readFromNBT(tagList.getCompoundTagAt(i)));
 				}
 			}
 		}
@@ -1609,6 +1608,6 @@ public class TileEntityDigitalMiner extends TileEntityElectricBlock implements I
 	@Override
 	public Set<ChunkPos> getChunkSet()
 	{
-		return new Range4D(Coord4D.get(this)).expandFromCenter(radius).getIntersectingChunks().stream().map(t -> t.getPos()).collect(Collectors.toSet());
+		return new Range4D(Coord4D.get(this)).expandFromCenter(radius).getIntersectingChunks().stream().map(Chunk3D::getPos).collect(Collectors.toSet());
 	}
 }

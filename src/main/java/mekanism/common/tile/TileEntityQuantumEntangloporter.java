@@ -58,8 +58,8 @@ public class TileEntityQuantumEntangloporter extends TileEntityElectricBlock imp
 	public double lastTransferLoss;
 	public double lastEnvironmentLoss;
 	
-	public List<Frequency> publicCache = new ArrayList<Frequency>();
-	public List<Frequency> privateCache = new ArrayList<Frequency>();
+	public List<Frequency> publicCache = new ArrayList<>();
+	public List<Frequency> privateCache = new ArrayList<>();
 
 	public static final EnumSet<EnumFacing> nothing = EnumSet.noneOf(EnumFacing.class);
 	
@@ -402,7 +402,7 @@ public class TileEntityQuantumEntangloporter extends TileEntityElectricBlock imp
 	@Override
 	public double getMaxEnergy()
 	{
-		return !hasFrequency() ? 0 : frequency.MAX_ENERGY;
+		return !hasFrequency() ? 0 : InventoryFrequency.MAX_ENERGY;
 	}
 
 	@Override

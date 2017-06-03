@@ -19,7 +19,7 @@ public class ItemWalkieTalkie extends ItemMekanism
 {
 	public static ModelResourceLocation OFF_MODEL = new ModelResourceLocation("mekanism:WalkieTalkie", "inventory");
 	
-	public static Map<Integer, ModelResourceLocation> CHANNEL_MODELS = new HashMap<Integer, ModelResourceLocation>();
+	public static Map<Integer, ModelResourceLocation> CHANNEL_MODELS = new HashMap<>();
 	
 	public ItemWalkieTalkie()
 	{
@@ -38,10 +38,7 @@ public class ItemWalkieTalkie extends ItemMekanism
 	
 	public static ModelResourceLocation getModel(int channel)
 	{
-		if(CHANNEL_MODELS.get(channel) == null)
-		{
-			CHANNEL_MODELS.put(channel, new ModelResourceLocation("mekanism:WalkieTalkie_ch" + channel, "inventory"));
-		}
+		CHANNEL_MODELS.computeIfAbsent(channel, c -> new ModelResourceLocation("mekanism:WalkieTalkie_ch" + c, "inventory"));
 		
 		return CHANNEL_MODELS.get(channel);
 	}

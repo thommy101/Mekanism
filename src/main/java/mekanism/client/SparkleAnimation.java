@@ -22,7 +22,7 @@ public class SparkleAnimation
 
 	public Random random = new Random();
 
-	public Set<Coord4D> iteratedNodes = new HashSet<Coord4D>();
+	public Set<Coord4D> iteratedNodes = new HashSet<>();
 	
 	public INodeChecker nodeChecker;
 

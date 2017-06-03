@@ -34,9 +34,7 @@ import mekanism.common.Tier.FluidTankTier;
 import mekanism.common.base.ITierItem;
 import mekanism.common.block.states.BlockStateBasic.BasicBlockType;
 import mekanism.common.block.states.BlockStateMachine.MachineType;
-import mekanism.common.inventory.InventoryBin;
 import mekanism.common.item.ItemAtomicDisassembler;
-import mekanism.common.item.ItemBlockBasic;
 import mekanism.common.item.ItemBlockEnergyCube;
 import mekanism.common.item.ItemBlockMachine;
 import mekanism.common.item.ItemFlamethrower;
@@ -53,7 +51,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelChest;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
@@ -405,7 +402,7 @@ public class BakedCustomItemModel implements IBakedModel, IPerspectiveAwareModel
 	{
 		if(side != null)
 		{
-			List<BakedQuad> faceQuads = new LinkedList<BakedQuad>();
+			List<BakedQuad> faceQuads = new LinkedList<>();
 			
 			if(Block.getBlockFromItem(stack.getItem()) != null)
 			{
@@ -429,7 +426,7 @@ public class BakedCustomItemModel implements IBakedModel, IPerspectiveAwareModel
 		
 		MekanismRenderer.pauseRenderer(tessellator);
 		
-		List<BakedQuad> generalQuads = new LinkedList<BakedQuad>();
+		List<BakedQuad> generalQuads = new LinkedList<>();
 		
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(0.5F, 0.5F, 0.5F);

@@ -3,7 +3,6 @@ package mekanism.common.recipe;
 import java.util.HashMap;
 
 import mekanism.common.Mekanism;
-import mekanism.common.MekanismItems;
 import mekanism.common.util.InventoryUtils;
 import mekanism.common.util.RecipeUtils;
 import net.minecraft.block.Block;
@@ -93,7 +92,7 @@ public class ShapedMekanismRecipe implements IRecipe
 			throw new RuntimeException(ret);
 		}
 
-		HashMap<Character, Object> itemMap = new HashMap<Character, Object>();
+		HashMap<Character, Object> itemMap = new HashMap<>();
 
 		for(; idx < recipe.length; idx += 2)
 		{

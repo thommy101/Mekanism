@@ -4,7 +4,6 @@ import java.util.Map;
 
 import mekanism.api.EnumColor;
 import mekanism.common.base.ISideConfiguration;
-import mekanism.common.content.transporter.Finder;
 import mekanism.common.content.transporter.InvStack;
 import mekanism.common.content.transporter.TransitRequest;
 import mekanism.common.content.transporter.TransitRequest.TransitResponse;
@@ -533,8 +532,7 @@ public final class InventoryUtils
 	
 	public static ItemStack loadFromNBT(NBTTagCompound nbtTags)
 	{
-		ItemStack ret = new ItemStack(nbtTags);
-		return ret;
+        return new ItemStack(nbtTags);
 	}
 	
 	public static boolean isItemHandler(TileEntity tile, EnumFacing side)

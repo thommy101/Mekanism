@@ -31,7 +31,7 @@ public abstract class TileEntityBasicMachine<INPUT extends MachineInput<INPUT>, 
 	 * @param soundPath - location of the sound effect
 	 * @param name - full name of this machine
 	 * @param location - GUI texture path of this machine
-	 * @param perTick - the energy this machine consumes every tick in it's active state
+	 * @param baseEnergyUsage - the energy this machine consumes every tick in it's active state
 	 * @param baseTicksRequired - how many ticks it takes to run a cycle
 	 * @param maxEnergy - how much energy this machine can store
 	 */

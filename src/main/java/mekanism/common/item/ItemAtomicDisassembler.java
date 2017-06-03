@@ -259,7 +259,7 @@ public class ItemAtomicDisassembler extends ItemEnergized
 
                 if(block == Blocks.DIRT)
                 {
-                    switch((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT))
+                    switch(iblockstate.getValue(BlockDirt.VARIANT))
                     {
                         case DIRT:
                             setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
@@ -363,9 +363,9 @@ public class ItemAtomicDisassembler extends ItemEnergized
 
 		public Coord4D location;
 
-		public Set<Coord4D> found = new HashSet<Coord4D>();
+		public Set<Coord4D> found = new HashSet<>();
 
-		public static Map<Block, List<Block>> ignoreBlocks = new HashMap<Block, List<Block>>();
+		public static Map<Block, List<Block>> ignoreBlocks = new HashMap<>();
 
 		public Finder(World w, ItemStack s, Coord4D loc)
 		{

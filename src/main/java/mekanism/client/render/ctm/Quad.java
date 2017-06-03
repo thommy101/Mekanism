@@ -337,14 +337,12 @@ public class Quad
     
     static float lerp(float a, float b, float f)
     {
-        float ret = (a * (1 - f)) + (b * f);
-        return ret;
+        return (a * (1 - f)) + (b * f);
     }
 
     static float normalize(float min, float max, float x) 
     {
-        float ret = (x - min) / (max - min);
-        return ret;
+        return (x - min) / (max - min);
     }
     
     public Quad rotate(int amount) 

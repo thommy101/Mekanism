@@ -198,7 +198,7 @@ public class GasStackRenderer implements IIngredientRenderer<GasStack>
 	@Override
 	public List<String> getTooltip(Minecraft minecraft, GasStack gasStack) 
 	{
-		List<String> tooltip = new ArrayList<String>();
+		List<String> tooltip = new ArrayList<>();
 		Gas gasType = gasStack.getGas();
 		
 		if(gasType == null) 

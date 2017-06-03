@@ -1,7 +1,5 @@
 package mekanism.client.jei.machine.other;
 
-import java.util.List;
-
 import mekanism.api.gas.GasStack;
 import mekanism.client.jei.BaseRecipeCategory;
 import mezz.jei.api.IGuiHelper;

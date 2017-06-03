@@ -84,7 +84,7 @@ public class BlockStateMachine extends ExtendedBlockState
 		super(block, new IProperty[] {BlockStateFacing.facingProperty, typeProperty, activeProperty, tierProperty, recipeProperty}, new IUnlistedProperty[] {BlockStateBasic.ctmProperty});
 	}
 
-	public static enum MachineBlock
+	public enum MachineBlock
 	{
 		MACHINE_BLOCK_1,
 		MACHINE_BLOCK_2,
@@ -118,7 +118,7 @@ public class BlockStateMachine extends ExtendedBlockState
 		}
 	}
 
-	public static enum MachineType implements IStringSerializable, IBlockType
+	public enum MachineType implements IStringSerializable, IBlockType
 	{
 		ENRICHMENT_CHAMBER(MachineBlock.MACHINE_BLOCK_1, 0, "EnrichmentChamber", 3, TileEntityEnrichmentChamber.class, true, false, true, Plane.HORIZONTAL, true),
 		OSMIUM_COMPRESSOR(MachineBlock.MACHINE_BLOCK_1, 1, "OsmiumCompressor", 4, TileEntityOsmiumCompressor.class, true, false, true, Plane.HORIZONTAL, true),
@@ -169,11 +169,11 @@ public class BlockStateMachine extends ExtendedBlockState
 		public boolean isElectric;
 		public boolean hasModel;
 		public boolean supportsUpgrades;
-		public Collection<ShapedMekanismRecipe> blockRecipes = new HashSet<ShapedMekanismRecipe>();
+		public Collection<ShapedMekanismRecipe> blockRecipes = new HashSet<>();
 		public Predicate<EnumFacing> facingPredicate;
 		public boolean activable;
 
-		private MachineType(MachineBlock block, int i, String s, int j, Class<? extends TileEntity> tileClass, boolean electric, boolean model, boolean upgrades, Predicate<EnumFacing> predicate, boolean hasActiveTexture)
+		MachineType(MachineBlock block, int i, String s, int j, Class<? extends TileEntity> tileClass, boolean electric, boolean model, boolean upgrades, Predicate<EnumFacing> predicate, boolean hasActiveTexture)
 		{
 			typeBlock = block;
 			meta = i;
@@ -219,7 +219,7 @@ public class BlockStateMachine extends ExtendedBlockState
 
 		public static List<MachineType> getValidMachines()
 		{
-			List<MachineType> ret = new ArrayList<MachineType>();
+			List<MachineType> ret = new ArrayList<>();
 
 			for(MachineType type : MachineType.values())
 			{

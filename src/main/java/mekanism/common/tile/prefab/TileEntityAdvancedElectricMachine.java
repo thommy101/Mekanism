@@ -60,7 +60,7 @@ public abstract class TileEntityAdvancedElectricMachine<RECIPE extends AdvancedM
 	 *
 	 * @param soundPath - location of the sound effect
 	 * @param name - full name of this machine
-	 * @param perTick - how much energy this machine uses per tick.
+	 * @param baseEnergyUsage - how much energy this machine uses per tick.
 	 * @param secondaryPerTick - how much secondary energy (fuel) this machine uses per tick.
 	 * @param ticksRequired - how many ticks it takes to smelt an item.
 	 * @param maxEnergy - maximum amount of energy this machine can hold.

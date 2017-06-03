@@ -105,7 +105,7 @@ public final class MekanismUtils
 {
 	public static final EnumFacing[] SIDE_DIRS = new EnumFacing[] {EnumFacing.NORTH, EnumFacing.SOUTH, EnumFacing.WEST, EnumFacing.EAST};
 
-	public static final Map<String, Class<?>> classesFound = new HashMap<String, Class<?>>();
+	public static final Map<String, Class<?>> classesFound = new HashMap<>();
 
 	/**
 	 * Checks for a new version of Mekanism.
@@ -117,7 +117,7 @@ public final class MekanismUtils
 			{
 				if(!Mekanism.latestVersionNumber.equals("null"))
 				{
-					ArrayList<IModule> list = new ArrayList<IModule>();
+					ArrayList<IModule> list = new ArrayList<>();
 
 					for(IModule module : Mekanism.modulesLoaded)
 					{
@@ -170,10 +170,7 @@ public final class MekanismUtils
 	{
 		Mekanism.donators.clear();
 
-		for(String s : getHTML("https://dl.dropbox.com/u/90411166/Donators/Mekanism.txt"))
-		{
-			Mekanism.donators.add(s);
-		}
+        Mekanism.donators.addAll(getHTML("https://dl.dropbox.com/u/90411166/Donators/Mekanism.txt"));
 	}
 
 	/**
@@ -184,7 +181,7 @@ public final class MekanismUtils
 	public static List<String> getHTML(String urlToRead)
 	{
 		String line;
-		List<String> result = new ArrayList<String>();
+		List<String> result = new ArrayList<>();
 
 		try {
 			URL url = new URL(urlToRead);
@@ -1225,8 +1222,8 @@ public final class MekanismUtils
 				renderer = stack.getItem().getFontRenderer(stack);
 			}
 			
-			List<String> words = new ArrayList<String>();
-			List<String> lines = new ArrayList<String>();
+			List<String> words = new ArrayList<>();
+			List<String> lines = new ArrayList<>();
 			
 			String currentWord = "";
 			
@@ -1259,15 +1256,13 @@ public final class MekanismUtils
 					}
 					
 					currentLine += word;
-					
-					continue;
-				}
+
+                }
 				else {
 					lines.add(currentLine);
 					currentLine = word;
-					
-					continue;
-				}
+
+                }
 			}
 			
 			if(!currentLine.isEmpty())
@@ -1280,7 +1275,7 @@ public final class MekanismUtils
 			t.printStackTrace();
 		}
 		
-		return new ArrayList<String>();
+		return new ArrayList<>();
 	}
 
 	/**
@@ -1503,7 +1498,7 @@ public final class MekanismUtils
 		return false;
 	}
 
-	public static enum ResourceType
+	public enum ResourceType
 	{
 		GUI("gui"),
 		GUI_ELEMENT("gui/elements"),
@@ -1516,7 +1511,7 @@ public final class MekanismUtils
 
 		private String prefix;
 
-		private ResourceType(String s)
+		ResourceType(String s)
 		{
 			prefix = s;
 		}

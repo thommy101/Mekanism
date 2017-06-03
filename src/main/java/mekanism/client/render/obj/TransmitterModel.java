@@ -50,9 +50,9 @@ import com.google.common.collect.Lists;
 
 public class TransmitterModel extends OBJBakedModelBase
 {
-	private static Set<TransmitterModel> modelInstances = new HashSet<TransmitterModel>();
+	private static Set<TransmitterModel> modelInstances = new HashSet<>();
 	
-	private Map<Integer, List<BakedQuad>> modelCache = new HashMap<Integer, List<BakedQuad>>();
+	private Map<Integer, List<BakedQuad>> modelCache = new HashMap<>();
 	private TransmitterModel itemCache;
 	
 	private IBlockState tempState;
@@ -84,7 +84,7 @@ public class TransmitterModel extends OBJBakedModelBase
 	    {
 			if(itemCache == null)
 			{
-				List<String> visible = new ArrayList<String>();
+				List<String> visible = new ArrayList<>();
 				
 				for(EnumFacing side : EnumFacing.values())
 				{

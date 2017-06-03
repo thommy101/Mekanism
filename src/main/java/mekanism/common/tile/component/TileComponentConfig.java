@@ -25,12 +25,12 @@ public class TileComponentConfig implements ITileComponent
 	
 	public TileEntityContainerBlock tileEntity;
 	
-	public Map<Integer, byte[]> sideConfigs = new HashMap<Integer, byte[]>();
-	public Map<Integer, ArrayList<SideData>> sideOutputs = new HashMap<Integer, ArrayList<SideData>>();
-	public Map<Integer, Boolean> ejecting = new HashMap<Integer, Boolean>();
-	public Map<Integer, Boolean> canEject = new HashMap<Integer, Boolean>();
+	public Map<Integer, byte[]> sideConfigs = new HashMap<>();
+	public Map<Integer, ArrayList<SideData>> sideOutputs = new HashMap<>();
+	public Map<Integer, Boolean> ejecting = new HashMap<>();
+	public Map<Integer, Boolean> canEject = new HashMap<>();
 	
-	public List<TransmissionType> transmissions = new ArrayList<TransmissionType>();
+	public List<TransmissionType> transmissions = new ArrayList<>();
 	
 	public TileComponentConfig(TileEntityContainerBlock tile, TransmissionType... types)
 	{
@@ -59,7 +59,7 @@ public class TileComponentConfig implements ITileComponent
 			transmissions.add(type);
 		}
 		
-		sideOutputs.put(type.ordinal(), new ArrayList<SideData>());
+		sideOutputs.put(type.ordinal(), new ArrayList<>());
 		ejecting.put(type.ordinal(), false);
 		canEject.put(type.ordinal(), true);
 	}

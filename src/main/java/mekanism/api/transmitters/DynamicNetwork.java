@@ -31,11 +31,11 @@ public abstract class DynamicNetwork<A, N extends DynamicNetwork<A, N>> implemen
 	public LinkedHashSet<IGridTransmitter<A, N>> transmittersToAdd = Sets.newLinkedHashSet();
 	public LinkedHashSet<IGridTransmitter<A, N>> transmittersAdded = Sets.newLinkedHashSet();
 
-	public HashMap<Coord4D, A> possibleAcceptors = new HashMap<Coord4D, A>();
-	public HashMap<Coord4D, EnumSet<EnumFacing>> acceptorDirections = new HashMap<Coord4D, EnumSet<EnumFacing>>();
+	public HashMap<Coord4D, A> possibleAcceptors = new HashMap<>();
+	public HashMap<Coord4D, EnumSet<EnumFacing>> acceptorDirections = new HashMap<>();
 	public HashMap<IGridTransmitter<A, N>, EnumSet<EnumFacing>> changedAcceptors = Maps.newHashMap();
 
-	private Set<DelayQueue> updateQueue = new LinkedHashSet<DelayQueue>();
+	private Set<DelayQueue> updateQueue = new LinkedHashSet<>();
 
 	protected Range4D packetRange = null;
 
@@ -155,7 +155,6 @@ public abstract class DynamicNetwork<A, N extends DynamicNetwork<A, N>> implemen
             if(!transmitter.isValid())
             {
                 iter.remove();
-                continue;
             }
         }
 

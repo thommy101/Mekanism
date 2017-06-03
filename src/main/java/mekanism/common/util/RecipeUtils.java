@@ -227,7 +227,7 @@ public class RecipeUtils
 
 		if(BlockStateMachine.MachineType.get(toReturn) != null && BlockStateMachine.MachineType.get(toReturn).supportsUpgrades)
 		{
-			Map<Upgrade, Integer> upgrades = new HashMap<Upgrade, Integer>();
+			Map<Upgrade, Integer> upgrades = new HashMap<>();
 
 			for(int i = 0; i < 9; i++)
 			{
@@ -318,14 +318,10 @@ public class RecipeUtils
 	
 	public static IRecipe getRecipeFromGrid(InventoryCrafting inv, World world)
 	{
-		List<IRecipe> list = new ArrayList<IRecipe>(CraftingManager.getInstance().getRecipeList());
-		
-		for(Iterator<IRecipe> iter = list.iterator(); iter.hasNext();)
-		{
-			IRecipe recipe = iter.next();
-			
-			if(recipe.matches(inv, world))
-			{
+		List<IRecipe> list = new ArrayList<>(CraftingManager.getInstance().getRecipeList());
+
+		for (IRecipe recipe : list) {
+			if (recipe.matches(inv, world)) {
 				return recipe;
 			}
 		}

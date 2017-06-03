@@ -8,7 +8,6 @@ import mekanism.client.jei.machine.AdvancedMachineRecipeWrapper;
 import mekanism.common.MekanismItems;
 import mekanism.common.recipe.machines.AdvancedMachineRecipe;
 import mekanism.common.util.ListUtils;
-import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.item.ItemStack;
 
 public class OsmiumCompressorRecipeWrapper extends AdvancedMachineRecipeWrapper

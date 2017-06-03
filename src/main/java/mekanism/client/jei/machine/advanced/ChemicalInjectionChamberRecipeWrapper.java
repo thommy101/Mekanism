@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mekanism.api.gas.Gas;
-import mekanism.api.gas.GasRegistry;
 import mekanism.client.jei.machine.AdvancedMachineRecipeCategory;
 import mekanism.client.jei.machine.AdvancedMachineRecipeWrapper;
 import mekanism.common.MekanismFluids;
@@ -27,7 +26,7 @@ public class ChemicalInjectionChamberRecipeWrapper extends AdvancedMachineRecipe
 	{
 		if(gasType == MekanismFluids.SulfuricAcid)
 		{
-			List<ItemStack> fuels = new ArrayList<ItemStack>();
+			List<ItemStack> fuels = new ArrayList<>();
 			fuels.addAll(OreDictionary.getOres("dustSulfur"));
 			fuels.add(MekanismUtils.getFullGasTank(GasTankTier.BASIC, MekanismFluids.SulfuricAcid));
 			
@@ -39,13 +38,13 @@ public class ChemicalInjectionChamberRecipeWrapper extends AdvancedMachineRecipe
 		}
 		else if(gasType == MekanismFluids.HydrogenChloride)
 		{
-			List<ItemStack> fuels = new ArrayList<ItemStack>();
+			List<ItemStack> fuels = new ArrayList<>();
 			fuels.addAll(OreDictionary.getOres("dustSalt"));
 			fuels.add(MekanismUtils.getFullGasTank(GasTankTier.BASIC, MekanismFluids.HydrogenChloride));
 			
 			return fuels;
 		}
 
-		return new ArrayList<ItemStack>();
+		return new ArrayList<>();
 	}
 }

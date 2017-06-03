@@ -215,7 +215,7 @@ public class GuiFormulaicAssemblicator extends GuiMekanism
 				
 				if(!stack.isEmpty())
 				{
-					Slot slot = (Slot)inventorySlots.inventorySlots.get(i+20);
+					Slot slot = inventorySlots.inventorySlots.get(i+20);
 					GlStateManager.pushMatrix();
 					
 					if(slot.getStack().isEmpty() || !slot.getStack().isItemEqual(stack))

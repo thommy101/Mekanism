@@ -62,7 +62,7 @@ public class CTMModelFactory implements IPerspectiveAwareModel
         model = m;
     }
     
-    private static Cache<Integer, CTMModelFactory> ctmCache = CacheBuilder.newBuilder().expireAfterAccess(1, TimeUnit.MINUTES).maximumSize(500).<Integer, CTMModelFactory>build();
+    private static Cache<Integer, CTMModelFactory> ctmCache = CacheBuilder.newBuilder().expireAfterAccess(1, TimeUnit.MINUTES).maximumSize(500).build();
     
     @Override
     public List<BakedQuad> getQuads(IBlockState stateIn, EnumFacing side, long rand) 
@@ -173,7 +173,7 @@ public class CTMModelFactory implements IPerspectiveAwareModel
     	
         for(BakedQuad q : from)
         {
-            to.addAll(tex.transformQuad(q, ctx == null ? null : ctx, quadGoal));
+            to.addAll(tex.transformQuad(q, ctx, quadGoal));
         }
     }
     

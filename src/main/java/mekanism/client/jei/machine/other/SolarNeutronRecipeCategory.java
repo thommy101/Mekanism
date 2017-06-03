@@ -1,7 +1,5 @@
 package mekanism.client.jei.machine.other;
 
-import java.util.List;
-
 import mekanism.client.jei.BaseRecipeCategory;
 import mekanism.common.recipe.machines.SolarNeutronRecipe;
 import mezz.jei.api.IGuiHelper;

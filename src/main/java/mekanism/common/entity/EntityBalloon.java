@@ -38,11 +38,11 @@ public class EntityBalloon extends Entity implements IEntityAdditionalSpawnData
 
 	public UUID cachedEntityUUID;
 	
-    private static final DataParameter<Byte> IS_LATCHED = EntityDataManager.<Byte>createKey(EntityBalloon.class, DataSerializers.BYTE);
-    private static final DataParameter<Integer> LATCHED_X = EntityDataManager.<Integer>createKey(EntityBalloon.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> LATCHED_Y = EntityDataManager.<Integer>createKey(EntityBalloon.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> LATCHED_Z = EntityDataManager.<Integer>createKey(EntityBalloon.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> LATCHED_ID = EntityDataManager.<Integer>createKey(EntityBalloon.class, DataSerializers.VARINT);
+    private static final DataParameter<Byte> IS_LATCHED = EntityDataManager.createKey(EntityBalloon.class, DataSerializers.BYTE);
+    private static final DataParameter<Integer> LATCHED_X = EntityDataManager.createKey(EntityBalloon.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> LATCHED_Y = EntityDataManager.createKey(EntityBalloon.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> LATCHED_Z = EntityDataManager.createKey(EntityBalloon.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> LATCHED_ID = EntityDataManager.createKey(EntityBalloon.class, DataSerializers.VARINT);
 
 	public EntityBalloon(World world)
 	{
@@ -127,7 +127,7 @@ public class EntityBalloon extends Entity implements IEntityAdditionalSpawnData
 		{
 			if(dataManager.get(IS_LATCHED) == 1)
 			{
-				latched = new Coord4D((int)dataManager.get(LATCHED_X), (int)dataManager.get(LATCHED_Y), (int)dataManager.get(LATCHED_Z), world.provider.getDimension());
+				latched = new Coord4D(dataManager.get(LATCHED_X), dataManager.get(LATCHED_Y), dataManager.get(LATCHED_Z), world.provider.getDimension());
 			}
 			else {
 				latched = null;
@@ -151,11 +151,11 @@ public class EntityBalloon extends Entity implements IEntityAdditionalSpawnData
 
 			if(ticksExisted == 1)
 			{
-				dataManager.set(IS_LATCHED, new Byte(latched != null ? (byte)1 : (latchedEntity != null ? (byte)2 : (byte)0)));
-				dataManager.set(LATCHED_X, new Integer(latched != null ? latched.xCoord : 0));
-				dataManager.set(LATCHED_Y, new Integer(latched != null ? latched.yCoord : 0));
-				dataManager.set(LATCHED_Z, new Integer(latched != null ? latched.zCoord : 0));
-				dataManager.set(LATCHED_ID, new Integer(latchedEntity != null ? latchedEntity.getEntityId() : -1));
+				dataManager.set(IS_LATCHED, latched != null ? (byte) 1 : (latchedEntity != null ? (byte) 2 : (byte) 0));
+				dataManager.set(LATCHED_X, latched != null ? latched.xCoord : 0);
+				dataManager.set(LATCHED_Y, latched != null ? latched.yCoord : 0);
+				dataManager.set(LATCHED_Z, latched != null ? latched.zCoord : 0);
+				dataManager.set(LATCHED_ID, latchedEntity != null ? latchedEntity.getEntityId() : -1);
 			}
 		}
 

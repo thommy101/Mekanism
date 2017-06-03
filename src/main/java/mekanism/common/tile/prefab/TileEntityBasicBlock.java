@@ -43,7 +43,7 @@ public abstract class TileEntityBasicBlock extends TileEntity implements ITileNe
 	public EnumFacing clientFacing = facing;
 
 	/** The players currently using this block. */
-	public HashSet<EntityPlayer> playersUsing = new HashSet<EntityPlayer>();
+	public HashSet<EntityPlayer> playersUsing = new HashSet<>();
 
 	/** A timer used to send packets to clients. */
 	public int ticker;
@@ -53,7 +53,7 @@ public abstract class TileEntityBasicBlock extends TileEntity implements ITileNe
 
 	public boolean doAutoSync = true;
 
-	public List<ITileComponent> components = new ArrayList<ITileComponent>();
+	public List<ITileComponent> components = new ArrayList<>();
 
 	@Override
 	public void update()
@@ -83,7 +83,7 @@ public abstract class TileEntityBasicBlock extends TileEntity implements ITileNe
 			{
 				for(EntityPlayer player : playersUsing)
 				{
-					Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<Object>())), (EntityPlayerMP)player);
+					Mekanism.packetHandler.sendTo(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<>())), (EntityPlayerMP)player);
 				}
 			}
 		}
@@ -240,7 +240,7 @@ public abstract class TileEntityBasicBlock extends TileEntity implements ITileNe
 
 		if(!(facing == clientFacing || world.isRemote))
 		{
-			Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<Object>())), new Range4D(Coord4D.get(this)));
+			Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<>())), new Range4D(Coord4D.get(this)));
 			markDirty();
 			clientFacing = facing;
 		}
@@ -283,7 +283,7 @@ public abstract class TileEntityBasicBlock extends TileEntity implements ITileNe
 		if(redstone != power)
 		{
 			redstone = power;
-			Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<Object>())), new Range4D(Coord4D.get(this)));
+			Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(Coord4D.get(this), getNetworkedData(new ArrayList<>())), new Range4D(Coord4D.get(this)));
 		
 			onPowerChange();
 		}
@@ -306,14 +306,6 @@ public abstract class TileEntityBasicBlock extends TileEntity implements ITileNe
 		}
 		
 		return null;
-	}
-	
-	@Override
-	public NBTTagCompound getUpdateTag()
-	{
-		// Forge writes only x/y/z/id info to a new NBT Tag Compound. This is fine, we have a custom network system
-		// to send other data so we don't use this one (yet).
-		return super.getUpdateTag();
 	}
 
 	@Override

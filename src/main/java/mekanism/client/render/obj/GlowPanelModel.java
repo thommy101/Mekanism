@@ -30,7 +30,6 @@ import net.minecraftforge.client.model.IPerspectiveAwareModel;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.obj.OBJModel;
 import net.minecraftforge.client.model.obj.OBJModel.Face;
-import net.minecraftforge.client.model.obj.OBJModel.OBJBakedModel;
 import net.minecraftforge.common.model.IModelState;
 import net.minecraftforge.common.property.IExtendedBlockState;
 
@@ -42,8 +41,8 @@ import com.google.common.collect.Lists;
 
 public class GlowPanelModel extends OBJBakedModelBase
 {
-	private static Map<Integer, List<BakedQuad>> glowPanelCache = new HashMap<Integer, List<BakedQuad>>();
-	private static Map<Integer, GlowPanelModel> glowPanelItemCache = new HashMap<Integer, GlowPanelModel>();
+	private static Map<Integer, List<BakedQuad>> glowPanelCache = new HashMap<>();
+	private static Map<Integer, GlowPanelModel> glowPanelItemCache = new HashMap<>();
 	
 	private IBlockState tempState;
 	private ItemStack tempStack;

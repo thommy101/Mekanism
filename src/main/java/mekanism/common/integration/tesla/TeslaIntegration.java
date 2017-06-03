@@ -31,14 +31,14 @@ public class TeslaIntegration implements ITeslaHolder, ITeslaConsumer, ITeslaPro
 	@Method(modid = "tesla")
 	public long getStoredPower() 
 	{
-		return (long)Math.round(tileEntity.getEnergy()*general.TO_TESLA);
+		return Math.round(tileEntity.getEnergy()*general.TO_TESLA);
 	}
 
 	@Override
 	@Method(modid = "tesla")
 	public long getCapacity() 
 	{
-		return (long)Math.round(tileEntity.getMaxEnergy()*general.TO_TESLA);
+		return Math.round(tileEntity.getMaxEnergy()*general.TO_TESLA);
 	}
 	
 	@Override
@@ -57,7 +57,7 @@ public class TeslaIntegration implements ITeslaHolder, ITeslaConsumer, ITeslaPro
 	
 	public long rfToTesla(int rf)
 	{
-		return (long)Math.round(rf*general.FROM_RF*general.TO_TESLA);
+		return Math.round(rf*general.FROM_RF*general.TO_TESLA);
 	}
 	
 	public int teslaToRF(long tesla)

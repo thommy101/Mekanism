@@ -116,7 +116,7 @@ public class CTM {
 
 	public Optional<Boolean> disableObscuredFaceCheck = Optional.absent();
 
-	protected TIntObjectMap<Dir[]> submapMap = new TIntObjectHashMap<Dir[]>();
+	protected TIntObjectMap<Dir[]> submapMap = new TIntObjectHashMap<>();
 	protected EnumMap<Dir, Boolean> connectionMap = Maps.newEnumMap(Dir.class);
 	protected int[] submapCache;
 
@@ -263,7 +263,7 @@ public class CTM {
      * @param world
      * @param current
      *            The position of your block.
-     * @param y
+     * @param connection
      *            The position of the block to check against.
      * @param dir
      *            The {@link EnumFacing side} of the block to check for connection status. This is <i>not</i> the direction to check in.
@@ -281,7 +281,7 @@ public class CTM {
      * @param world
      * @param current
      *            The position of your block.
-     * @param y
+     * @param connection
      *            The position of the block to check against.
      * @param dir
      *            The {@link EnumFacing side} of the block to check for connection status. This is <i>not</i> the direction to check in.
@@ -343,7 +343,6 @@ public class CTM {
 
 	public static IBlockState getConnectedState(IBlockAccess world, BlockPos pos, EnumFacing side)
 	{
-		IBlockState state = world.getBlockState(pos);
-		return state;
+		return world.getBlockState(pos);
 	}
 }

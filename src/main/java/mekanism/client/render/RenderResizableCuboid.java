@@ -66,7 +66,7 @@ public class RenderResizableCuboid {
 
         private final VertexFormatElement element;
 
-        private EnumShadeType(VertexFormatElement element) {
+        EnumShadeType(VertexFormatElement element) {
             this.element = element;
         }
     }
@@ -303,8 +303,8 @@ public class RenderResizableCuboid {
 
             index++;
 
-            skyLight[index] = (int) (combindedLight / 0x10000);
-            blockLight[index] = (int) (combindedLight % 0x10000);
+            skyLight[index] = combindedLight / 0x10000;
+            blockLight[index] = combindedLight % 0x10000;
             colorMultiplier[index] = state.getAmbientOcclusionLightValue();
             // The extra 0.1 is to stop any 1 divided by 0 errors
             distances[index] = 1 / (transVertex.distanceTo(convertMiddle(pos)) + 0.1);
@@ -488,7 +488,7 @@ public class RenderResizableCuboid {
             double[] arr = points[i];
             for (int j = 0; j < arr.length; j++) {
                 double d = arr[j];
-                int used = 0;
+                int used;
                 if (j == 3 || j == 6) {// Shade or unused
                     used = (int) d;
                 } else {

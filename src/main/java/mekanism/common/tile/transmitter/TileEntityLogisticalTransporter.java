@@ -270,7 +270,7 @@ public class TileEntityLogisticalTransporter extends TileEntityTransmitter<TileE
 
 	public ArrayList<Object> getSyncPacket(TransporterStack stack, boolean kill)
 	{
-		ArrayList<Object> data = new ArrayList<Object>();
+		ArrayList<Object> data = new ArrayList<>();
 
 		data.add(1);
 		data.add(kill);

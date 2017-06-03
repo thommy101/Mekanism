@@ -110,7 +110,7 @@ public abstract class BaseRecipeCategory implements IRecipeCategory, IGuiWrapper
 
 		while(true)
 		{
-			int renderRemaining = 0;
+			int renderRemaining;
 
 			if(scale > 16)
 			{
@@ -166,7 +166,7 @@ public abstract class BaseRecipeCategory implements IRecipeCategory, IGuiWrapper
 		Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 	}
 	
-	public Set<GuiElement> guiElements = new HashSet<GuiElement>();
+	public Set<GuiElement> guiElements = new HashSet<>();
 	
 	public void addGuiElements() {}
 	

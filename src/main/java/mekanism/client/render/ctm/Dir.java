@@ -41,14 +41,14 @@ public enum Dir {
 
 	private EnumFacing[] dirs;
 
-	private Dir(EnumFacing... dirs) {
+	Dir(EnumFacing... dirs) {
 		this.dirs = dirs;
     }
 
     /**
      * Finds if this block is connected for the given side in this Dir.
      * 
-     * @param inst
+     * @param ctm
      *            The CTM instance to use for logic.
      * @param world
      *            The world the block is in.
@@ -65,7 +65,7 @@ public enum Dir {
     /**
      * Finds if this block is connected for the given side in this Dir.
      * 
-     * @param inst
+     * @param ctm
      *            The CTM instance to use for logic.
      * @param world
      *            The world the block is in.
@@ -103,7 +103,7 @@ public enum Dir {
 			}
 			return ret;
 		} else {
-			EnumFacing axis = null;
+			EnumFacing axis;
 			// Next, we need different a different rotation axis depending
 			// on if this is up/down or not
 			if (normal.getFrontOffsetY() == 0) {

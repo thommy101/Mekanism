@@ -23,10 +23,10 @@ public class ThreadMinerSearch extends Thread
 
 	public State state = State.IDLE;
 
-	public Map<Chunk3D, BitSet> oresToMine = new HashMap<Chunk3D, BitSet>();
-	public Map<Integer, MinerFilter> replaceMap = new HashMap<Integer, MinerFilter>();
+	public Map<Chunk3D, BitSet> oresToMine = new HashMap<>();
+	public Map<Integer, MinerFilter> replaceMap = new HashMap<>();
 
-	public Map<BlockInfo, MinerFilter> acceptedItems = new HashMap<BlockInfo, MinerFilter>();
+	public Map<BlockInfo, MinerFilter> acceptedItems = new HashMap<>();
 
 	public int found = 0;
 
@@ -92,7 +92,6 @@ public class ThreadMinerSearch extends Thread
 				if(info.block != null && !tileEntity.getWorld().isAirBlock(new BlockPos(x, y, z)) && state.getBlockHardness(tileEntity.getWorld(), new BlockPos(x, y, z)) >= 0)
 				{
 					MinerFilter filterFound = null;
-					boolean canFilter = false;
 	
 					if(acceptedItems.containsKey(info))
 					{
@@ -117,10 +116,8 @@ public class ThreadMinerSearch extends Thread
 	
 						acceptedItems.put(info, filterFound);
 					}
-					
-					canFilter = tileEntity.inverse ? filterFound == null : filterFound != null;
 	
-					if(canFilter)
+					if(tileEntity.inverse ? filterFound == null : filterFound != null) // canFilter
 					{
 						set(i, new Coord4D(x, y, z, tileEntity.getWorld().provider.getDimension()));
 						replaceMap.put(i, filterFound);
@@ -140,11 +137,8 @@ public class ThreadMinerSearch extends Thread
 	public void set(int i, Coord4D location)
 	{
 		Chunk3D chunk = new Chunk3D(location);
-		
-		if(oresToMine.get(chunk) == null)
-		{
-			oresToMine.put(chunk, new BitSet());
-		}
+
+		oresToMine.computeIfAbsent(chunk, k -> new BitSet());
 		
 		oresToMine.get(chunk).set(i);
 	}
@@ -154,7 +148,7 @@ public class ThreadMinerSearch extends Thread
 		state = State.IDLE;
 	}
 
-	public static enum State
+	public enum State
 	{
 		IDLE("Not ready"),
 		SEARCHING("Searching"),
@@ -163,7 +157,7 @@ public class ThreadMinerSearch extends Thread
 
 		public String desc;
 
-		private State(String s)
+		State(String s)
 		{
 			desc = s;
 		}

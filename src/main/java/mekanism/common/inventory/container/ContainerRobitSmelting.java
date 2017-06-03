@@ -64,23 +64,17 @@ public class ContainerRobitSmelting extends Container
 	{
 		super.detectAndSendChanges();
 
-		for(int i = 0; i < listeners.size(); ++i)
-		{
-			IContainerListener icrafting = (IContainerListener)listeners.get(i);
-
-			if(lastCookTime != robit.furnaceCookTime)
-			{
-				icrafting.sendProgressBarUpdate(this, 0, robit.furnaceCookTime);
+		for (IContainerListener listener : listeners) {
+			if (lastCookTime != robit.furnaceCookTime) {
+				listener.sendProgressBarUpdate(this, 0, robit.furnaceCookTime);
 			}
 
-			if(lastBurnTime != robit.furnaceBurnTime)
-			{
-				icrafting.sendProgressBarUpdate(this, 1, robit.furnaceBurnTime);
+			if (lastBurnTime != robit.furnaceBurnTime) {
+				listener.sendProgressBarUpdate(this, 1, robit.furnaceBurnTime);
 			}
 
-			if(lastItemBurnTime != robit.currentItemBurnTime)
-			{
-				icrafting.sendProgressBarUpdate(this, 2, robit.currentItemBurnTime);
+			if (lastItemBurnTime != robit.currentItemBurnTime) {
+				listener.sendProgressBarUpdate(this, 2, robit.currentItemBurnTime);
 			}
 		}
 
@@ -112,7 +106,7 @@ public class ContainerRobitSmelting extends Container
 	public ItemStack transferStackInSlot(EntityPlayer player, int slotID)
 	{
 		ItemStack stack = ItemStack.EMPTY;
-		Slot currentSlot = (Slot)inventorySlots.get(slotID);
+		Slot currentSlot = inventorySlots.get(slotID);
 
 		if(currentSlot != null && currentSlot.getHasStack())
 		{

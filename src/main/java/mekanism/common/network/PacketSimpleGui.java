@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PacketSimpleGui implements IMessageHandler<SimpleGuiMessage, IMessage>
 {
-	public static List<IGuiProvider> handlers = new ArrayList<IGuiProvider>();
+	public static List<IGuiProvider> handlers = new ArrayList<>();
 	
 	@Override
 	public IMessage onMessage(SimpleGuiMessage message, MessageContext context) 

@@ -43,7 +43,7 @@ public class ModelCTM implements IModel
     @Override
     public Collection<ResourceLocation> getDependencies() 
     {
-    	return new ArrayList<ResourceLocation>();
+    	return new ArrayList<>();
     }
 
     @Override
