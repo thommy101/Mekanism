@@ -224,7 +224,7 @@ public class BlockStateGenerator extends ExtendedBlockState
 		
 		public String getDescription()
 		{
-			return LangUtils.localize("tooltip." + blockName);
+			return LangUtils.localize("tooltip.mekanism." + blockName);
 		}
 		
 		public ItemStack getStack()

@@ -482,7 +482,7 @@ public class TileEntityFluidicPlenisher extends TileEntityElectricBlock implemen
 		usedNodes.clear();
 		finishedCalc = false;
 		
-		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.configurator.plenisherReset")));
+		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.configurator.plenisherReset")));
 
 		return EnumActionResult.SUCCESS;
 	}

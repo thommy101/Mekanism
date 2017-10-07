@@ -100,11 +100,11 @@ public class ItemGaugeDropper extends ItemMekanism implements IGasItem
 		}
 		else if(gasStack != null)
 		{
-			list.add(LangUtils.localize("tooltip.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
+			list.add(LangUtils.localize("tooltip.mekanism.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
 		}
 		else if(fluidStack != null)
 		{
-			list.add(LangUtils.localize("tooltip.stored") + " " + fluidStack.getFluid().getLocalizedName(fluidStack) + ": " + fluidStack.amount);
+			list.add(LangUtils.localize("tooltip.mekanism.stored") + " " + fluidStack.getFluid().getLocalizedName(fluidStack) + ": " + fluidStack.amount);
 		}
 	}
 

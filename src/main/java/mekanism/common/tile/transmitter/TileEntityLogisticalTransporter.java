@@ -351,7 +351,7 @@ public class TileEntityLogisticalTransporter extends TileEntityTransmitter<TileE
 		onPartChanged(null);
 		PathfinderCache.onChanged(new Coord4D(getPos(), getWorld()));
 		Mekanism.packetHandler.sendToReceivers(new TileEntityMessage(new Coord4D(getPos(), getWorld()), getNetworkedData(new ArrayList<>())), new Range4D(new Coord4D(getPos(), getWorld())));
-		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.configurator.toggleColor") + ": " + (getTransmitter().getColor() != null ? getTransmitter().getColor().getColoredName() : EnumColor.BLACK + LangUtils.localize("gui.mekanism.none"))));
+		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.configurator.toggleColor") + ": " + (getTransmitter().getColor() != null ? getTransmitter().getColor().getColoredName() : EnumColor.BLACK + LangUtils.localize("gui.mekanism.none"))));
 
 		return EnumActionResult.SUCCESS;
 	}
@@ -360,7 +360,7 @@ public class TileEntityLogisticalTransporter extends TileEntityTransmitter<TileE
 	public EnumActionResult onRightClick(EntityPlayer player, EnumFacing side)
 	{
 		super.onRightClick(player, side);
-		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.configurator.viewColor") + ": " + (getTransmitter().getColor() != null ? getTransmitter().getColor().getColoredName() : "None")));
+		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.configurator.viewColor") + ": " + (getTransmitter().getColor() != null ? getTransmitter().getColor().getColoredName() : "None")));
 		
 		return EnumActionResult.SUCCESS;
 	}

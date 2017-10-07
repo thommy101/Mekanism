@@ -40,7 +40,7 @@ public class ItemUpgrade extends ItemMekanism implements IUpgradeItem
 	{
 		if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 		{
-			list.add(LangUtils.localize("tooltip.hold") + " " + EnumColor.AQUA + "shift" + EnumColor.GREY + " " + LangUtils.localize("tooltip.forDetails"));
+			list.add(LangUtils.localize("tooltip.mekanism.hold") + " " + EnumColor.AQUA + "shift" + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.forDetails"));
 		}
 		else {
 			list.addAll(MekanismUtils.splitTooltip(getUpgradeType(itemstack).getDescription(), itemstack));

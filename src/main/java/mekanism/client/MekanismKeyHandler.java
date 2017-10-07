@@ -89,7 +89,7 @@ public class MekanismKeyHandler extends MekKeyHandler
 				int toSet = configurator.getState(toolStack).ordinal() < ConfiguratorMode.values().length-1 ? configurator.getState(toolStack).ordinal() + 1 : 0;
 				configurator.setState(toolStack, ConfiguratorMode.values()[toSet]);
 				Mekanism.packetHandler.sendToServer(new ItemStackMessage(EnumHand.MAIN_HAND, ListUtils.asArrayList(toSet)));
-				player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.configureState") + ": " + configurator.getColor(configurator.getState(toolStack)) + configurator.getStateDisplay(configurator.getState(toolStack))));
+				player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.configureState") + ": " + configurator.getColor(configurator.getState(toolStack)) + configurator.getStateDisplay(configurator.getState(toolStack))));
 			}
 			else if(player.isSneaking() && item instanceof ItemElectricBow)
 			{
@@ -97,7 +97,7 @@ public class MekanismKeyHandler extends MekKeyHandler
 
 				bow.setFireState(toolStack, !bow.getFireState(toolStack));
 				Mekanism.packetHandler.sendToServer(new ItemStackMessage(EnumHand.MAIN_HAND, ListUtils.asArrayList(bow.getFireState(toolStack))));
-				player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.fireMode") + ": " + (bow.getFireState(toolStack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + LangUtils.transOnOff(bow.getFireState(toolStack))));
+				player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.fireMode") + ": " + (bow.getFireState(toolStack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + LangUtils.transOnOff(bow.getFireState(toolStack))));
 			}
 			else if(player.isSneaking() && item instanceof ItemBlockMachine)
 			{
@@ -107,7 +107,7 @@ public class MekanismKeyHandler extends MekKeyHandler
 				{
 					machine.setBucketMode(toolStack, !machine.getBucketMode(toolStack));
 					Mekanism.packetHandler.sendToServer(new ItemStackMessage(EnumHand.MAIN_HAND, ListUtils.asArrayList(machine.getBucketMode(toolStack))));
-					player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.portableTank.bucketMode") + ": " + (machine.getBucketMode(toolStack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + LangUtils.transOnOff(machine.getBucketMode(toolStack))));
+					player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.portableTank.bucketMode") + ": " + (machine.getBucketMode(toolStack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + LangUtils.transOnOff(machine.getBucketMode(toolStack))));
 				}
 			}
 			else if(player.isSneaking() && item instanceof ItemWalkieTalkie)
@@ -128,7 +128,7 @@ public class MekanismKeyHandler extends MekKeyHandler
 
                 flamethrower.incrementMode(toolStack);
                 Mekanism.packetHandler.sendToServer(new PacketFlamethrowerData.FlamethrowerDataMessage(PacketFlamethrowerData.FlamethrowerPacket.MODE, EnumHand.MAIN_HAND, null, false));
-                player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.flamethrower.modeBump") + ": " + flamethrower.getMode(toolStack).getName()));
+                player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.flamethrower.modeBump") + ": " + flamethrower.getMode(toolStack).getName()));
             }
 		}
 		else if(kb == armorModeSwitchKey)

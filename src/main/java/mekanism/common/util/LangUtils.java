@@ -15,7 +15,7 @@ public final class LangUtils
 	
 	public static String transYesNo(boolean b)
 	{
-		return LangUtils.localize("tooltip." + (b ? "yes" : "no"));
+		return LangUtils.localize("tooltip.mekanism." + (b ? "yes" : "no"));
 	}
 	
 	public static String transOutputInput(boolean b)

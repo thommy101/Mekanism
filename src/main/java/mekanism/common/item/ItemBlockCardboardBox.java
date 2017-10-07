@@ -48,18 +48,18 @@ public class ItemBlockCardboardBox extends ItemBlock
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag)
 	{
-		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.blockData") + ": " + LangUtils.transYesNo(getBlockData(itemstack) != null));
+		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.blockData") + ": " + LangUtils.transYesNo(getBlockData(itemstack) != null));
 		BlockData data = getBlockData(itemstack);
 		
 		if(data != null)
 		{
 			try {
-				list.add(LangUtils.localize("tooltip.block") + ": " + new ItemStack(data.block, 1, data.meta).getDisplayName());
-				list.add(LangUtils.localize("tooltip.meta") + ": " + data.meta);
+				list.add(LangUtils.localize("tooltip.mekanism.block") + ": " + new ItemStack(data.block, 1, data.meta).getDisplayName());
+				list.add(LangUtils.localize("tooltip.mekanism.meta") + ": " + data.meta);
 	
 				if(data.tileTag != null)
 				{
-					list.add(LangUtils.localize("tooltip.tile") + ": " + data.tileTag.getString("id"));
+					list.add(LangUtils.localize("tooltip.mekanism.tile") + ": " + data.tileTag.getString("id"));
 				}
 			} catch(Exception e) {}
 		}

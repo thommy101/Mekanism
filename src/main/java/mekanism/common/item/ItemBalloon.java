@@ -114,7 +114,7 @@ public class ItemBalloon extends ItemMekanism implements IMetaItem
 			dyeName = EnumColor.DARK_GREY + color.getDyeName();
 		}
 
-		return dyeName + " " + LangUtils.localize("tooltip.balloon");
+		return dyeName + " " + LangUtils.localize("tooltip.mekanism.balloon");
 	}
 
 	@Override

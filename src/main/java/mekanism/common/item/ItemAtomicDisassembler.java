@@ -60,8 +60,8 @@ public class ItemAtomicDisassembler extends ItemEnergized
 	{
 		super.addInformation(itemstack, world, list, flag);
 
-		list.add(LangUtils.localize("tooltip.mode") + ": " + EnumColor.INDIGO + getModeName(itemstack));
-		list.add(LangUtils.localize("tooltip.efficiency") + ": " + EnumColor.INDIGO + getEfficiency(itemstack));
+		list.add(LangUtils.localize("tooltip.mekanism.mode") + ": " + EnumColor.INDIGO + getModeName(itemstack));
+		list.add(LangUtils.localize("tooltip.mekanism.efficiency") + ": " + EnumColor.INDIGO + getEfficiency(itemstack));
 	}
 
 	@Override
@@ -187,7 +187,7 @@ public class ItemAtomicDisassembler extends ItemEnergized
 			if(!world.isRemote)
 			{
 				toggleMode(itemstack);
-				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.modeToggle") + " " + EnumColor.INDIGO + getModeName(itemstack) + EnumColor.AQUA + " (" + getEfficiency(itemstack) + ")"));
+				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.modeToggle") + " " + EnumColor.INDIGO + getModeName(itemstack) + EnumColor.AQUA + " (" + getEfficiency(itemstack) + ")"));
 			}
 			
 			return new ActionResult<>(EnumActionResult.SUCCESS, itemstack);
@@ -321,15 +321,15 @@ public class ItemAtomicDisassembler extends ItemEnergized
 		switch(mode)
 		{
 			case 0:
-				return LangUtils.localize("tooltip.disassembler.normal");
+				return LangUtils.localize("tooltip.mekanism.disassembler.normal");
 			case 1:
-				return LangUtils.localize("tooltip.disassembler.slow");
+				return LangUtils.localize("tooltip.mekanism.disassembler.slow");
 			case 2:
-				return LangUtils.localize("tooltip.disassembler.fast");
+				return LangUtils.localize("tooltip.mekanism.disassembler.fast");
 			case 3:
-				return LangUtils.localize("tooltip.disassembler.vein");
+				return LangUtils.localize("tooltip.mekanism.disassembler.vein");
 			case 4:
-				return LangUtils.localize("tooltip.disassembler.off");
+				return LangUtils.localize("tooltip.mekanism.disassembler.off");
 		}
 
 		return null;

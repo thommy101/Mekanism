@@ -48,13 +48,13 @@ public class ItemScubaTank extends ItemArmor implements IGasItem
 
 		if(gasStack == null)
 		{
-			list.add(LangUtils.localize("tooltip.noGas") + ".");
+			list.add(LangUtils.localize("tooltip.mekanism.noGas") + ".");
 		}
 		else {
-			list.add(LangUtils.localize("tooltip.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
+			list.add(LangUtils.localize("tooltip.mekanism.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
 		}
 
-		list.add(EnumColor.GREY + LangUtils.localize("tooltip.flowing") + ": " + (getFlowing(itemstack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + getFlowingStr(itemstack));
+		list.add(EnumColor.GREY + LangUtils.localize("tooltip.mekanism.flowing") + ": " + (getFlowing(itemstack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + getFlowingStr(itemstack));
 	}
 	
 	@Override
@@ -172,7 +172,7 @@ public class ItemScubaTank extends ItemArmor implements IGasItem
 	{
 		boolean flowing = getFlowing(stack);
 		
-		return LangUtils.localize("tooltip." + (flowing ? "yes" : "no"));
+		return LangUtils.localize("tooltip.mekanism." + (flowing ? "yes" : "no"));
 	}
 
 	public void setFlowing(ItemStack stack, boolean flowing)

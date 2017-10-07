@@ -38,7 +38,7 @@ public class ItemSeismicReader extends ItemEnergized
 		{
 			if(!world.isRemote)
 			{
-				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.RED + LangUtils.localize("tooltip.seismicReader.needsEnergy")));
+				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.RED + LangUtils.localize("tooltip.mekanism.seismicReader.needsEnergy")));
 			}
 			
 			return new ActionResult<>(EnumActionResult.SUCCESS, itemstack);
@@ -47,7 +47,7 @@ public class ItemSeismicReader extends ItemEnergized
 		{
 			if(!world.isRemote)
 			{
-				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.RED + LangUtils.localize("tooltip.seismicReader.noVibrations")));
+				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.RED + LangUtils.localize("tooltip.mekanism.seismicReader.noVibrations")));
 			}
 			
 			return new ActionResult<>(EnumActionResult.SUCCESS, itemstack);

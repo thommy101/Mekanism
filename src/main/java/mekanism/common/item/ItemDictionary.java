@@ -45,7 +45,7 @@ public class ItemDictionary extends ItemMekanism
 
 					if(!names.isEmpty())
 					{
-						player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.keysFound") + ":"));
+						player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.keysFound") + ":"));
 
 						for(String name : names)
 						{
@@ -53,7 +53,7 @@ public class ItemDictionary extends ItemMekanism
 						}
 					}
 					else {
-						player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.noKey") + "."));
+						player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism]" + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.noKey") + "."));
 					}
 				}
 

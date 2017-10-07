@@ -39,18 +39,18 @@ public class ItemHohlraum extends ItemMekanism implements IGasItem
 
 		if(gasStack == null)
 		{
-			list.add(LangUtils.localize("tooltip.noGas") + ".");
-			list.add(EnumColor.DARK_RED + LangUtils.localize("tooltip.insufficientFuel"));
+			list.add(LangUtils.localize("tooltip.mekanism.noGas") + ".");
+			list.add(EnumColor.DARK_RED + LangUtils.localize("tooltip.mekanism.insufficientFuel"));
 		}
 		else {
-			list.add(LangUtils.localize("tooltip.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
+			list.add(LangUtils.localize("tooltip.mekanism.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
 			
 			if(gasStack.amount == getMaxGas(itemstack))
 			{
-				list.add(EnumColor.DARK_GREEN + LangUtils.localize("tooltip.readyForReaction") + "!");
+				list.add(EnumColor.DARK_GREEN + LangUtils.localize("tooltip.mekanism.readyForReaction") + "!");
 			}
 			else {
-				list.add(EnumColor.DARK_RED + LangUtils.localize("tooltip.insufficientFuel"));
+				list.add(EnumColor.DARK_RED + LangUtils.localize("tooltip.mekanism.insufficientFuel"));
 			}
 		}
 	}

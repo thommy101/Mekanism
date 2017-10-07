@@ -210,7 +210,7 @@ public class BlockStateBasic extends ExtendedBlockState
 
 		public String getDescription()
 		{
-			return LangUtils.localize("tooltip." + name);
+			return LangUtils.localize("tooltip.mekanism." + name);
 		}
 
 		public ItemStack getStack(int amount)

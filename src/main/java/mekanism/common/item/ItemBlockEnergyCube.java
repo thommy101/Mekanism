@@ -80,12 +80,12 @@ public class ItemBlockEnergyCube extends ItemBlock implements IEnergizedItem, IS
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag)
 	{
-		list.add(EnumColor.BRIGHT_GREEN + LangUtils.localize("tooltip.storedEnergy") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(getEnergy(itemstack)));
-		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(EnergyCubeTier.values()[getBaseTier(itemstack).ordinal()].maxEnergy));
+		list.add(EnumColor.BRIGHT_GREEN + LangUtils.localize("tooltip.mekanism.storedEnergy") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(getEnergy(itemstack)));
+		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(EnergyCubeTier.values()[getBaseTier(itemstack).ordinal()].maxEnergy));
 		
 		if(!MekKeyHandler.getIsKeyPressed(MekanismKeyHandler.sneakKey))
 		{
-			list.add(LangUtils.localize("tooltip.hold") + " " + EnumColor.AQUA + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.forDetails") + ".");
+			list.add(LangUtils.localize("tooltip.mekanism.hold") + " " + EnumColor.AQUA + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.forDetails") + ".");
 		}
 		else {
 			if(hasSecurity(itemstack))
@@ -99,7 +99,7 @@ public class ItemBlockEnergyCube extends ItemBlock implements IEnergizedItem, IS
 				}
 			}
 			
-			list.add(EnumColor.AQUA + LangUtils.localize("tooltip.inventory") + ": " + EnumColor.GREY + LangUtils.transYesNo(getInventory(itemstack) != null && getInventory(itemstack).tagCount() != 0));
+			list.add(EnumColor.AQUA + LangUtils.localize("tooltip.mekanism.inventory") + ": " + EnumColor.GREY + LangUtils.transYesNo(getInventory(itemstack) != null && getInventory(itemstack).tagCount() != 0));
 		}
 	}
 

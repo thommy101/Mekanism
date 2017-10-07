@@ -516,7 +516,7 @@ public class TileEntityElectricPump extends TileEntityElectricBlock implements I
 	{
 		reset();
 
-		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.configurator.pumpReset")));
+		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("tooltip.mekanism.configurator.pumpReset")));
 
 		return EnumActionResult.SUCCESS;
 	}

@@ -145,11 +145,11 @@ public class ItemBlockGasTank extends ItemBlock implements IGasItem, ISustainedI
 		}
 		
 		int cap = GasTankTier.values()[getBaseTier(itemstack).ordinal()].storage;
-		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : cap));
+		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : cap));
 
 		if(!MekKeyHandler.getIsKeyPressed(MekanismKeyHandler.sneakKey))
 		{
-			list.add(LangUtils.localize("tooltip.hold") + " " + EnumColor.AQUA + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.forDetails") + ".");
+			list.add(LangUtils.localize("tooltip.mekanism.hold") + " " + EnumColor.AQUA + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.forDetails") + ".");
 		}
 		else {
 			if(hasSecurity(itemstack))
@@ -163,7 +163,7 @@ public class ItemBlockGasTank extends ItemBlock implements IGasItem, ISustainedI
 				}
 			}
 			
-			list.add(EnumColor.AQUA + LangUtils.localize("tooltip.inventory") + ": " + EnumColor.GREY + LangUtils.transYesNo(getInventory(itemstack) != null && getInventory(itemstack).tagCount() != 0));
+			list.add(EnumColor.AQUA + LangUtils.localize("tooltip.mekanism.inventory") + ": " + EnumColor.GREY + LangUtils.transYesNo(getInventory(itemstack) != null && getInventory(itemstack).tagCount() != 0));
 		}
 	}
 

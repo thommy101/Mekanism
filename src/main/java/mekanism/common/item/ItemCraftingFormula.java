@@ -71,7 +71,7 @@ public class ItemCraftingFormula extends ItemMekanism
 			}
 		}
 		
-		list.add(EnumColor.GREY + LangUtils.localize("tooltip.ingredients") + ":");
+		list.add(EnumColor.GREY + LangUtils.localize("tooltip.mekanism.ingredients") + ":");
 		
 		for(ItemStack stack : stacks)
 		{
@@ -114,8 +114,8 @@ public class ItemCraftingFormula extends ItemMekanism
 			return super.getItemStackDisplayName(stack);
 		}
 		
-		return super.getItemStackDisplayName(stack) + " " + (isInvalid(stack) ? EnumColor.DARK_RED + "(" + LangUtils.localize("tooltip.invalid")
-				: EnumColor.DARK_GREEN + "(" + LangUtils.localize("tooltip.encoded")) + ")";
+		return super.getItemStackDisplayName(stack) + " " + (isInvalid(stack) ? EnumColor.DARK_RED + "(" + LangUtils.localize("tooltip.mekanism.invalid")
+				: EnumColor.DARK_GREEN + "(" + LangUtils.localize("tooltip.mekanism.encoded")) + ")";
 	}
 	
 	public boolean isInvalid(ItemStack stack)

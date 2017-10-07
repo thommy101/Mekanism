@@ -224,13 +224,13 @@ public class ItemConfigurator extends ItemEnergized implements IMekWrench, ITool
 	
 	public String getViewModeText(TransmissionType type)
 	{
-		String base = LangUtils.localize("tooltip.configurator.viewMode");
+		String base = LangUtils.localize("tooltip.mekanism.configurator.viewMode");
 		return String.format(base, type.localize().toLowerCase());
 	}
 	
 	public String getToggleModeText(TransmissionType type)
 	{
-		String base = LangUtils.localize("tooltip.configurator.toggleMode");
+		String base = LangUtils.localize("tooltip.mekanism.configurator.toggleMode");
 		return String.format(base, type.localize());
 	}
 
@@ -309,7 +309,7 @@ public class ItemConfigurator extends ItemEnergized implements IMekWrench, ITool
 		
 		public String getName()
 		{
-			return LangUtils.localize("tooltip.configurator." + name) + " " + info;
+			return LangUtils.localize("tooltip.mekanism.configurator." + name) + " " + info;
 		}
 		
 		public EnumColor getColor()

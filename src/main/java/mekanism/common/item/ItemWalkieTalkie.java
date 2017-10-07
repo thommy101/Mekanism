@@ -41,7 +41,7 @@ public class ItemWalkieTalkie extends ItemMekanism implements IItemNetwork
 		super.addInformation(itemstack, world, list, flag);
 
 		list.add((getOn(itemstack) ? EnumColor.DARK_GREEN : EnumColor.DARK_RED) + LangUtils.localize("gui.mekanism." + (getOn(itemstack) ? "on" : "off")));
-		list.add(EnumColor.DARK_AQUA + LangUtils.localize("tooltip.channel") + ": " + EnumColor.GREY + getChannel(itemstack));
+		list.add(EnumColor.DARK_AQUA + LangUtils.localize("tooltip.mekanism.channel") + ": " + EnumColor.GREY + getChannel(itemstack));
 	}
 	
 	public static ModelResourceLocation getModel(int channel)

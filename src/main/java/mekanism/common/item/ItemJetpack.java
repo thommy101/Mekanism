@@ -70,13 +70,13 @@ public class ItemJetpack extends ItemArmor implements IGasItem, ISpecialArmor
 
 		if(gasStack == null)
 		{
-			list.add(LangUtils.localize("tooltip.noGas") + ".");
+			list.add(LangUtils.localize("tooltip.mekanism.noGas") + ".");
 		}
 		else {
-			list.add(LangUtils.localize("tooltip.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
+			list.add(LangUtils.localize("tooltip.mekanism.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
 		}
 
-		list.add(EnumColor.GREY + LangUtils.localize("tooltip.mode") + ": " + EnumColor.GREY + getMode(itemstack).getName());
+		list.add(EnumColor.GREY + LangUtils.localize("tooltip.mekanism.mode") + ": " + EnumColor.GREY + getMode(itemstack).getName());
 	}
 
 	@Override
@@ -226,9 +226,9 @@ public class ItemJetpack extends ItemArmor implements IGasItem, ISpecialArmor
 
 	public enum JetpackMode
 	{
-		NORMAL("tooltip.jetpack.regular", EnumColor.DARK_GREEN),
-		HOVER("tooltip.jetpack.hover", EnumColor.DARK_AQUA),
-		DISABLED("tooltip.jetpack.disabled", EnumColor.DARK_RED);
+		NORMAL("tooltip.mekanism.jetpack.regular", EnumColor.DARK_GREEN),
+		HOVER("tooltip.mekanism.jetpack.hover", EnumColor.DARK_AQUA),
+		DISABLED("tooltip.mekanism.jetpack.disabled", EnumColor.DARK_RED);
 
 		private String unlocalized;
 		private EnumColor color;

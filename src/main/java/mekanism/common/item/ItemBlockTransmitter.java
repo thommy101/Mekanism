@@ -80,31 +80,31 @@ public class ItemBlockTransmitter extends ItemBlock implements ITierItem
 			
 			if(transmission == TransmissionType.ENERGY)
 			{
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(Tier.CableTier.get(tier).cableCapacity) + "/t");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(Tier.CableTier.get(tier).cableCapacity) + "/t");
 			}
 			else if(transmission == TransmissionType.FLUID)
 			{
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + Tier.PipeTier.get(tier).pipeCapacity + "mB/t");
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.pumpRate") + ": " + EnumColor.GREY + Tier.PipeTier.get(tier).pipePullAmount + "mB/t");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + Tier.PipeTier.get(tier).pipeCapacity + "mB/t");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.pumpRate") + ": " + EnumColor.GREY + Tier.PipeTier.get(tier).pipePullAmount + "mB/t");
 			}
 			else if(transmission == TransmissionType.GAS)
 			{
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + Tier.TubeTier.get(tier).tubeCapacity + "mB/t");
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.pumpRate") + ": " + EnumColor.GREY + Tier.TubeTier.get(tier).tubePullAmount + "mB/t");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + Tier.TubeTier.get(tier).tubeCapacity + "mB/t");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.pumpRate") + ": " + EnumColor.GREY + Tier.TubeTier.get(tier).tubePullAmount + "mB/t");
 			}
 			else if(transmission == TransmissionType.ITEM)
 			{
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.speed") + ": " + EnumColor.GREY + (Tier.TransporterTier.get(tier).speed/(100/20)) + " m/s");
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.pumpRate") + ": " + EnumColor.GREY + Tier.TransporterTier.get(tier).pullAmount*2 + "/s");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.speed") + ": " + EnumColor.GREY + (Tier.TransporterTier.get(tier).speed/(100/20)) + " m/s");
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.pumpRate") + ": " + EnumColor.GREY + Tier.TransporterTier.get(tier).pullAmount*2 + "/s");
 			}
 			else if(transmission == TransmissionType.HEAT)
 			{
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.conduction") + ": " + EnumColor.GREY + Tier.ConductorTier.get(tier).inverseConduction);
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.insulation") + ": " + EnumColor.GREY + Tier.ConductorTier.get(tier).inverseConductionInsulation);
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.heatCapacity") + ": " + EnumColor.GREY + Tier.ConductorTier.get(tier).inverseHeatCapacity);
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.conduction") + ": " + EnumColor.GREY + Tier.ConductorTier.get(tier).inverseConduction);
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.insulation") + ": " + EnumColor.GREY + Tier.ConductorTier.get(tier).inverseConductionInsulation);
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.heatCapacity") + ": " + EnumColor.GREY + Tier.ConductorTier.get(tier).inverseHeatCapacity);
 			}
 
-			list.add(LangUtils.localize("tooltip.hold") + " " + EnumColor.AQUA + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.forDetails"));
+			list.add(LangUtils.localize("tooltip.mekanism.hold") + " " + EnumColor.AQUA + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.forDetails"));
 		}
 		else {
 			TransmitterType type = TransmitterType.values()[itemstack.getItemDamage()];
@@ -113,7 +113,7 @@ public class ItemBlockTransmitter extends ItemBlock implements ITierItem
 			{
 				case UNIVERSAL_CABLE:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
 					list.add("- " + EnumColor.PURPLE + "RF " + EnumColor.GREY + "(ThermalExpansion)");
 					list.add("- " + EnumColor.PURPLE + "EU " + EnumColor.GREY +  "(IndustrialCraft)");
 					list.add("- " + EnumColor.PURPLE + "Joules " + EnumColor.GREY +  "(Mekanism)");
@@ -121,43 +121,43 @@ public class ItemBlockTransmitter extends ItemBlock implements ITierItem
 				}
 				case MECHANICAL_PIPE:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.fluids") + " " + EnumColor.GREY + "(MinecraftForge)");
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.fluids") + " " + EnumColor.GREY + "(MinecraftForge)");
 					break;
 				}
 				case PRESSURIZED_TUBE:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.gasses") + " (Mekanism)");
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.gasses") + " (Mekanism)");
 					break;
 				}
 				case LOGISTICAL_TRANSPORTER:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.items") + " (" + LangUtils.localize("tooltip.universal") + ")");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.blocks") + " (" + LangUtils.localize("tooltip.universal") + ")");
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.items") + " (" + LangUtils.localize("tooltip.mekanism.universal") + ")");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.blocks") + " (" + LangUtils.localize("tooltip.mekanism.universal") + ")");
 					break;
 				}
 				case RESTRICTIVE_TRANSPORTER:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.items") + " (" + LangUtils.localize("tooltip.universal") + ")");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.blocks") + " (" + LangUtils.localize("tooltip.universal") + ")");
-					list.add("- " + EnumColor.DARK_RED + LangUtils.localize("tooltip.restrictiveDesc"));
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.items") + " (" + LangUtils.localize("tooltip.mekanism.universal") + ")");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.blocks") + " (" + LangUtils.localize("tooltip.mekanism.universal") + ")");
+					list.add("- " + EnumColor.DARK_RED + LangUtils.localize("tooltip.mekanism.restrictiveDesc"));
 					break;
 				}
 				case DIVERSION_TRANSPORTER:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.items") + " (" + LangUtils.localize("tooltip.universal") + ")");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.blocks") + " (" + LangUtils.localize("tooltip.universal") + ")");
-					list.add("- " + EnumColor.DARK_RED + LangUtils.localize("tooltip.diversionDesc"));
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.items") + " (" + LangUtils.localize("tooltip.mekanism.universal") + ")");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.blocks") + " (" + LangUtils.localize("tooltip.mekanism.universal") + ")");
+					list.add("- " + EnumColor.DARK_RED + LangUtils.localize("tooltip.mekanism.diversionDesc"));
 					break;
 				}
 				case THERMODYNAMIC_CONDUCTOR:
 				{
-					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.capableTrans") + ":");
-					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.heat") + " (Mekanism)");
+					list.add(EnumColor.DARK_GREY + LangUtils.localize("tooltip.mekanism.capableTrans") + ":");
+					list.add("- " + EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.heat") + " (Mekanism)");
 					break;
 				}
 			}

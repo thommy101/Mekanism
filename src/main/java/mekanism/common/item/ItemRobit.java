@@ -35,8 +35,8 @@ public class ItemRobit extends ItemEnergized implements ISustainedInventory
 	{
 		super.addInformation(itemstack, world, list, flag);
 
-		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.name") + ": " + EnumColor.GREY + getName(itemstack));
-		list.add(EnumColor.AQUA + LangUtils.localize("tooltip.inventory") + ": " + EnumColor.GREY + (getInventory(itemstack) != null && getInventory(itemstack).tagCount() != 0));
+		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.name") + ": " + EnumColor.GREY + getName(itemstack));
+		list.add(EnumColor.AQUA + LangUtils.localize("tooltip.mekanism.inventory") + ": " + EnumColor.GREY + (getInventory(itemstack) != null && getInventory(itemstack).tagCount() != 0));
 	}
 
 	@Override

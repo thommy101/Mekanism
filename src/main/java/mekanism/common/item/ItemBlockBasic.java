@@ -157,34 +157,34 @@ public class ItemBlockBasic extends ItemBlock implements IEnergizedItem, ITierIt
 					{
 						list.add(EnumColor.BRIGHT_GREEN + inv.getItemType().getDisplayName());
 						String amountStr = inv.getItemCount() == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : "" + inv.getItemCount();
-						list.add(EnumColor.PURPLE + LangUtils.localize("tooltip.itemAmount") + ": " + EnumColor.GREY + amountStr);
+						list.add(EnumColor.PURPLE + LangUtils.localize("tooltip.mekanism.itemAmount") + ": " + EnumColor.GREY + amountStr);
 					}
 					else {
 						list.add(EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.empty"));
 					}
 					
 					int cap = BinTier.values()[getBaseTier(itemstack).ordinal()].storage;
-					list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : cap) + " " + LangUtils.localize("transmission.Items"));
+					list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : cap) + " " + LangUtils.localize("transmission.Items"));
 				}
 				else if(type == BasicBlockType.INDUCTION_CELL)
 				{
 					InductionCellTier tier = InductionCellTier.values()[getBaseTier(itemstack).ordinal()];
 					
-					list.add(tier.getBaseTier().getColor() + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(tier.maxEnergy));
+					list.add(tier.getBaseTier().getColor() + LangUtils.localize("tooltip.mekanism.capacity") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(tier.maxEnergy));
 				}
 				else if(type == BasicBlockType.INDUCTION_PROVIDER)
 				{
 					InductionProviderTier tier = InductionProviderTier.values()[getBaseTier(itemstack).ordinal()];
 					
-					list.add(tier.getBaseTier().getColor() + LangUtils.localize("tooltip.outputRate") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(tier.output));
+					list.add(tier.getBaseTier().getColor() + LangUtils.localize("tooltip.mekanism.outputRate") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(tier.output));
 				}
 				
 				if(getMaxEnergy(itemstack) > 0)
 				{
-					list.add(EnumColor.BRIGHT_GREEN + LangUtils.localize("tooltip.storedEnergy") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(getEnergy(itemstack)));
+					list.add(EnumColor.BRIGHT_GREEN + LangUtils.localize("tooltip.mekanism.storedEnergy") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(getEnergy(itemstack)));
 				}
 				
-				list.add(LangUtils.localize("tooltip.hold") + " " + EnumColor.INDIGO + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.forDetails") + ".");
+				list.add(LangUtils.localize("tooltip.mekanism.hold") + " " + EnumColor.INDIGO + GameSettings.getKeyDisplayString(MekanismKeyHandler.sneakKey.getKeyCode()) + EnumColor.GREY + " " + LangUtils.localize("tooltip.mekanism.forDetails") + ".");
 			}
 			else {
 				list.addAll(MekanismUtils.splitTooltip(type.getDescription(), itemstack));

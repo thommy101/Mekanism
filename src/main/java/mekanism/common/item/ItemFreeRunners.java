@@ -86,8 +86,8 @@ public class ItemFreeRunners extends ItemArmor implements IEnergizedItem, ISpeci
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag)
 	{
-		list.add(EnumColor.AQUA + LangUtils.localize("tooltip.storedEnergy") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(getEnergy(itemstack), getMaxEnergy(itemstack)));
-		list.add(EnumColor.GREY + LangUtils.localize("tooltip.mode") + ": " + EnumColor.GREY + getMode(itemstack).getName());
+		list.add(EnumColor.AQUA + LangUtils.localize("tooltip.mekanism.storedEnergy") + ": " + EnumColor.GREY + MekanismUtils.getEnergyDisplay(getEnergy(itemstack), getMaxEnergy(itemstack)));
+		list.add(EnumColor.GREY + LangUtils.localize("tooltip.mekanism.mode") + ": " + EnumColor.GREY + getMode(itemstack).getName());
 	}
 
 	public ItemStack getUnchargedItem()
@@ -247,8 +247,8 @@ public class ItemFreeRunners extends ItemArmor implements IEnergizedItem, ISpeci
 
 	public enum FreeRunnerMode
 	{
-		NORMAL("tooltip.freerunner.regular", EnumColor.DARK_GREEN),
-		DISABLED("tooltip.freerunner.disabled", EnumColor.DARK_RED);
+		NORMAL("tooltip.mekanism.freerunner.regular", EnumColor.DARK_GREEN),
+		DISABLED("tooltip.mekanism.freerunner.disabled", EnumColor.DARK_RED);
 
 		private String unlocalized;
 		private EnumColor color;

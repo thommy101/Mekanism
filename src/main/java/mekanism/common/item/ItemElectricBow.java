@@ -44,7 +44,7 @@ public class ItemElectricBow extends ItemEnergized implements IItemNetwork
 	{
 		super.addInformation(itemstack, world, list, flag);
 		
-		list.add(EnumColor.PINK + LangUtils.localize("tooltip.fireMode") + ": " + EnumColor.GREY + LangUtils.transOnOff(getFireState(itemstack)));
+		list.add(EnumColor.PINK + LangUtils.localize("tooltip.mekanism.fireMode") + ": " + EnumColor.GREY + LangUtils.transOnOff(getFireState(itemstack)));
 	}
 
 	@Override

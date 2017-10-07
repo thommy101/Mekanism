@@ -38,13 +38,13 @@ public class ItemFlamethrower extends ItemMekanism implements IGasItem
 
 		if(gasStack == null)
 		{
-			list.add(LangUtils.localize("tooltip.noGas") + ".");
+			list.add(LangUtils.localize("tooltip.mekanism.noGas") + ".");
 		}
 		else {
-			list.add(LangUtils.localize("tooltip.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
+			list.add(LangUtils.localize("tooltip.mekanism.stored") + " " + gasStack.getGas().getLocalizedName() + ": " + gasStack.amount);
 		}
 
-        list.add(EnumColor.GREY + LangUtils.localize("tooltip.mode") + ": " + EnumColor.GREY + getMode(itemstack).getName());
+        list.add(EnumColor.GREY + LangUtils.localize("tooltip.mekanism.mode") + ": " + EnumColor.GREY + getMode(itemstack).getName());
 	}
 	
 	public void useGas(ItemStack stack)
@@ -185,9 +185,9 @@ public class ItemFlamethrower extends ItemMekanism implements IGasItem
 
     public enum FlamethrowerMode
     {
-        COMBAT("tooltip.flamethrower.combat", EnumColor.YELLOW),
-        HEAT("tooltip.flamethrower.heat", EnumColor.ORANGE),
-        INFERNO("tooltip.flamethrower.inferno", EnumColor.DARK_RED);
+        COMBAT("tooltip.mekanism.flamethrower.combat", EnumColor.YELLOW),
+        HEAT("tooltip.mekanism.flamethrower.heat", EnumColor.ORANGE),
+        INFERNO("tooltip.mekanism.flamethrower.inferno", EnumColor.DARK_RED);
 
         private String unlocalized;
         private EnumColor color;
