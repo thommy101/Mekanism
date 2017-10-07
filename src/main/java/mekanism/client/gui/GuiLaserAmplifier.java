@@ -64,7 +64,7 @@ public class GuiLaserAmplifier extends GuiMekanism
 			@Override
 			public String getText(double level)
 			{
-				return LangUtils.localize("gui.storing") + ": " + MekanismUtils.getEnergyDisplay(level, tileEntity.getMaxEnergy());
+				return LangUtils.localize("gui.mekanism.storing") + ": " + MekanismUtils.getEnergyDisplay(level, tileEntity.getMaxEnergy());
 			}
 		}, Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png"), 6, 10));
 		guiElements.add(new GuiSecurityTab(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png")));
@@ -81,9 +81,9 @@ public class GuiLaserAmplifier extends GuiMekanism
 		fontRenderer.drawString(tileEntity.getName(), 55, 6, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 2, 0x404040);
 
-		fontRenderer.drawString(tileEntity.time > 0 ? LangUtils.localize("gui.delay") + ": " + tileEntity.time + "t" : LangUtils.localize("gui.noDelay"), 26, 30, 0x404040);
-		fontRenderer.drawString(LangUtils.localize("gui.min") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.minThreshold), 26, 45, 0x404040);
-		fontRenderer.drawString(LangUtils.localize("gui.max") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.maxThreshold), 26, 60, 0x404040);
+		fontRenderer.drawString(tileEntity.time > 0 ? LangUtils.localize("gui.mekanism.delay") + ": " + tileEntity.time + "t" : LangUtils.localize("gui.mekanism.noDelay"), 26, 30, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.min") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.minThreshold), 26, 45, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.max") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.maxThreshold), 26, 60, 0x404040);
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}

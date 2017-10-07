@@ -42,7 +42,7 @@ public class ItemConfigurationCard extends ItemMekanism
 	{
 		super.addInformation(itemstack, world, list, flag);
 		
-		list.add(EnumColor.GREY + LangUtils.localize("gui.data") + ": " + EnumColor.INDIGO + LangUtils.localize(getDataType(itemstack)));
+		list.add(EnumColor.GREY + LangUtils.localize("gui.mekanism.data") + ": " + EnumColor.INDIGO + LangUtils.localize(getDataType(itemstack)));
 	}
 
 	@Override
@@ -191,6 +191,6 @@ public class ItemConfigurationCard extends ItemMekanism
 			return data.getString("dataType");
 		}
 		
-		return "gui.none";
+		return "gui.mekanism.none";
 	}
 }

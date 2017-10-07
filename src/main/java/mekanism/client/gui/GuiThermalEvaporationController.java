@@ -34,7 +34,7 @@ public class GuiThermalEvaporationController extends GuiMekanism
 		{
             TemperatureUnit unit = TemperatureUnit.values()[general.tempUnit.ordinal()];
             String environment = UnitDisplayUtils.getDisplayShort(tileEntity.totalLoss*unit.intervalSize, false, unit);
-            return ListUtils.asList(LangUtils.localize("gui.dissipated") + ": " + environment + "/t");
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.dissipated") + ": " + environment + "/t");
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiThermalEvaporationController.png")));
 	}
 
@@ -48,18 +48,18 @@ public class GuiThermalEvaporationController extends GuiMekanism
 		fontRenderer.drawString(tileEntity.getName(), (xSize/2)-(fontRenderer.getStringWidth(tileEntity.getName())/2), 4, 0x404040);
 
 		fontRenderer.drawString(getStruct(), 50, 21, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.height") + ": " + tileEntity.height, 50, 30, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.temp") + ": " + getTemp(), 50, 39, 0x00CD00);
-		renderScaledText(LangUtils.localize("gui.production") + ": " + Math.round(tileEntity.lastGain*100D)/100D + " mB/t", 50, 48, 0x00CD00, 76);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.height") + ": " + tileEntity.height, 50, 30, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.temp") + ": " + getTemp(), 50, 39, 0x00CD00);
+		renderScaledText(LangUtils.localize("gui.mekanism.production") + ": " + Math.round(tileEntity.lastGain*100D)/100D + " mB/t", 50, 48, 0x00CD00, 76);
 
 		if(xAxis >= 7 && xAxis <= 23 && yAxis >= 14 && yAxis <= 72)
 		{
-			drawHoveringText(tileEntity.inputTank.getFluid() != null ? LangUtils.localizeFluidStack(tileEntity.inputTank.getFluid()) + ": " + tileEntity.inputTank.getFluidAmount() : LangUtils.localize("gui.empty"), xAxis, yAxis);
+			drawHoveringText(tileEntity.inputTank.getFluid() != null ? LangUtils.localizeFluidStack(tileEntity.inputTank.getFluid()) + ": " + tileEntity.inputTank.getFluidAmount() : LangUtils.localize("gui.mekanism.empty"), xAxis, yAxis);
 		}
 
 		if(xAxis >= 153 && xAxis <= 169 && yAxis >= 14 && yAxis <= 72)
 		{
-			drawHoveringText(tileEntity.outputTank.getFluid() != null ? LangUtils.localizeFluidStack(tileEntity.outputTank.getFluid()) + ": " + tileEntity.outputTank.getFluidAmount() : LangUtils.localize("gui.empty"), xAxis, yAxis);
+			drawHoveringText(tileEntity.outputTank.getFluid() != null ? LangUtils.localizeFluidStack(tileEntity.outputTank.getFluid()) + ": " + tileEntity.outputTank.getFluidAmount() : LangUtils.localize("gui.mekanism.empty"), xAxis, yAxis);
 		}
 
 		if(xAxis >= 49 && xAxis <= 127 && yAxis >= 64 && yAxis <= 72)
@@ -74,15 +74,15 @@ public class GuiThermalEvaporationController extends GuiMekanism
 	{
 		if(tileEntity.structured)
 		{
-			return LangUtils.localize("gui.formed");
+			return LangUtils.localize("gui.mekanism.formed");
 		}
 		else {
 			if(tileEntity.controllerConflict)
 			{
-				return LangUtils.localize("gui.conflict");
+				return LangUtils.localize("gui.mekanism.conflict");
 			}
 			else {
-				return LangUtils.localize("gui.incomplete");
+				return LangUtils.localize("gui.mekanism.incomplete");
 			}
 		}
 	}

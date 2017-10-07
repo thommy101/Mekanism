@@ -99,9 +99,9 @@ public class GuiSecurityTab extends GuiElement
 		if(xAxis >= 179 && xAxis <= 197 && yAxis >= 36 && yAxis <= 54)
 		{
 			String securityDisplay = isItem ? SecurityUtils.getSecurityDisplay(getItem(), Side.CLIENT) : SecurityUtils.getSecurityDisplay(tileEntity, Side.CLIENT);
-			String securityText = EnumColor.GREY + LangUtils.localize("gui.security") + ": " + securityDisplay;
+			String securityText = EnumColor.GREY + LangUtils.localize("gui.mekanism.security") + ": " + securityDisplay;
 			String ownerText = SecurityUtils.getOwnerDisplay(mc.player, getOwnerUsername());
-			String overrideText = EnumColor.RED + "(" + LangUtils.localize("gui.overridden") + ")";
+			String overrideText = EnumColor.RED + "(" + LangUtils.localize("gui.mekanism.overridden") + ")";
 			
 			if(isItem ? SecurityUtils.isOverridden(getItem(), Side.CLIENT) : SecurityUtils.isOverridden(tileEntity, Side.CLIENT))
 			{

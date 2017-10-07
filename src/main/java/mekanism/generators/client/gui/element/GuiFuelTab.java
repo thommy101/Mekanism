@@ -58,7 +58,7 @@ public class GuiFuelTab extends GuiElement
 
 		if(xAxis >= -21 && xAxis <= -3 && yAxis >= 38 && yAxis <= 56)
 		{
-			displayTooltip(LangUtils.localize("gui.fuel"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.fuel"), xAxis, yAxis);
 		}
 
 		mc.renderEngine.bindTexture(defaultLocation);

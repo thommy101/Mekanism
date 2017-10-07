@@ -415,7 +415,7 @@ public class TileEntityTurbineValve extends TileEntityTurbineCasing implements I
 	@Override
 	public String getName()
 	{
-		return LangUtils.localize("gui.industrialTurbine");
+		return LangUtils.localize("gui.mekanism.industrialTurbine");
 	}
 	
 	private static final String[] methods = new String[] {"isFormed", "getSteam", "getFlowRate", "getMaxFlow", "getSteamInput"};

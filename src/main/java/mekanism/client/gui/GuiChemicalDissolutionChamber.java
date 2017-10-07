@@ -40,7 +40,7 @@ public class GuiChemicalDissolutionChamber extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String multiplier = MekanismUtils.getEnergyDisplay(tileEntity.energyPerTick);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + multiplier + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + multiplier + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalDissolutionChamber.png")));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.injectTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalDissolutionChamber.png"), 5, 4));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.outputTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalDissolutionChamber.png"), 133, 13));
@@ -66,7 +66,7 @@ public class GuiChemicalDissolutionChamber extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		fontRenderer.drawString(LangUtils.localize("gui.chemicalDissolutionChamber.short"), 35, 4, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.chemicalDissolutionChamber.short"), 35, 4, 0x404040);
 
 		if(xAxis >= 116 && xAxis <= 168 && yAxis >= 76 && yAxis <= 80)
 		{

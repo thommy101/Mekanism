@@ -86,8 +86,8 @@ public class GuiTurbineTab extends GuiElement
 	
 	public enum TurbineTab
 	{
-		MAIN("GuiGasesTab.png", 6, "gui.main"),
-		STAT("GuiStatsTab.png", 7, "gui.stats");
+		MAIN("GuiGasesTab.png", 6, "gui.mekanism.main"),
+		STAT("GuiStatsTab.png", 7, "gui.mekanism.stats");
 		
 		private String path;
 		private int guiId;

@@ -1104,7 +1104,7 @@ public final class MekanismUtils
 	{
 		if(energy == Double.MAX_VALUE)
 		{
-			return LangUtils.localize("gui.infinite");
+			return LangUtils.localize("gui.mekanism.infinite");
 		}
 		
 		switch(general.energyUnit)
@@ -1126,7 +1126,7 @@ public final class MekanismUtils
 	{
 		if(energy == Double.MAX_VALUE)
 		{
-			return LangUtils.localize("gui.infinite");
+			return LangUtils.localize("gui.mekanism.infinite");
 		}
 
 		String energyString = getEnergyDisplay(energy);

@@ -59,7 +59,7 @@ public class GuiTOreDictFilter extends GuiMekanism
 
 	public List<ItemStack> iterStacks;
 
-	public String status = EnumColor.DARK_GREEN + LangUtils.localize("gui.allOK");
+	public String status = EnumColor.DARK_GREEN + LangUtils.localize("gui.mekanism.allOK");
 
 	public GuiTOreDictFilter(EntityPlayer player, TileEntityLogisticalSorter tentity, int index)
 	{
@@ -89,8 +89,8 @@ public class GuiTOreDictFilter extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 
 		buttonList.clear();
-		buttonList.add(new GuiButton(0, guiWidth + 47, guiHeight + 62, 60, 20, LangUtils.localize("gui.save")));
-		buttonList.add(new GuiButton(1, guiWidth + 109, guiHeight + 62, 60, 20, LangUtils.localize("gui.delete")));
+		buttonList.add(new GuiButton(0, guiWidth + 47, guiHeight + 62, 60, 20, LangUtils.localize("gui.mekanism.save")));
+		buttonList.add(new GuiButton(1, guiWidth + 109, guiHeight + 62, 60, 20, LangUtils.localize("gui.mekanism.delete")));
 
 		if(isNew)
 		{
@@ -147,7 +147,7 @@ public class GuiTOreDictFilter extends GuiMekanism
 				Mekanism.packetHandler.sendToServer(new LogisticalSorterGuiMessage(SorterGuiPacket.SERVER, Coord4D.get(tileEntity), 0, 0, 0));
 			}
 			else {
-				status = EnumColor.DARK_RED + LangUtils.localize("gui.oredictFilter.noKey");
+				status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.oredictFilter.noKey");
 				ticker = 20;
 			}
 		}
@@ -164,10 +164,10 @@ public class GuiTOreDictFilter extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		fontRenderer.drawString((isNew ? LangUtils.localize("gui.new") : LangUtils.localize("gui.edit")) + " " + LangUtils.localize("gui.oredictFilter"), 43, 6, 0x404040);
-		fontRenderer.drawString(LangUtils.localize("gui.status") + ": " + status, 35, 20, 0x00CD00);
-		renderScaledText(LangUtils.localize("gui.key") + ": " + filter.oreDictName, 35, 32, 0x00CD00, 107);
-		fontRenderer.drawString(LangUtils.localize("gui." + (filter.allowDefault ? "on" : "off")), 24, 66, 0x404040);
+		fontRenderer.drawString((isNew ? LangUtils.localize("gui.mekanism.new") : LangUtils.localize("gui.mekanism.edit")) + " " + LangUtils.localize("gui.mekanism.oredictFilter"), 43, 6, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.status") + ": " + status, 35, 20, 0x00CD00);
+		renderScaledText(LangUtils.localize("gui.mekanism.key") + ": " + filter.oreDictName, 35, 32, 0x00CD00, 107);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism." + (filter.allowDefault ? "on" : "off")), 24, 66, 0x404040);
 
 		if(!renderStack.isEmpty())
 		{
@@ -196,7 +196,7 @@ public class GuiTOreDictFilter extends GuiMekanism
 		
 		if(xAxis >= 11 && xAxis <= 22 && yAxis >= 64 && yAxis <= 75)
 		{
-			drawHoveringText(LangUtils.localize("gui.allowDefault"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.allowDefault"), xAxis, yAxis);
 		}
 
 		if(xAxis >= 12 && xAxis <= 28 && yAxis >= 44 && yAxis <= 60)
@@ -206,7 +206,7 @@ public class GuiTOreDictFilter extends GuiMekanism
 				drawHoveringText(filter.color.getColoredName(), xAxis, yAxis);
 			}
 			else {
-				drawHoveringText(LangUtils.localize("gui.none"), xAxis, yAxis);
+				drawHoveringText(LangUtils.localize("gui.mekanism.none"), xAxis, yAxis);
 			}
 		}
 
@@ -266,7 +266,7 @@ public class GuiTOreDictFilter extends GuiMekanism
 			ticker--;
 		}
 		else {
-			status = EnumColor.DARK_GREEN + LangUtils.localize("gui.allOK");
+			status = EnumColor.DARK_GREEN + LangUtils.localize("gui.mekanism.allOK");
 		}
 
 		if(stackSwitch > 0)
@@ -364,12 +364,12 @@ public class GuiTOreDictFilter extends GuiMekanism
 
 		if(oreName == null || oreName.isEmpty())
 		{
-			status = EnumColor.DARK_RED + LangUtils.localize("gui.oredictFilter.noKey");
+			status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.oredictFilter.noKey");
 			return;
 		}
 		else if(oreName.equals(filter.oreDictName))
 		{
-			status = EnumColor.DARK_RED + LangUtils.localize("gui.oredictFilter.sameKey");
+			status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.oredictFilter.sameKey");
 			return;
 		}
 

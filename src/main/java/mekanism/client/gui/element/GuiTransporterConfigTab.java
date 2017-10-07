@@ -59,7 +59,7 @@ public class GuiTransporterConfigTab extends GuiElement
 
 		if(xAxis >= -21 && xAxis <= -3 && yAxis >= yPos+4 && yAxis <= yPos+22)
 		{
-			displayTooltip(LangUtils.localize("gui.configuration.transporter"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.configuration.transporter"), xAxis, yAxis);
 		}
 
 		mc.renderEngine.bindTexture(defaultLocation);

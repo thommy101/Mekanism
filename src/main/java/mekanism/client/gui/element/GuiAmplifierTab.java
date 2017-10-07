@@ -61,7 +61,7 @@ public class GuiAmplifierTab extends GuiElement
 
 		if(xAxis >= -21 && xAxis <= -3 && yAxis >= 142 && yAxis <= 160)
 		{
-			String text = LangUtils.localize("gui.redstoneOutput") + ": ";
+			String text = LangUtils.localize("gui.mekanism.redstoneOutput") + ": ";
 			displayTooltip(text + ((TileEntityLaserAmplifier)tileEntity).outputMode.getName(), xAxis, yAxis);
 		}
 

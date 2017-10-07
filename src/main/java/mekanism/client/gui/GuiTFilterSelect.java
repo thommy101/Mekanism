@@ -41,10 +41,10 @@ public class GuiTFilterSelect extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 		
 		buttonList.clear();
-		buttonList.add(new GuiButton(0, guiWidth + 24, guiHeight + 32, 128, 20, LangUtils.localize("gui.itemstack")));
-		buttonList.add(new GuiButton(1, guiWidth + 24, guiHeight + 52, 128, 20, LangUtils.localize("gui.oredict")));
-		buttonList.add(new GuiButton(2, guiWidth + 24, guiHeight + 72, 128, 20, LangUtils.localize("gui.material")));
-		buttonList.add(new GuiButton(3, guiWidth + 24, guiHeight + 92, 128, 20, LangUtils.localize("gui.modID")));
+		buttonList.add(new GuiButton(0, guiWidth + 24, guiHeight + 32, 128, 20, LangUtils.localize("gui.mekanism.itemstack")));
+		buttonList.add(new GuiButton(1, guiWidth + 24, guiHeight + 52, 128, 20, LangUtils.localize("gui.mekanism.oredict")));
+		buttonList.add(new GuiButton(2, guiWidth + 24, guiHeight + 72, 128, 20, LangUtils.localize("gui.mekanism.material")));
+		buttonList.add(new GuiButton(3, guiWidth + 24, guiHeight + 92, 128, 20, LangUtils.localize("gui.mekanism.modID")));
 	}
 	
 	@Override
@@ -76,7 +76,7 @@ public class GuiTFilterSelect extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		fontRenderer.drawString(LangUtils.localize("gui.filterSelect.title"), 43, 6, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.filterSelect.title"), 43, 6, 0x404040);
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}

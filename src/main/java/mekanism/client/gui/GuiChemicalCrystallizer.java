@@ -67,7 +67,7 @@ public class GuiChemicalCrystallizer extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String multiplier = MekanismUtils.getEnergyDisplay(tileEntity.energyPerTick);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + multiplier + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + multiplier + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalCrystallizer.png")));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.inputTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalCrystallizer.png"), 5, 4));
 		guiElements.add(new GuiSlot(SlotType.EXTRA, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalCrystallizer.png"), 5, 64).with(SlotOverlay.PLUS));
@@ -105,7 +105,7 @@ public class GuiChemicalCrystallizer extends GuiMekanism
 				
 				if(recipe == null)
 				{
-					fontRenderer.drawString("(" + LangUtils.localize("gui.noRecipe") + ")", 29, 24, 0x00CD00);
+					fontRenderer.drawString("(" + LangUtils.localize("gui.mekanism.noRecipe") + ")", 29, 24, 0x00CD00);
 				}
 				else {
 					fontRenderer.drawString("(" + recipe.recipeOutput.output.getDisplayName() + ")", 29, 24, 0x00CD00);

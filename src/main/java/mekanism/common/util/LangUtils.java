@@ -10,7 +10,7 @@ public final class LangUtils
 {
 	public static String transOnOff(boolean b)
 	{
-		return LangUtils.localize("gui." + (b ? "on" : "off"));
+		return LangUtils.localize("gui.mekanism." + (b ? "on" : "off"));
 	}
 	
 	public static String transYesNo(boolean b)
@@ -20,7 +20,7 @@ public final class LangUtils
 	
 	public static String transOutputInput(boolean b)
 	{
-		return LangUtils.localize("gui." + (b ? "output" : "input"));
+		return LangUtils.localize("gui.mekanism." + (b ? "output" : "input"));
 	}
 
 	public static String localizeFluidStack(FluidStack fluidStack)

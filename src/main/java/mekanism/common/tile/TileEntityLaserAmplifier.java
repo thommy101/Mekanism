@@ -427,7 +427,7 @@ public class TileEntityLaserAmplifier extends TileEntityContainerBlock implement
 		
 		public String getName()
 		{
-			return LangUtils.localize("gui." + unlocalizedName);
+			return LangUtils.localize("gui.mekanism." + unlocalizedName);
 		}
 	}
 }

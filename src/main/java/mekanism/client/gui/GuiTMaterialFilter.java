@@ -46,7 +46,7 @@ public class GuiTMaterialFilter extends GuiMekanism
 
 	public TMaterialFilter filter = new TMaterialFilter();
 
-	public String status = EnumColor.DARK_GREEN + LangUtils.localize("gui.allOK");
+	public String status = EnumColor.DARK_GREEN + LangUtils.localize("gui.mekanism.allOK");
 
 	public int ticker;
 
@@ -76,8 +76,8 @@ public class GuiTMaterialFilter extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 
 		buttonList.clear();
-		buttonList.add(new GuiButton(0, guiWidth + 47, guiHeight + 62, 60, 20, LangUtils.localize("gui.save")));
-		buttonList.add(new GuiButton(1, guiWidth + 109, guiHeight + 62, 60, 20, LangUtils.localize("gui.delete")));
+		buttonList.add(new GuiButton(0, guiWidth + 47, guiHeight + 62, 60, 20, LangUtils.localize("gui.mekanism.save")));
+		buttonList.add(new GuiButton(1, guiWidth + 109, guiHeight + 62, 60, 20, LangUtils.localize("gui.mekanism.delete")));
 
 		if(isNew)
 		{
@@ -106,7 +106,7 @@ public class GuiTMaterialFilter extends GuiMekanism
 			}
 			else if(filter.materialItem.isEmpty())
 			{
-				status = EnumColor.DARK_RED + LangUtils.localize("gui.itemFilter.noItem");
+				status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.itemFilter.noItem");
 				ticker = 20;
 			}
 		}
@@ -123,10 +123,10 @@ public class GuiTMaterialFilter extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		fontRenderer.drawString((isNew ? LangUtils.localize("gui.new") : LangUtils.localize("gui.edit")) + " " + LangUtils.localize("gui.materialFilter"), 43, 6, 0x404040);
-		fontRenderer.drawString(LangUtils.localize("gui.status") + ": " + status, 35, 20, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.materialFilter.details") + ":", 35, 32, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui." + (filter.allowDefault ? "on" : "off")), 24, 66, 0x404040);
+		fontRenderer.drawString((isNew ? LangUtils.localize("gui.mekanism.new") : LangUtils.localize("gui.mekanism.edit")) + " " + LangUtils.localize("gui.mekanism.materialFilter"), 43, 6, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.status") + ": " + status, 35, 20, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.materialFilter.details") + ":", 35, 32, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism." + (filter.allowDefault ? "on" : "off")), 24, 66, 0x404040);
 
 		if(!filter.materialItem.isEmpty())
 		{
@@ -154,7 +154,7 @@ public class GuiTMaterialFilter extends GuiMekanism
 
 		if(xAxis >= 11 && xAxis <= 22 && yAxis >= 64 && yAxis <= 75)
 		{
-			drawHoveringText(LangUtils.localize("gui.allowDefault"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.allowDefault"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 12 && xAxis <= 28 && yAxis >= 44 && yAxis <= 60)
@@ -164,7 +164,7 @@ public class GuiTMaterialFilter extends GuiMekanism
 				drawHoveringText(filter.color.getColoredName(), xAxis, yAxis);
 			}
 			else {
-				drawHoveringText(LangUtils.localize("gui.none"), xAxis, yAxis);
+				drawHoveringText(LangUtils.localize("gui.mekanism.none"), xAxis, yAxis);
 			}
 		}
 
@@ -181,7 +181,7 @@ public class GuiTMaterialFilter extends GuiMekanism
 			ticker--;
 		}
 		else {
-			status = EnumColor.DARK_GREEN + LangUtils.localize("gui.allOK");
+			status = EnumColor.DARK_GREEN + LangUtils.localize("gui.mekanism.allOK");
 		}
 	}
 

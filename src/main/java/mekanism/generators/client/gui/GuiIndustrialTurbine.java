@@ -50,7 +50,7 @@ public class GuiIndustrialTurbine extends GuiMekanism
 			@Override
 			public String getTooltip()
 			{
-				return LangUtils.localize("gui.steamInput") + ": " + tileEntity.structure.lastSteamInput + " mB/t";
+				return LangUtils.localize("gui.mekanism.steamInput") + ": " + tileEntity.structure.lastSteamInput + " mB/t";
 			}
 			
 			@Override
@@ -72,8 +72,8 @@ public class GuiIndustrialTurbine extends GuiMekanism
             double energyMultiplier = (general.maxEnergyPerSteam/TurbineUpdateProtocol.MAX_BLADES)*Math.min(tileEntity.structure.blades, tileEntity.structure.coils*generators.turbineBladesPerCoil);
 
             return ListUtils.asList(
-                    LangUtils.localize("gui.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
-                    LangUtils.localize("gui.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.structure.clientFlow*energyMultiplier) + "/t");
+                    LangUtils.localize("gui.mekanism.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
+                    LangUtils.localize("gui.mekanism.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.structure.clientFlow*energyMultiplier) + "/t");
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiIndustrialTurbine.png")));
 	}
 	
@@ -91,17 +91,17 @@ public class GuiIndustrialTurbine extends GuiMekanism
 		double rate = tileEntity.structure.lowerVolume*(tileEntity.structure.clientDispersers*generators.turbineDisperserGasFlow);		
 		rate = Math.min(rate, tileEntity.structure.vents*generators.turbineVentGasFlow);
 		
-		renderScaledText(LangUtils.localize("gui.production") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.structure.clientFlow*energyMultiplier), 53, 26, 0x00CD00, 106);
-		renderScaledText(LangUtils.localize("gui.flowRate") + ": " + tileEntity.structure.clientFlow + " mB/t", 53, 35, 0x00CD00, 106);
-		renderScaledText(LangUtils.localize("gui.capacity") + ": " + tileEntity.structure.getFluidCapacity() + " mB", 53, 44, 0x00CD00, 106);
-		renderScaledText(LangUtils.localize("gui.maxFlow") + ": " + rate + " mB/t", 53, 53, 0x00CD00, 106);
+		renderScaledText(LangUtils.localize("gui.mekanism.production") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.structure.clientFlow*energyMultiplier), 53, 26, 0x00CD00, 106);
+		renderScaledText(LangUtils.localize("gui.mekanism.flowRate") + ": " + tileEntity.structure.clientFlow + " mB/t", 53, 35, 0x00CD00, 106);
+		renderScaledText(LangUtils.localize("gui.mekanism.capacity") + ": " + tileEntity.structure.getFluidCapacity() + " mB", 53, 44, 0x00CD00, 106);
+		renderScaledText(LangUtils.localize("gui.mekanism.maxFlow") + ": " + rate + " mB/t", 53, 53, 0x00CD00, 106);
 		
-		String name = chooseByMode(tileEntity.structure.dumpMode, LangUtils.localize("gui.idle"), LangUtils.localize("gui.dumping"), LangUtils.localize("gui.dumping_excess"));
+		String name = chooseByMode(tileEntity.structure.dumpMode, LangUtils.localize("gui.mekanism.idle"), LangUtils.localize("gui.mekanism.dumping"), LangUtils.localize("gui.mekanism.dumping_excess"));
 		renderScaledText(name, 156-(int)(fontRenderer.getStringWidth(name)*getNeededScale(name, 66)), 73, 0x404040, 66);
 		
 		if(xAxis >= 7 && xAxis <= 39 && yAxis >= 14 && yAxis <= 72)
 		{
-			drawHoveringText(tileEntity.structure.fluidStored != null ? LangUtils.localizeFluidStack(tileEntity.structure.fluidStored) + ": " + tileEntity.structure.fluidStored.amount + "mB" : LangUtils.localize("gui.empty"), xAxis, yAxis);
+			drawHoveringText(tileEntity.structure.fluidStored != null ? LangUtils.localizeFluidStack(tileEntity.structure.fluidStored) + ": " + tileEntity.structure.fluidStored.amount + "mB" : LangUtils.localize("gui.mekanism.empty"), xAxis, yAxis);
 		}
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

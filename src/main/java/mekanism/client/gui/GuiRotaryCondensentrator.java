@@ -57,7 +57,7 @@ public class GuiRotaryCondensentrator extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
 		{
             String usage = MekanismUtils.getEnergyDisplay(tileEntity.clientEnergyUsed);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + usage + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + usage + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiRotaryCondensentrator.png")));
 		guiElements.add(new GuiFluidGauge(() -> tileEntity.fluidTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiRotaryCondensentrator.png"), 133, 13));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.gasTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiRotaryCondensentrator.png"), 25, 13));
@@ -99,7 +99,7 @@ public class GuiRotaryCondensentrator extends GuiMekanism
 		int yAxis = (mouseY - (height - ySize) / 2);
 
 		fontRenderer.drawString(tileEntity.getName(), (xSize/2)-(fontRenderer.getStringWidth(tileEntity.getName())/2), 4, 0x404040);
-		fontRenderer.drawString(tileEntity.mode == 0 ? LangUtils.localize("gui.condensentrating") : LangUtils.localize("gui.decondensentrating"), 6, (ySize - 94) + 2, 0x404040);
+		fontRenderer.drawString(tileEntity.mode == 0 ? LangUtils.localize("gui.mekanism.condensentrating") : LangUtils.localize("gui.mekanism.decondensentrating"), 6, (ySize - 94) + 2, 0x404040);
 
 		if(xAxis >= 116 && xAxis <= 168 && yAxis >= 76 && yAxis <= 80)
 		{
@@ -108,7 +108,7 @@ public class GuiRotaryCondensentrator extends GuiMekanism
 
 		if(xAxis >= 4 && xAxis <= 22 && yAxis >= 4 && yAxis <= 22)
 		{
-			drawHoveringText(LangUtils.localize("gui.rotaryCondensentrator.toggleOperation"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.rotaryCondensentrator.toggleOperation"), xAxis, yAxis);
 		}
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

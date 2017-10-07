@@ -69,7 +69,7 @@ public class GuiSecurityDesk extends GuiMekanism
 
 		buttonList.clear();
 
-		removeButton = new GuiButton(0, guiWidth + 13, guiHeight + 81, 122, 20, LangUtils.localize("gui.remove"));
+		removeButton = new GuiButton(0, guiWidth + 13, guiHeight + 81, 122, 20, LangUtils.localize("gui.mekanism.remove"));
 		
 		trustedField = new GuiTextField(1, fontRenderer, guiWidth + 35, guiHeight + 69, 86, 11);
 		trustedField.setMaxStringLength(MAX_LENGTH);
@@ -255,43 +255,43 @@ public class GuiSecurityDesk extends GuiMekanism
 		int xAxis = (mouseX-(width-xSize)/2);
 		int yAxis = (mouseY-(height-ySize)/2);
 
-		String ownerText = EnumColor.RED + tileEntity.clientOwner != null ? (LangUtils.localize("gui.owner") + ": " + tileEntity.clientOwner) : LangUtils.localize("gui.noOwner");
+		String ownerText = EnumColor.RED + tileEntity.clientOwner != null ? (LangUtils.localize("gui.mekanism.owner") + ": " + tileEntity.clientOwner) : LangUtils.localize("gui.mekanism.noOwner");
 		fontRenderer.drawString(tileEntity.getName(), (xSize/2)-(fontRenderer.getStringWidth(tileEntity.getName())/2), 4, 0x404040);
 		fontRenderer.drawString(ownerText, (xSize - 7) - fontRenderer.getStringWidth(ownerText), (ySize - 96) + 2, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 2, 0x404040);
 		
-		String trusted = LangUtils.localize("gui.trustedPlayers");
+		String trusted = LangUtils.localize("gui.mekanism.trustedPlayers");
 		fontRenderer.drawString(trusted, 74-(fontRenderer.getStringWidth(trusted)/2), 57, 0x787878);
 		
-		String security = EnumColor.RED + LangUtils.localize("gui.securityOffline");
+		String security = EnumColor.RED + LangUtils.localize("gui.mekanism.securityOffline");
 		
 		if(tileEntity.frequency != null)
 		{
-			security = LangUtils.localize("gui.security") + ": " + tileEntity.frequency.securityMode.getDisplay();
+			security = LangUtils.localize("gui.mekanism.security") + ": " + tileEntity.frequency.securityMode.getDisplay();
 		}
 		
 		fontRenderer.drawString(security, 13, 103, 0x404040);
 		
-		renderScaledText(LangUtils.localize("gui.add") + ":", 13, 70, 0x404040, 20);
+		renderScaledText(LangUtils.localize("gui.mekanism.add") + ":", 13, 70, 0x404040, 20);
 		
 		if(tileEntity.frequency != null && xAxis >= 146 && xAxis <= 162 && yAxis >= 59 && yAxis <= 75)
 		{
-			displayTooltip(LangUtils.localize("gui.securityOverride") + ": " + LangUtils.transOnOff(tileEntity.frequency.override), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.securityOverride") + ": " + LangUtils.transOnOff(tileEntity.frequency.override), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 13 && xAxis <= 53 && yAxis >= 113 && yAxis <= 129)
 		{
-			displayTooltip(LangUtils.localize("gui.publicMode"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.publicMode"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 54 && xAxis <= 94 && yAxis >= 113 && yAxis <= 129)
 		{
-			displayTooltip(LangUtils.localize("gui.privateMode"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.privateMode"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 95 && xAxis <= 135 && yAxis >= 113 && yAxis <= 129)
 		{
-			displayTooltip(LangUtils.localize("gui.trustedMode"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.trustedMode"), xAxis, yAxis);
 		}
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

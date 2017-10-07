@@ -75,17 +75,17 @@ public class GuiUpgradeManagement extends GuiMekanism
 		drawTexturedModalRect(84, 8+getScroll(), 202, 0, 4, 4);
 		
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 2, 0x404040);
-		fontRenderer.drawString(LangUtils.localize("gui.upgrades.supported") + ":", 26, 59, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.upgrades.supported") + ":", 26, 59, 0x404040);
 		
 		if(selectedType == null)
 		{
-			renderText(LangUtils.localize("gui.upgrades.noSelection") + ".", 92, 8, 0.8F, true);
+			renderText(LangUtils.localize("gui.mekanism.upgrades.noSelection") + ".", 92, 8, 0.8F, true);
 		}
 		else {
 			int amount = tileEntity.getComponent().getUpgrades(selectedType);
 			
-			renderText(selectedType.getName() + " " + LangUtils.localize("gui.upgrade"), 92, 8, 0.6F, true);
-			renderText(LangUtils.localize("gui.upgrades.amount") + ": " + amount + "/" + selectedType.getMax(), 92, 16, 0.6F, true);
+			renderText(selectedType.getName() + " " + LangUtils.localize("gui.mekanism.upgrade"), 92, 8, 0.6F, true);
+			renderText(LangUtils.localize("gui.mekanism.upgrades.amount") + ": " + amount + "/" + selectedType.getMax(), 92, 16, 0.6F, true);
 			
 			int text = 0;
 			

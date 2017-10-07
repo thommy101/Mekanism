@@ -43,7 +43,7 @@ public class GuiFluidicPlenisher extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String multiplier = MekanismUtils.getEnergyDisplay(tileEntity.energyPerTick);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + multiplier + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + multiplier + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, guiLocation));
 		guiElements.add(new GuiSecurityTab(this, tileEntity, guiLocation));
 		guiElements.add(new GuiRedstoneControl(this, tileEntity, guiLocation));
@@ -56,8 +56,8 @@ public class GuiFluidicPlenisher extends GuiMekanism
 		fontRenderer.drawString(tileEntity.getName(), (xSize / 2) - (fontRenderer.getStringWidth(tileEntity.getName()) / 2), 6, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 94) + 2, 0x404040);
 		fontRenderer.drawString(MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()), 51, 26, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.finished") + ": " + LangUtils.transYesNo(tileEntity.finishedCalc), 51, 35, 0x00CD00);
-		fontRenderer.drawString(tileEntity.fluidTank.getFluid() != null ? LangUtils.localizeFluidStack(tileEntity.fluidTank.getFluid()) + ": " + tileEntity.fluidTank.getFluid().amount : LangUtils.localize("gui.noFluid"), 51, 44, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.finished") + ": " + LangUtils.transYesNo(tileEntity.finishedCalc), 51, 35, 0x00CD00);
+		fontRenderer.drawString(tileEntity.fluidTank.getFluid() != null ? LangUtils.localizeFluidStack(tileEntity.fluidTank.getFluid()) + ": " + tileEntity.fluidTank.getFluid().amount : LangUtils.localize("gui.mekanism.noFluid"), 51, 44, 0x00CD00);
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}

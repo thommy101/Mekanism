@@ -58,7 +58,7 @@ public class GuiSideConfigurationTab extends GuiElement
 
 		if(xAxis >= -21 && xAxis <= -3 && yAxis >= 10 && yAxis <= 28)
 		{
-			displayTooltip(LangUtils.localize("gui.configuration.side"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.configuration.side"), xAxis, yAxis);
 		}
 
 		mc.renderEngine.bindTexture(defaultLocation);

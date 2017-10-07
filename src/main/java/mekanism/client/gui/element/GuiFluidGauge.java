@@ -127,9 +127,9 @@ public class GuiFluidGauge extends GuiGauge<Fluid>
 			return dummyType.getLocalizedName(null);
 		}
 		
-		String amountStr = (infoHandler.getTank().getFluidAmount() == Integer.MAX_VALUE ? LangUtils.localize("gui.infinite") : infoHandler.getTank().getFluidAmount() + " mB");
+		String amountStr = (infoHandler.getTank().getFluidAmount() == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : infoHandler.getTank().getFluidAmount() + " mB");
 		
-		return infoHandler.getTank().getFluid() != null ? LangUtils.localizeFluidStack(infoHandler.getTank().getFluid()) + ": " + amountStr : LangUtils.localize("gui.empty");
+		return infoHandler.getTank().getFluid() != null ? LangUtils.localizeFluidStack(infoHandler.getTank().getFluid()) + ": " + amountStr : LangUtils.localize("gui.mekanism.empty");
 	}
 
 	public interface IFluidInfoHandler

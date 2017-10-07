@@ -96,7 +96,7 @@ public class ItemGaugeDropper extends ItemMekanism implements IGasItem
 
 		if(gasStack == null && fluidStack == null)
 		{
-			list.add(LangUtils.localize("gui.empty") + ".");
+			list.add(LangUtils.localize("gui.mekanism.empty") + ".");
 		}
 		else if(gasStack != null)
 		{

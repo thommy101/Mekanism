@@ -107,7 +107,7 @@ public enum Upgrade
 		{
 			double effect = Math.pow(general.maxUpgradeMultiplier, (float)tile.getComponent().getUpgrades(this)/(float)getMax());
 			
-			ret.add(LangUtils.localize("gui.upgrades.effect") + ": " + (Math.round(effect*100)/100F) + "x");
+			ret.add(LangUtils.localize("gui.mekanism.upgrades.effect") + ": " + (Math.round(effect*100)/100F) + "x");
 		}
 		
 		return ret;
@@ -121,7 +121,7 @@ public enum Upgrade
 		{
 			double effect = Math.pow(2, (float)tile.getComponent().getUpgrades(this));
 			
-			ret.add(LangUtils.localize("gui.upgrades.effect") + ": " + effect + "x");
+			ret.add(LangUtils.localize("gui.mekanism.upgrades.effect") + ": " + effect + "x");
 		}
 		
 		return ret;

@@ -50,7 +50,7 @@ public class GuiHeatInfo extends GuiElement
 
 			info.addAll(infoHandler.getInfo());
 			
-			info.add(LangUtils.localize("gui.unit") + ": " + general.tempUnit);
+			info.add(LangUtils.localize("gui.mekanism.unit") + ": " + general.tempUnit);
 			displayTooltips(info, xAxis, yAxis);
 		}
 	}

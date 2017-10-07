@@ -209,15 +209,15 @@ public class ItemBlockMachine extends ItemBlock implements IEnergizedItem, ISpec
 				if(fluidStack != null)
 				{
 					int amount = getFluidStack(itemstack).amount;
-					String amountStr = amount == Integer.MAX_VALUE ? LangUtils.localize("gui.infinite") : amount + "mB";
+					String amountStr = amount == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : amount + "mB";
 					list.add(EnumColor.AQUA + LangUtils.localizeFluidStack(fluidStack) + ": " + EnumColor.GREY + amountStr);
 				}
 				else {
-					list.add(EnumColor.DARK_RED + LangUtils.localize("gui.empty") + ".");
+					list.add(EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.empty") + ".");
 				}
 				
 				int cap = FluidTankTier.values()[getBaseTier(itemstack).ordinal()].storage;
-				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.infinite") : cap + " mB"));
+				list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : cap + " mB"));
 			}
 			
 			if(type == MachineType.QUANTUM_ENTANGLOPORTER)
@@ -226,8 +226,8 @@ public class ItemBlockMachine extends ItemBlock implements IEnergizedItem, ISpec
 				
 				if(freq != null)
 				{
-					list.add(EnumColor.INDIGO + LangUtils.localize("gui.frequency") + ": " + EnumColor.GREY + freq.name);
-					list.add(EnumColor.INDIGO + LangUtils.localize("gui.mode") + ": " + EnumColor.GREY + LangUtils.localize("gui." + (!freq.publicFreq ? "private" : "public")));
+					list.add(EnumColor.INDIGO + LangUtils.localize("gui.mekanism.frequency") + ": " + EnumColor.GREY + freq.name);
+					list.add(EnumColor.INDIGO + LangUtils.localize("gui.mekanism.mode") + ": " + EnumColor.GREY + LangUtils.localize("gui.mekanism." + (!freq.publicFreq ? "private" : "public")));
 				}
 			}
 
@@ -239,11 +239,11 @@ public class ItemBlockMachine extends ItemBlock implements IEnergizedItem, ISpec
 			if(hasSecurity(itemstack))
 			{
 				list.add(SecurityUtils.getOwnerDisplay(Minecraft.getMinecraft().player, MekanismClient.clientUUIDMap.get(getOwnerUUID(itemstack))));
-				list.add(EnumColor.GREY + LangUtils.localize("gui.security") + ": " + SecurityUtils.getSecurityDisplay(itemstack, Side.CLIENT));
+				list.add(EnumColor.GREY + LangUtils.localize("gui.mekanism.security") + ": " + SecurityUtils.getSecurityDisplay(itemstack, Side.CLIENT));
 				
 				if(SecurityUtils.isOverridden(itemstack, Side.CLIENT))
 				{
-					list.add(EnumColor.RED + "(" + LangUtils.localize("gui.overridden") + ")");
+					list.add(EnumColor.RED + "(" + LangUtils.localize("gui.mekanism.overridden") + ")");
 				}
 			}
 				

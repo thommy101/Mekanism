@@ -85,8 +85,8 @@ public class GuiMatrixTab extends GuiElement
 	
 	public enum MatrixTab
 	{
-		MAIN("GuiEnergyTab.png", 49, "gui.main"),
-		STAT("GuiStatsTab.png", 50, "gui.stats");
+		MAIN("GuiEnergyTab.png", 49, "gui.mekanism.main"),
+		STAT("GuiStatsTab.png", 50, "gui.mekanism.stats");
 		
 		private String path;
 		private int guiId;

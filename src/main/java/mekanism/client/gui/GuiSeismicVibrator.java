@@ -36,7 +36,7 @@ public class GuiSeismicVibrator extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String multiplier = MekanismUtils.getEnergyDisplay(usage.seismicVibratorUsage);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + multiplier + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + multiplier + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiSeismicVibrator.png")));
 
 		guiElements.add(new GuiSlot(SlotType.NORMAL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiSeismicVibrator.png"), 142, 34).with(SlotOverlay.POWER));
@@ -51,8 +51,8 @@ public class GuiSeismicVibrator extends GuiMekanism
 		fontRenderer.drawString(tileEntity.getName(), 45, 6, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 2, 0x404040);
 		
-		fontRenderer.drawString(tileEntity.isActive ? LangUtils.localize("gui.vibrating") : LangUtils.localize("gui.idle"), 19, 26, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.chunk") + ": " + (tileEntity.getPos().getX() >> 4) + ", " + (tileEntity.getPos().getZ() >> 4), 19, 35, 0x00CD00);
+		fontRenderer.drawString(tileEntity.isActive ? LangUtils.localize("gui.mekanism.vibrating") : LangUtils.localize("gui.mekanism.idle"), 19, 26, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.chunk") + ": " + (tileEntity.getPos().getX() >> 4) + ", " + (tileEntity.getPos().getZ() >> 4), 19, 35, 0x00CD00);
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}

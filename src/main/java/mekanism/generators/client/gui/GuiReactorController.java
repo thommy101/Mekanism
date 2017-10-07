@@ -34,8 +34,8 @@ public class GuiReactorController extends GuiMekanism
 		if(tileEntity.isFormed())
 		{
 			guiElements.add(new GuiEnergyInfo(() -> tileEntity.isFormed() ? ListUtils.asList(
-                    LangUtils.localize("gui.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
-                    LangUtils.localize("gui.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getReactor().getPassiveGeneration(false, true)) + "/t") : new ArrayList<>(), this, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png")));
+                    LangUtils.localize("gui.mekanism.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
+                    LangUtils.localize("gui.mekanism.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getReactor().getPassiveGeneration(false, true)) + "/t") : new ArrayList<>(), this, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png")));
 			guiElements.add(new GuiSlot(SlotType.NORMAL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png"), 79, 38));
 			guiElements.add(new GuiHeatTab(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png")));
 			guiElements.add(new GuiFuelTab(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiBlank.png")));
@@ -50,10 +50,10 @@ public class GuiReactorController extends GuiMekanism
 		
 		if(tileEntity.getActive())
 		{
-			fontRenderer.drawString(LangUtils.localize("gui.formed"), 8, 16, 0x404040);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.formed"), 8, 16, 0x404040);
 		}
 		else {
-			fontRenderer.drawString(LangUtils.localize("gui.incomplete"), 8, 16, 0x404040);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.incomplete"), 8, 16, 0x404040);
 		}
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

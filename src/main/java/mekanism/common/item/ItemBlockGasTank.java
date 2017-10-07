@@ -137,15 +137,15 @@ public class ItemBlockGasTank extends ItemBlock implements IGasItem, ISustainedI
 
 		if(gasStack == null)
 		{
-			list.add(EnumColor.DARK_RED + LangUtils.localize("gui.empty") + ".");
+			list.add(EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.empty") + ".");
 		}
 		else {
-			String amount = "" + (gasStack.amount == Integer.MAX_VALUE ? LangUtils.localize("gui.infinite") : gasStack.amount);
+			String amount = "" + (gasStack.amount == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : gasStack.amount);
 			list.add(EnumColor.ORANGE + gasStack.getGas().getLocalizedName() + ": " + EnumColor.GREY + amount);
 		}
 		
 		int cap = GasTankTier.values()[getBaseTier(itemstack).ordinal()].storage;
-		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.infinite") : cap));
+		list.add(EnumColor.INDIGO + LangUtils.localize("tooltip.capacity") + ": " + EnumColor.GREY + (cap == Integer.MAX_VALUE ? LangUtils.localize("gui.mekanism.infinite") : cap));
 
 		if(!MekKeyHandler.getIsKeyPressed(MekanismKeyHandler.sneakKey))
 		{
@@ -155,11 +155,11 @@ public class ItemBlockGasTank extends ItemBlock implements IGasItem, ISustainedI
 			if(hasSecurity(itemstack))
 			{
 				list.add(SecurityUtils.getOwnerDisplay(Minecraft.getMinecraft().player, MekanismClient.clientUUIDMap.get(getOwnerUUID(itemstack))));
-				list.add(EnumColor.GREY + LangUtils.localize("gui.security") + ": " + SecurityUtils.getSecurityDisplay(itemstack, Side.CLIENT));
+				list.add(EnumColor.GREY + LangUtils.localize("gui.mekanism.security") + ": " + SecurityUtils.getSecurityDisplay(itemstack, Side.CLIENT));
 				
 				if(SecurityUtils.isOverridden(itemstack, Side.CLIENT))
 				{
-					list.add(EnumColor.RED + "(" + LangUtils.localize("gui.overridden") + ")");
+					list.add(EnumColor.RED + "(" + LangUtils.localize("gui.mekanism.overridden") + ")");
 				}
 			}
 			

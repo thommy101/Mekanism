@@ -55,7 +55,7 @@ public class GuiUpgradeTab extends GuiElement
 
 		if(xAxis >= 179 && xAxis <= 197 && yAxis >= 10 && yAxis <= 28)
 		{
-			displayTooltip(LangUtils.localize("gui.upgrades"), xAxis, yAxis);
+			displayTooltip(LangUtils.localize("gui.mekanism.upgrades"), xAxis, yAxis);
 		}
 
 		mc.renderEngine.bindTexture(defaultLocation);

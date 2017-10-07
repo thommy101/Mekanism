@@ -115,15 +115,15 @@ public final class SecurityUtils
 	{
 		if(ownerName == null)
 		{
-			return EnumColor.RED + LangUtils.localize("gui.noOwner");
+			return EnumColor.RED + LangUtils.localize("gui.mekanism.noOwner");
 		}
 		
-		return EnumColor.GREY + LangUtils.localize("gui.owner") + ": " + (player.getName().equals(ownerName) ? EnumColor.BRIGHT_GREEN : EnumColor.RED) + ownerName;
+		return EnumColor.GREY + LangUtils.localize("gui.mekanism.owner") + ": " + (player.getName().equals(ownerName) ? EnumColor.BRIGHT_GREEN : EnumColor.RED) + ownerName;
 	}
 	
 	public static void displayNoAccess(EntityPlayer player)
 	{
-		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.RED + LangUtils.localize("gui.noAccessDesc")));
+		player.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.RED + LangUtils.localize("gui.mekanism.noAccessDesc")));
 	}
 	
 	public static SecurityMode getSecurity(ISecurityTile security, Side side)

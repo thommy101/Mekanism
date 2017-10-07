@@ -109,7 +109,7 @@ public class GuiGasGauge extends GuiGauge<Gas>
 			return dummyType.getLocalizedName();
 		}
 		
-		return (infoHandler.getTank().getGas() != null) ? infoHandler.getTank().getGas().getGas().getLocalizedName() + ": " + infoHandler.getTank().getStored() : LangUtils.localize("gui.empty");
+		return (infoHandler.getTank().getGas() != null) ? infoHandler.getTank().getGas().getGas().getLocalizedName() + ": " + infoHandler.getTank().getStored() : LangUtils.localize("gui.mekanism.empty");
 	}
 
 	public interface IGasInfoHandler

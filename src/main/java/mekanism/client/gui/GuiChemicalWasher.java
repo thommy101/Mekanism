@@ -44,7 +44,7 @@ public class GuiChemicalWasher extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String usage = MekanismUtils.getEnergyDisplay(tileEntity.clientEnergyUsed);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + usage + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + usage + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalWasher.png")));
 		guiElements.add(new GuiFluidGauge(() -> tileEntity.fluidTank, Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalWasher.png"), 5, 4));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.inputTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalWasher.png"), 26, 13));

@@ -34,8 +34,8 @@ public class GuiGasGenerator extends GuiMekanism
 		guiElements.add(new GuiRedstoneControl(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png")));
 		guiElements.add(new GuiSecurityTab(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png")));
 		guiElements.add(new GuiEnergyInfo(() -> ListUtils.asList(
-                LangUtils.localize("gui.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.generationRate*tileEntity.clientUsed) + "/t",
-                LangUtils.localize("gui.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png")));
+                LangUtils.localize("gui.mekanism.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.generationRate*tileEntity.clientUsed) + "/t",
+                LangUtils.localize("gui.mekanism.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png")));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.fuelTank, Type.WIDE, this, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png"), 55, 18));
 		guiElements.add(new GuiPowerBar(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png"), 164, 15));
 		guiElements.add(new GuiSlot(SlotType.NORMAL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiGasGenerator.png"), 16, 34).with(SlotOverlay.MINUS));
@@ -47,7 +47,7 @@ public class GuiGasGenerator extends GuiMekanism
 	{
 		fontRenderer.drawString(tileEntity.getName(), (xSize/2)-(fontRenderer.getStringWidth(tileEntity.getName())/2), 6, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 2, 0x404040);
-		String s = LangUtils.localize("gui.burnRate") + ": " + tileEntity.clientUsed;
+		String s = LangUtils.localize("gui.mekanism.burnRate") + ": " + tileEntity.clientUsed;
 		fontRenderer.drawString(s, xSize - 8 - fontRenderer.getStringWidth(s), (ySize - 96) + 2, 0x404040);
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

@@ -32,8 +32,8 @@ public class GuiSolarGenerator extends GuiMekanism
 		guiElements.add(new GuiRedstoneControl(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiSolarGenerator.png")));
 		guiElements.add(new GuiSecurityTab(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiSolarGenerator.png")));
 		guiElements.add(new GuiEnergyInfo(() -> ListUtils.asList(
-                LangUtils.localize("gui.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.isActive ? tileEntity.getProduction() : 0) + "/t",
-                LangUtils.localize("gui.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiSolarGenerator.png")));
+                LangUtils.localize("gui.mekanism.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.isActive ? tileEntity.getProduction() : 0) + "/t",
+                LangUtils.localize("gui.mekanism.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiSolarGenerator.png")));
 		guiElements.add(new GuiPowerBar(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiSolarGenerator.png"), 164, 15));
 		guiElements.add(new GuiSlot(SlotType.NORMAL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiSolarGenerator.png"), 142, 34).with(SlotOverlay.POWER));
 	}
@@ -47,8 +47,8 @@ public class GuiSolarGenerator extends GuiMekanism
 		fontRenderer.drawString(tileEntity.getName(), !tileEntity.fullName.contains("Advanced") ? 45 : 30, 6, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 2, 0x404040);
 		fontRenderer.drawString(MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()), 51, 26, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.solarGenerator.sun") + ": " + tileEntity.seesSun, 51, 35, 0x00CD00);
-		fontRenderer.drawString(LangUtils.localize("gui.out") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t", 51, 44, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.solarGenerator.sun") + ": " + tileEntity.seesSun, 51, 35, 0x00CD00);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.out") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t", 51, 44, 0x00CD00);
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}

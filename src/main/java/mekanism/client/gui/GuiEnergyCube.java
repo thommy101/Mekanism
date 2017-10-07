@@ -36,8 +36,8 @@ public class GuiEnergyCube extends GuiMekanism
 		guiElements.add(new GuiTransporterConfigTab(this, 34, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiEnergyCube.png")));
 		guiElements.add(new GuiEnergyGauge(() -> tileEntity, GuiEnergyGauge.Type.WIDE, this, MekanismUtils.getResource(ResourceType.GUI, "GuiEnergyCube.png"), 55, 18));
 		guiElements.add(new GuiEnergyInfo(() -> ListUtils.asList(
-                LangUtils.localize("gui.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
-                LangUtils.localize("gui.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiEnergyCube.png")));
+                LangUtils.localize("gui.mekanism.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
+                LangUtils.localize("gui.mekanism.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiEnergyCube.png")));
 		guiElements.add(new GuiSlot(SlotType.INPUT, this, MekanismUtils.getResource(ResourceType.GUI, "GuiEnergyCube.png"), 16, 34).with(SlotOverlay.MINUS));
 		guiElements.add(new GuiSlot(SlotType.OUTPUT, this, MekanismUtils.getResource(ResourceType.GUI, "GuiEnergyCube.png"), 142, 34).with(SlotOverlay.PLUS));
 	}

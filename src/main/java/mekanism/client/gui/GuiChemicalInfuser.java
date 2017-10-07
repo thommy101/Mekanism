@@ -40,7 +40,7 @@ public class GuiChemicalInfuser extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String usage = MekanismUtils.getEnergyDisplay(tileEntity.clientEnergyUsed);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + usage + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + usage + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this,  MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalInfuser.png")));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.leftTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalInfuser.png"), 25, 13));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.centerTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiChemicalInfuser.png"), 79, 4));
@@ -75,7 +75,7 @@ public class GuiChemicalInfuser extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		fontRenderer.drawString(LangUtils.localize("gui.chemicalInfuser.short"), 5, 5, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.chemicalInfuser.short"), 5, 5, 0x404040);
 		fontRenderer.drawString(LangUtils.localize("container.inventory"), 8, (ySize - 96) + 4, 0x404040);
 		
 		if(xAxis >= 116 && xAxis <= 168 && yAxis >= 76 && yAxis <= 80)

@@ -230,7 +230,7 @@ public interface IFactory
 
 		public String getLocalizedName()
 		{
-			return LangUtils.localize("gui.factory." + name);
+			return LangUtils.localize("gui.mekanism.factory." + name);
 		}
 
 		public ResourceLocation getSound()

@@ -125,7 +125,7 @@ public class TileEntityTurbineCasing extends TileEntityMultiblock<SynchronizedTu
 	@Override
 	public String getName()
 	{
-		return LangUtils.localize("gui.industrialTurbine");
+		return LangUtils.localize("gui.mekanism.industrialTurbine");
 	}
 	
 	@Override

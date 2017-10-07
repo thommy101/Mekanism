@@ -152,7 +152,7 @@ public class TileEntityInductionCasing extends TileEntityMultiblock<Synchronized
 	@Override
 	public String getName()
 	{
-		return LangUtils.localize("gui.inductionMatrix");
+		return LangUtils.localize("gui.mekanism.inductionMatrix");
 	}
 	
 	public int getScaledEnergyLevel(int i)

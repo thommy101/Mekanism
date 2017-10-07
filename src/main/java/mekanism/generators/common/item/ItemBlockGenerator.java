@@ -136,11 +136,11 @@ public class ItemBlockGenerator extends ItemBlock implements IEnergizedItem, ISp
 				if(hasSecurity(itemstack))
 				{
 					list.add(SecurityUtils.getOwnerDisplay(Minecraft.getMinecraft().player, MekanismClient.clientUUIDMap.get(getOwnerUUID(itemstack))));
-					list.add(EnumColor.GREY + LangUtils.localize("gui.security") + ": " + SecurityUtils.getSecurityDisplay(itemstack, Side.CLIENT));
+					list.add(EnumColor.GREY + LangUtils.localize("gui.mekanism.security") + ": " + SecurityUtils.getSecurityDisplay(itemstack, Side.CLIENT));
 					
 					if(SecurityUtils.isOverridden(itemstack, Side.CLIENT))
 					{
-						list.add(EnumColor.RED + "(" + LangUtils.localize("gui.overridden") + ")");
+						list.add(EnumColor.RED + "(" + LangUtils.localize("gui.mekanism.overridden") + ")");
 					}
 				}
 				

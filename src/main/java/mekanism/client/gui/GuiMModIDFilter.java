@@ -58,7 +58,7 @@ public class GuiMModIDFilter extends GuiMekanism
 
 	public List<ItemStack> iterStacks;
 
-	public String status = EnumColor.DARK_GREEN + LangUtils.localize("gui.allOK");
+	public String status = EnumColor.DARK_GREEN + LangUtils.localize("gui.mekanism.allOK");
 
 	public GuiMModIDFilter(EntityPlayer player, TileEntityDigitalMiner tentity, int index)
 	{
@@ -88,8 +88,8 @@ public class GuiMModIDFilter extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 
 		buttonList.clear();
-		buttonList.add(new GuiButton(0, guiWidth + 27, guiHeight + 62, 60, 20, LangUtils.localize("gui.save")));
-		buttonList.add(new GuiButton(1, guiWidth + 89, guiHeight + 62, 60, 20, LangUtils.localize("gui.delete")));
+		buttonList.add(new GuiButton(0, guiWidth + 27, guiHeight + 62, 60, 20, LangUtils.localize("gui.mekanism.save")));
+		buttonList.add(new GuiButton(1, guiWidth + 89, guiHeight + 62, 60, 20, LangUtils.localize("gui.mekanism.delete")));
 
 		if(isNew)
 		{
@@ -146,7 +146,7 @@ public class GuiMModIDFilter extends GuiMekanism
 				Mekanism.packetHandler.sendToServer(new DigitalMinerGuiMessage(MinerGuiPacket.SERVER, Coord4D.get(tileEntity), 0, 0, 0));
 			}
 			else {
-				status = EnumColor.DARK_RED + LangUtils.localize("gui.modIDFilter.noID");
+				status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.modIDFilter.noID");
 				ticker = 20;
 			}
 		}
@@ -163,9 +163,9 @@ public class GuiMModIDFilter extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		fontRenderer.drawString((isNew ? LangUtils.localize("gui.new") : LangUtils.localize("gui.edit")) + " " + LangUtils.localize("gui.modIDFilter"), 43, 6, 0x404040);
-		fontRenderer.drawString(LangUtils.localize("gui.status") + ": " + status, 35, 20, 0x00CD00);
-		renderScaledText(LangUtils.localize("gui.id") + ": " + filter.modID, 35, 32, 0x00CD00, 107);
+		fontRenderer.drawString((isNew ? LangUtils.localize("gui.mekanism.new") : LangUtils.localize("gui.mekanism.edit")) + " " + LangUtils.localize("gui.mekanism.modIDFilter"), 43, 6, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.status") + ": " + status, 35, 20, 0x00CD00);
+		renderScaledText(LangUtils.localize("gui.mekanism.id") + ": " + filter.modID, 35, 32, 0x00CD00, 107);
 
 		if(!renderStack.isEmpty())
 		{
@@ -189,7 +189,7 @@ public class GuiMModIDFilter extends GuiMekanism
 		
 		if(xAxis >= 148 && xAxis <= 162 && yAxis >= 45 && yAxis <= 59)
 		{
-			drawHoveringText(LangUtils.localize("gui.digitalMiner.requireReplace") + ": " + LangUtils.transYesNo(filter.requireStack), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.digitalMiner.requireReplace") + ": " + LangUtils.transYesNo(filter.requireStack), xAxis, yAxis);
 		}
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
@@ -265,7 +265,7 @@ public class GuiMModIDFilter extends GuiMekanism
 			ticker--;
 		}
 		else {
-			status = EnumColor.DARK_GREEN + LangUtils.localize("gui.allOK");
+			status = EnumColor.DARK_GREEN + LangUtils.localize("gui.mekanism.allOK");
 		}
 
 		if(stackSwitch > 0)
@@ -370,12 +370,12 @@ public class GuiMModIDFilter extends GuiMekanism
 
 		if(modName == null || modName.isEmpty())
 		{
-			status = EnumColor.DARK_RED + LangUtils.localize("gui.modIDFilter.noID");
+			status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.modIDFilter.noID");
 			return;
 		}
 		else if(modName.equals(filter.modID))
 		{
-			status = EnumColor.DARK_RED + LangUtils.localize("gui.modIDFilter.sameID");
+			status = EnumColor.DARK_RED + LangUtils.localize("gui.mekanism.modIDFilter.sameID");
 			return;
 		}
 

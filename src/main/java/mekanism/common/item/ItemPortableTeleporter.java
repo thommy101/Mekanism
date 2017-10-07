@@ -42,8 +42,8 @@ public class ItemPortableTeleporter extends ItemEnergized implements IOwnerItem
 		
 		if(getFrequency(itemstack) != null)
 		{
-			list.add(EnumColor.INDIGO + LangUtils.localize("gui.frequency") + ": " + EnumColor.GREY + getFrequency(itemstack).name);
-			list.add(EnumColor.INDIGO + LangUtils.localize("gui.mode") + ": " + EnumColor.GREY + LangUtils.localize("gui." + (!getFrequency(itemstack).publicFreq ? "private" : "public")));
+			list.add(EnumColor.INDIGO + LangUtils.localize("gui.mekanism.frequency") + ": " + EnumColor.GREY + getFrequency(itemstack).name);
+			list.add(EnumColor.INDIGO + LangUtils.localize("gui.mekanism.mode") + ": " + EnumColor.GREY + LangUtils.localize("gui.mekanism." + (!getFrequency(itemstack).publicFreq ? "private" : "public")));
 		}
 		
 		super.addInformation(itemstack, world, list, flag);
@@ -60,7 +60,7 @@ public class ItemPortableTeleporter extends ItemEnergized implements IOwnerItem
 			{
 				setOwnerUUID(itemstack, entityplayer.getUniqueID());
 				Mekanism.packetHandler.sendToAll(new SecurityUpdateMessage(SecurityPacket.UPDATE, entityplayer.getUniqueID(), null));
-				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("gui.nowOwn")));
+				entityplayer.sendMessage(new TextComponentString(EnumColor.DARK_BLUE + "[Mekanism] " + EnumColor.GREY + LangUtils.localize("gui.mekanism.nowOwn")));
 			}
 			else {
 				if(SecurityUtils.canAccess(entityplayer, itemstack))

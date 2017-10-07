@@ -197,7 +197,7 @@ public class GuiSeismicReader extends GuiScreen
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(guiWidth + 72, guiHeight + 26, 0);
 		GlStateManager.scale(0.70f, 0.70f, 0.70f);
-		fontRenderer.drawString(LangUtils.localize("gui.abundancy") + ": " + frequency, 0, 0, 0x919191);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.abundancy") + ": " + frequency, 0, 0, 0x919191);
 		GlStateManager.popMatrix();
 		super.drawScreen(mouseX, mouseY, partialTick);
 	}

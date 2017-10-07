@@ -74,7 +74,7 @@ public class TileEntityDynamicValve extends TileEntityDynamicTank implements IFl
 	@Override
 	public String getName()
 	{
-		return LangUtils.localize("gui.dynamicTank");
+		return LangUtils.localize("gui.mekanism.dynamicTank");
 	}
 	
 	@Override

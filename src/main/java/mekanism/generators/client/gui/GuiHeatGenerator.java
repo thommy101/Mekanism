@@ -38,8 +38,8 @@ public class GuiHeatGenerator extends GuiMekanism
 		guiElements.add(new GuiRedstoneControl(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png")));
 		guiElements.add(new GuiSecurityTab(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png")));
 		guiElements.add(new GuiEnergyInfo(() -> ListUtils.asList(
-                LangUtils.localize("gui.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.producingEnergy) + "/t",
-                LangUtils.localize("gui.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png")));
+                LangUtils.localize("gui.mekanism.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.producingEnergy) + "/t",
+                LangUtils.localize("gui.mekanism.maxOutput") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxOutput()) + "/t"), this, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png")));
 		guiElements.add(new GuiFluidGauge(() -> tileEntity.lavaTank, Type.WIDE, this, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png"), 55, 18));
 		guiElements.add(new GuiPowerBar(this, tileEntity, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png"), 164, 15));
 		guiElements.add(new GuiSlot(SlotType.NORMAL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png"), 16, 34));
@@ -49,7 +49,7 @@ public class GuiHeatGenerator extends GuiMekanism
             TemperatureUnit unit = TemperatureUnit.values()[general.tempUnit.ordinal()];
             String transfer = UnitDisplayUtils.getDisplayShort(tileEntity.lastTransferLoss, false, unit);
             String environment = UnitDisplayUtils.getDisplayShort(tileEntity.lastEnvironmentLoss, false, unit);
-            return ListUtils.asList(LangUtils.localize("gui.transferred") + ": " + transfer + "/t", LangUtils.localize("gui.dissipated") + ": " + environment + "/t");
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.transferred") + ": " + transfer + "/t", LangUtils.localize("gui.mekanism.dissipated") + ": " + environment + "/t");
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiHeatGenerator.png")));
 	}
 

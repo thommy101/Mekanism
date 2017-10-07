@@ -72,7 +72,7 @@ public class ItemConfigurator extends ItemEnergized implements IMekWrench, ITool
 	public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag)
 	{
 		super.addInformation(itemstack, world, list, flag);
-		list.add(EnumColor.PINK + LangUtils.localize("gui.state") + ": " + getColor(getState(itemstack)) + getStateDisplay(getState(itemstack)));
+		list.add(EnumColor.PINK + LangUtils.localize("gui.mekanism.state") + ": " + getColor(getState(itemstack)) + getStateDisplay(getState(itemstack)));
 	}
 
 	@Override

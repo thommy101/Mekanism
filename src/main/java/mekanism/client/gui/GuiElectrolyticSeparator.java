@@ -51,7 +51,7 @@ public class GuiElectrolyticSeparator extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String usage = MekanismUtils.getEnergyDisplay(tileEntity.clientEnergyUsed);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + usage + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + usage + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, MekanismUtils.getResource(ResourceType.GUI, "GuiElectrolyticSeparator.png")));
 		guiElements.add(new GuiFluidGauge(() -> tileEntity.fluidTank, GuiGauge.Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiElectrolyticSeparator.png"), 5, 10));
 		guiElements.add(new GuiGasGauge(() -> tileEntity.leftTank, GuiGauge.Type.SMALL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiElectrolyticSeparator.png"), 58, 18));
@@ -105,10 +105,10 @@ public class GuiElectrolyticSeparator extends GuiMekanism
 	{
 		fontRenderer.drawString(tileEntity.getName(), 45, 6, 0x404040);
 
-		String name = chooseByMode(tileEntity.dumpLeft, LangUtils.localize("gui.idle"), LangUtils.localize("gui.dumping"), LangUtils.localize("gui.dumping_excess"));
+		String name = chooseByMode(tileEntity.dumpLeft, LangUtils.localize("gui.mekanism.idle"), LangUtils.localize("gui.mekanism.dumping"), LangUtils.localize("gui.mekanism.dumping_excess"));
 		renderScaledText(name, 21, 73, 0x404040, 66);
 
-		name = chooseByMode(tileEntity.dumpRight, LangUtils.localize("gui.idle"), LangUtils.localize("gui.dumping"), LangUtils.localize("gui.dumping_excess"));
+		name = chooseByMode(tileEntity.dumpRight, LangUtils.localize("gui.mekanism.idle"), LangUtils.localize("gui.mekanism.dumping"), LangUtils.localize("gui.mekanism.dumping_excess"));
 		renderScaledText(name, 156-(int)(fontRenderer.getStringWidth(name)*getNeededScale(name, 66)), 73, 0x404040, 66);
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

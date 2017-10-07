@@ -118,8 +118,8 @@ public class GuiOredictionificatorFilter extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 
 		buttonList.clear();
-		buttonList.add(new GuiButton(0, guiWidth + 31, guiHeight + 62, 54, 20, LangUtils.localize("gui.save")));
-		buttonList.add(new GuiButton(1, guiWidth + 89, guiHeight + 62, 54, 20, LangUtils.localize("gui.delete")));
+		buttonList.add(new GuiButton(0, guiWidth + 31, guiHeight + 62, 54, 20, LangUtils.localize("gui.mekanism.save")));
+		buttonList.add(new GuiButton(1, guiWidth + 89, guiHeight + 62, 54, 20, LangUtils.localize("gui.mekanism.delete")));
 
 		if(isNew)
 		{
@@ -139,10 +139,10 @@ public class GuiOredictionificatorFilter extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		String text = (isNew ? LangUtils.localize("gui.new") : LangUtils.localize("gui.edit")) + " " + LangUtils.localize("gui.filter");
+		String text = (isNew ? LangUtils.localize("gui.mekanism.new") : LangUtils.localize("gui.mekanism.edit")) + " " + LangUtils.localize("gui.mekanism.filter");
 		fontRenderer.drawString(text, (xSize/2)-(fontRenderer.getStringWidth(text)/2), 6, 0x404040);
 		
-		fontRenderer.drawString(LangUtils.localize("gui.index") + ": " + filter.index, 79, 23, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.index") + ": " + filter.index, 79, 23, 0x404040);
 		
 		if(filter.filter != null)
 		{
@@ -162,17 +162,17 @@ public class GuiOredictionificatorFilter extends GuiMekanism
 		
 		if(xAxis >= 31 && xAxis <= 43 && yAxis >= 21 && yAxis <= 33)
 		{
-			drawHoveringText(LangUtils.localize("gui.lastItem"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.lastItem"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 63 && xAxis <= 75 && yAxis >= 21 && yAxis <= 33)
 		{
-			drawHoveringText(LangUtils.localize("gui.nextItem"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.nextItem"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 33 && xAxis <= 129 && yAxis >= 48 && yAxis <= 60)
 		{
-			drawHoveringText(LangUtils.localize("gui.oreDictCompat"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.oreDictCompat"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 45 && xAxis <= 61 && yAxis >= 19 && yAxis <= 35)

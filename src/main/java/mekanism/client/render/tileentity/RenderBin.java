@@ -43,7 +43,7 @@ public class RenderBin extends TileEntitySpecialRenderer<TileEntityBin>
 			
 			if(clientAmount == Integer.MAX_VALUE)
 			{
-				amount = LangUtils.localize("gui.infinite");
+				amount = LangUtils.localize("gui.mekanism.infinite");
 			}
 			
 			GlStateManager.pushMatrix();

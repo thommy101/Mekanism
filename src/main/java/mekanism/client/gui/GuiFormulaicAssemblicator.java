@@ -57,7 +57,7 @@ public class GuiFormulaicAssemblicator extends GuiMekanism
 		guiElements.add(new GuiEnergyInfo(() ->
         {
             String multiplier = MekanismUtils.getEnergyDisplay(tileEntity.energyPerTick);
-            return ListUtils.asList(LangUtils.localize("gui.using") + ": " + multiplier + "/t", LangUtils.localize("gui.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
+            return ListUtils.asList(LangUtils.localize("gui.mekanism.using") + ": " + multiplier + "/t", LangUtils.localize("gui.mekanism.needed") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getMaxEnergy()-tileEntity.getEnergy()));
         }, this, guiLocation));
 		guiElements.add(new GuiSlot(SlotType.POWER, this, guiLocation, 151, 75).with(SlotOverlay.POWER));
 		
@@ -75,32 +75,32 @@ public class GuiFormulaicAssemblicator extends GuiMekanism
 		
 		if(xAxis >= 44 && xAxis <= 60 && yAxis >= 75 && yAxis <= 91)
 		{
-			drawHoveringText(LangUtils.localize("gui.fillEmpty"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.fillEmpty"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 7 && xAxis <= 21 && yAxis >= 45 && yAxis <= 59)
 		{
-			drawHoveringText(LangUtils.localize("gui.encodeFormula"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.encodeFormula"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 71 && xAxis <= 87 && yAxis >= 75 && yAxis <= 91)
 		{
-			drawHoveringText(LangUtils.localize("gui.craftSingle"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.craftSingle"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 89 && xAxis <= 105 && yAxis >= 75 && yAxis <= 91)
 		{
-			drawHoveringText(LangUtils.localize("gui.craftAvailable"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.craftAvailable"), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 107 && xAxis <= 123 && yAxis >= 75 && yAxis <= 91)
 		{
-			drawHoveringText(LangUtils.localize("gui.autoModeToggle") + ": " + LangUtils.transOnOff(tileEntity.autoMode), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.autoModeToggle") + ": " + LangUtils.transOnOff(tileEntity.autoMode), xAxis, yAxis);
 		}
 		
 		if(xAxis >= 26 && xAxis <= 42 && yAxis >= 75 && yAxis <= 91)
 		{
-			drawHoveringText(LangUtils.localize("gui.stockControl") + ": " + LangUtils.transOnOff(tileEntity.stockControl), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.stockControl") + ": " + LangUtils.transOnOff(tileEntity.stockControl), xAxis, yAxis);
 		}
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

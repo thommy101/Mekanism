@@ -95,7 +95,7 @@ public class GuiOredictionificator extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 
 		buttonList.clear();
-		buttonList.add(new GuiButton(0, guiWidth + 10, guiHeight + 86, 142, 20, LangUtils.localize("gui.newFilter")));
+		buttonList.add(new GuiButton(0, guiWidth + 10, guiHeight + 86, 142, 20, LangUtils.localize("gui.mekanism.newFilter")));
 	}
 	
 	@Override
@@ -141,7 +141,7 @@ public class GuiOredictionificator extends GuiMekanism
 					GlStateManager.popMatrix();
 				}
 
-				fontRenderer.drawString(LangUtils.localize("gui.filter"), 32, yStart + 2, 0x404040);
+				fontRenderer.drawString(LangUtils.localize("gui.mekanism.filter"), 32, yStart + 2, 0x404040);
 				renderScaledText(filter.filter, 32, yStart + 2 + 9, 0x404040, 117);
 			}
 		}

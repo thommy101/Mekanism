@@ -44,8 +44,8 @@ public class GuiReactorFuel extends GuiMekanism
 		super(new ContainerNull(inventory.player, tentity));
 		tileEntity = tentity;
 		guiElements.add(new GuiEnergyInfo(() -> tileEntity.isFormed() ? ListUtils.asList(
-                LangUtils.localize("gui.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
-                LangUtils.localize("gui.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getReactor().getPassiveGeneration(false, true)) + "/t") : new ArrayList<>(), this, MekanismUtils.getResource(ResourceType.GUI, "GuiTall.png")));
+                LangUtils.localize("gui.mekanism.storing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getEnergy(), tileEntity.getMaxEnergy()),
+                LangUtils.localize("gui.mekanism.producing") + ": " + MekanismUtils.getEnergyDisplay(tileEntity.getReactor().getPassiveGeneration(false, true)) + "/t") : new ArrayList<>(), this, MekanismUtils.getResource(ResourceType.GUI, "GuiTall.png")));
 		guiElements.add(new GuiGasGauge(() -> tentity.deuteriumTank, Type.SMALL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiTall.png"), 25, 64));
 		guiElements.add(new GuiGasGauge(() -> tentity.fuelTank, Type.STANDARD, this, MekanismUtils.getResource(ResourceType.GUI, "GuiTall.png"), 79, 50));
 		guiElements.add(new GuiGasGauge(() -> tentity.tritiumTank, Type.SMALL, this, MekanismUtils.getResource(ResourceType.GUI, "GuiTall.png"), 133, 64));
@@ -75,7 +75,7 @@ public class GuiReactorFuel extends GuiMekanism
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 
 		fontRenderer.drawString(tileEntity.getName(), 46, 6, 0x404040);
-		String str = LangUtils.localize("gui.reactor.injectionRate") + ": " + (tileEntity.getReactor() == null ? "None" : tileEntity.getReactor().getInjectionRate());
+		String str = LangUtils.localize("gui.mekanism.reactor.injectionRate") + ": " + (tileEntity.getReactor() == null ? "None" : tileEntity.getReactor().getInjectionRate());
 		fontRenderer.drawString(str, (xSize / 2) - (fontRenderer.getStringWidth(str) / 2), 35, 0x404040);
 		fontRenderer.drawString("Edit Rate" + ":", 50, 117, 0x404040);
 	}

@@ -85,8 +85,8 @@ public class GuiBoilerTab extends GuiElement
 	
 	public enum BoilerTab
 	{
-		MAIN("GuiGasesTab.png", 54, "gui.main"),
-		STAT("GuiStatsTab.png", 55, "gui.stats");
+		MAIN("GuiGasesTab.png", 54, "gui.mekanism.main"),
+		STAT("GuiStatsTab.png", 55, "gui.mekanism.stats");
 		
 		private String path;
 		private int guiId;

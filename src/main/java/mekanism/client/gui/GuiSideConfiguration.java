@@ -166,18 +166,18 @@ public class GuiSideConfiguration extends GuiMekanism
 		int xAxis = (mouseX - (width - xSize) / 2);
 		int yAxis = (mouseY - (height - ySize) / 2);
 
-		String title = currentType.localize() + " " + LangUtils.localize("gui.config");
+		String title = currentType.localize() + " " + LangUtils.localize("gui.mekanism.config");
 		fontRenderer.drawString(title, (xSize/2)-(fontRenderer.getStringWidth(title)/2), 5, 0x404040);
 		
 		if(configurable.getConfig().canEject(currentType))
 		{
-			fontRenderer.drawString(LangUtils.localize("gui.eject") + ": " + (configurable.getConfig().isEjecting(currentType) ? "On" : "Off"), 53, 17, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.eject") + ": " + (configurable.getConfig().isEjecting(currentType) ? "On" : "Off"), 53, 17, 0x00CD00);
 		}
 		else {
-			fontRenderer.drawString(LangUtils.localize("gui.noEject"), 53, 17, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.noEject"), 53, 17, 0x00CD00);
 		}
 		
-		fontRenderer.drawString(LangUtils.localize("gui.slots"), 77, 81, 0x787878);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.slots"), 77, 81, 0x787878);
 
 		for(int i = 0; i < slotPosMap.size(); i++)
 		{
@@ -197,7 +197,7 @@ public class GuiSideConfiguration extends GuiMekanism
 
 		if(xAxis >= 156 && xAxis <= 170 && yAxis >= 6 && yAxis <= 20)
 		{
-			drawHoveringText(LangUtils.localize("gui.autoEject"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.autoEject"), xAxis, yAxis);
 		}
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

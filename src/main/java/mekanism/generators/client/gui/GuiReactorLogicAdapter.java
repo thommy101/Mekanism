@@ -45,12 +45,12 @@ public class GuiReactorLogicAdapter extends GuiMekanism
 		int yAxis = (mouseY - (height - ySize) / 2);
 		
 		fontRenderer.drawString(tileEntity.getName(), (xSize/2)-(fontRenderer.getStringWidth(tileEntity.getName())/2), 6, 0x404040);
-		renderScaledText(LangUtils.localize("gui.coolingMeasurements") + ": " + EnumColor.RED + LangUtils.transOnOff(tileEntity.activeCooled), 36, 20, 0x404040, 117);
-		renderScaledText(LangUtils.localize("gui.redstoneOutputMode") + ": " + EnumColor.RED + tileEntity.logicType.getLocalizedName(), 23, 123, 0x404040, 130);
-		
-		String text = LangUtils.localize("gui.status") + ": " + EnumColor.RED + LangUtils.localize("gui." + (tileEntity.checkMode() ? "outputting" : "idle"));
-		fontRenderer.drawString(text, (xSize/2)-(fontRenderer.getStringWidth(text)/2), 136, 0x404040); 
-		
+		renderScaledText(LangUtils.localize("gui.mekanism.coolingMeasurements") + ": " + EnumColor.RED + LangUtils.transOnOff(tileEntity.activeCooled), 36, 20, 0x404040, 117);
+		renderScaledText(LangUtils.localize("gui.mekanism.redstoneOutputMode") + ": " + EnumColor.RED + tileEntity.logicType.getLocalizedName(), 23, 123, 0x404040, 130);
+
+		String text = LangUtils.localize("gui.mekanism.status") + ": " + EnumColor.RED + LangUtils.localize("gui.mekanism." + (tileEntity.checkMode() ? "outputting" : "idle"));
+		fontRenderer.drawString(text, (xSize/2)-(fontRenderer.getStringWidth(text)/2), 136, 0x404040);
+
 		for(ReactorLogic type : ReactorLogic.values())
 		{
 			GlStateManager.pushMatrix();
@@ -58,10 +58,10 @@ public class GuiReactorLogicAdapter extends GuiMekanism
 			itemRender.renderItemAndEffectIntoGUI(type.getRenderStack(), 27, 35 + (22*type.ordinal()));
 			RenderHelper.disableStandardItemLighting();
 			GlStateManager.popMatrix();
-			
+
 			fontRenderer.drawString(EnumColor.WHITE + type.getLocalizedName(), 46, 34+(22*type.ordinal()), 0x404040);
 		}
-		
+
 		for(ReactorLogic type : ReactorLogic.values())
 		{
 			if(xAxis >= 24 && xAxis <= 152 && yAxis >= 32+(22*type.ordinal()) && yAxis <= 32+22+(22*type.ordinal()))
@@ -69,10 +69,10 @@ public class GuiReactorLogicAdapter extends GuiMekanism
 				displayTooltips(MekanismUtils.splitTooltip(type.getDescription(), ItemStack.EMPTY), xAxis, yAxis);
 			}
 		}
-		
+
 		if(xAxis >= 23 && xAxis <= 34 && yAxis >= 19 && yAxis <= 30)
 		{
-			drawHoveringText(LangUtils.localize("gui.toggleCooling"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.toggleCooling"), xAxis, yAxis);
 		}
 		
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);

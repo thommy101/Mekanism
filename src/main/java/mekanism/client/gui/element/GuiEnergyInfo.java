@@ -51,7 +51,7 @@ public class GuiEnergyInfo extends GuiElement
 
 			info.addAll(infoHandler.getInfo());
 			
-			info.add(LangUtils.localize("gui.unit") + ": " + general.energyUnit);
+			info.add(LangUtils.localize("gui.mekanism.unit") + ": " + general.energyUnit);
 			displayTooltips(info, xAxis, yAxis);
 		}
 	}

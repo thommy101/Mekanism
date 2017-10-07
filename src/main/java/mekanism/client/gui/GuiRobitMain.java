@@ -73,7 +73,7 @@ public class GuiRobitMain extends GuiMekanism
 		int guiHeight = (height - ySize) / 2;
 
 		buttonList.clear();
-		buttonList.add(confirmName = new GuiButton(0, guiWidth + 58, guiHeight + 47, 60, 20, LangUtils.localize("gui.confirm")));
+		buttonList.add(confirmName = new GuiButton(0, guiWidth + 58, guiHeight + 47, 60, 20, LangUtils.localize("gui.mekanism.confirm")));
 		confirmName.visible = displayNameChange;
 
 		nameChangeField = new GuiTextField(1, fontRenderer, guiWidth + 48, guiHeight + 21, 80, 12);
@@ -105,16 +105,16 @@ public class GuiRobitMain extends GuiMekanism
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
 	{
-		fontRenderer.drawString(LangUtils.localize("gui.robit"), 76, 6, 0x404040);
+		fontRenderer.drawString(LangUtils.localize("gui.mekanism.robit"), 76, 6, 0x404040);
 
 		if(!displayNameChange)
 		{
 			CharSequence owner = robit.getOwnerName().length() > 14 ? robit.getOwnerName().subSequence(0, 14) : robit.getOwnerName();
-			fontRenderer.drawString(LangUtils.localize("gui.robit.greeting") + " " + robit.getName() + "!", 29, 18, 0x00CD00);
-			fontRenderer.drawString(LangUtils.localize("gui.energy") + ": " + MekanismUtils.getEnergyDisplay(robit.getEnergy(), robit.MAX_ELECTRICITY), 29, 36-4, 0x00CD00);
-			fontRenderer.drawString(LangUtils.localize("gui.robit.following") + ": " + robit.getFollowing(), 29, 45-4, 0x00CD00);
-			fontRenderer.drawString(LangUtils.localize("gui.robit.dropPickup") + ": " + robit.getDropPickup(), 29, 54-4, 0x00CD00);
-			fontRenderer.drawString(LangUtils.localize("gui.robit.owner") + ": " + owner, 29, 63-4, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.robit.greeting") + " " + robit.getName() + "!", 29, 18, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.energy") + ": " + MekanismUtils.getEnergyDisplay(robit.getEnergy(), robit.MAX_ELECTRICITY), 29, 36-4, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.robit.following") + ": " + robit.getFollowing(), 29, 45-4, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.robit.dropPickup") + ": " + robit.getDropPickup(), 29, 54-4, 0x00CD00);
+			fontRenderer.drawString(LangUtils.localize("gui.mekanism.robit.owner") + ": " + owner, 29, 63-4, 0x00CD00);
 		}
 
 		int xAxis = (mouseX - (width - xSize) / 2);
@@ -126,19 +126,19 @@ public class GuiRobitMain extends GuiMekanism
 		}
 		else if(xAxis >= 152 && xAxis <= 170 && yAxis >= 54 && yAxis <= 72)
 		{
-			drawHoveringText(LangUtils.localize("gui.robit.toggleFollow"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.robit.toggleFollow"), xAxis, yAxis);
 		}
 		else if(xAxis >= 6 && xAxis <= 24 && yAxis >= 54 && yAxis <= 72)
 		{
-			drawHoveringText(LangUtils.localize("gui.robit.rename"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.robit.rename"), xAxis, yAxis);
 		}
 		else if(xAxis >= 6 && xAxis <= 24 && yAxis >= 16 && yAxis <= 34)
 		{
-			drawHoveringText(LangUtils.localize("gui.robit.teleport"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.robit.teleport"), xAxis, yAxis);
 		}
 		else if(xAxis >= 6 && xAxis <= 24 && yAxis >= 35 && yAxis <= 53)
 		{
-			drawHoveringText(LangUtils.localize("gui.robit.togglePickup"), xAxis, yAxis);
+			drawHoveringText(LangUtils.localize("gui.mekanism.robit.togglePickup"), xAxis, yAxis);
 		}
 
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
